@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    tools:context="rafasaid.com.br.santacruzveterano.JogadoresActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="Goleiros"
+            android:textColor="#FFFFFF" />
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:columnCount="1"
+            android:rowCount="1">
+
+            <ImageView
+                android:id="@+id/goleiro_rosto"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:onClick="startRomarioDados"
+                android:src="@drawable/romario_rosto" />
+
+        </GridLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="Zagueiros"
+            android:textColor="#FFFFFF" />
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:columnCount="3"
+            android:rowCount="1">
+
+            <ImageView
+                android:id="@+id/zagueiro1_rosto"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:onClick="startDouglasDados"
+                android:src="@drawable/douglas_rosto" />
+
+
+            <ImageView
+                android:id="@+id/zagueiro2_rosto"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:onClick="startPaulinhoDados"
+                android:src="@drawable/paulinho_rosto" />
+
+            <ImageView
+                android:id="@+id/zagueiro3_rosto"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:onClick="startBoizinhoDados"
+                android:src="@drawable/boizinho_rosto" />
+
+        </GridLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="Laterais"
+            android:textColor="#FFFFFF" />
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:columnCount="3"
+            android:rowCount="1">
+
+            <ImageView
+                android:id="@+id/lateral1_rosto"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:onClick="startPelotaDados"
+                android:src="@drawable/pelota_rosto" />
+
+            <ImageView
+                android:id="@+id/lateral2_rosto"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:onClick="startBaianoDados"
+                android:src="@drawable/baiano_rosto" />
+
+            <ImageView
+                android:id="@+id/lateral3_rosto"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:onClick="startZeGatoDados"
+                android:src="@drawable/ze_gato_rosto" />
+
+        </GridLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="Meio-campistas"
+            android:textColor="#FFFFFF" />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:columnCount="3"
+            android:rowCount="3">
+
+            <ImageView
+                android:id="@+id/meio_campo1_rosto"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:onClick="startRafaelDados"
+                android:src="@drawable/rafa_rosto" />
+
+            <ImageView
+                android:id="@+id/meio_campo2_rosto"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:onClick="startAlissonDados"
+                android:src="@drawable/alisson_rosto" />
+
+            <ImageView
+                android:id="@+id/meio_campo3_rosto"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:onClick="startEdmundoDados"
+                android:src="@drawable/edmundo_rosto" />
+
+            <ImageView
+                android:id="@+id/meio_campo4_rosto"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:onClick="startLuizEduardoDados"
+                android:src="@drawable/luiz_eduardo_rosto" />
+
+            <ImageView
+                android:id="@+id/meio_campo5_rosto"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:onClick="startRicardoDados"
+                android:src="@drawable/ricardo_rosto" />
+
+            <ImageView
+                android:id="@+id/meio_campo6_rosto"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:onClick="startRobertoDados"
+                android:src="@drawable/roberto_rosto" />
+
+            <ImageView
+                android:id="@+id/meio_campo7_rosto"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:onClick="startGabrielDados"
+                android:src="@drawable/gabriel_rosto" />
+
+        </GridLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="Atacantes"
+            android:textColor="#FFFFFF" />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:columnCount="3"
+            android:rowCount="3">
+
+            <ImageView
+                android:id="@+id/atacante1_rosto"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:onClick="startErickDados"
+                android:src="@drawable/erick_rosto" />
+
+            <ImageView
+                android:id="@+id/atacante2_rosto"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:onClick="startErliDados"
+                android:src="@drawable/erli_rosto" />
+
+            <ImageView
+                android:id="@+id/atacante3_rosto"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:onClick="startAlexDados"
+                android:src="@drawable/alex_rosto" />
+
+            <ImageView
+                android:id="@+id/atacante4_rosto"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:onClick="startBilinDados"
+                android:src="@drawable/bilin_rosto" />
+
+            <ImageView
+                android:id="@+id/atacante5_rosto"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:onClick="startBrunoDados"
+                android:src="@drawable/bruno_rosto" />
+
+            <ImageView
+                android:id="@+id/atacante6_rosto"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:onClick="startJosielDados"
+                android:src="@drawable/josiel_rosto" />
+
+            <ImageView
+                android:id="@+id/atacante7_rosto"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:onClick="startRyanDados"
+                android:src="@drawable/ryan_rosto" />
+
+        </GridLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="Arbitragem"
+            android:textColor="#FFFFFF" />
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:columnCount="1"
+            android:rowCount="1">
+
+            <ImageView
+                android:id="@+id/arbitro_rosto"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:onClick="startVanorDados"
+                android:src="@drawable/vanor_rosto" />
+
+        </GridLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="Gandula"
+            android:textColor="#FFFFFF" />
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:columnCount="1"
+            android:rowCount="1">
+
+            <ImageView
+                android:id="@+id/gandula_rosto"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:onClick="startMaurinhoDados"
+                android:src="@drawable/maurinho_rosto" />
+
+        </GridLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="Torcedores"
+            android:textColor="#FFFFFF" />
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:columnCount="3"
+            android:rowCount="1">
+
+            <ImageView
+                android:id="@+id/torcedor1_rosto"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:onClick="startMaurinhoDados"
+                android:src="@drawable/maurinho_rosto" />
+
+            <ImageView
+                android:id="@+id/torcedor2_rosto"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:onClick="startMaurinhoDados"
+                android:src="@drawable/maurinho_rosto" />
+
+            <ImageView
+                android:id="@+id/torcedor3_rosto"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:onClick="startMaurinhoDados"
+                android:src="@drawable/maurinho_rosto" />
+
+        </GridLayout>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AdicionarCalendario">
+
+    <EditText
+        android:id="@+id/data_add_calendario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Data do jogo DD/MM/AAAA"
+        android:inputType="textCapWords" />
+
+    <EditText
+        android:id="@+id/adversario_add_calendario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Adversário"
+        android:inputType="textCapWords" />
+
+    <EditText
+        android:id="@+id/local_add_calendario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Local do jogo" />
+
+</LinearLayout>

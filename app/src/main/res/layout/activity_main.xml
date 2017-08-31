@@ -1,18 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="rafasaid.com.br.santacruzveterano.MainActivity">
+    android:background="@color/colorPrimary">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+        <TextView
+            android:id="@+id/jogadores"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="26dp"
+            android:background="#FFC107"
+            android:text="Jogadores"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="26dp" />
+
+        <TextView
+            android:id="@+id/resultados"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="26dp"
+            android:background="#FFC107"
+            android:text="Resultados"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="26dp" />
+
+        <TextView
+            android:id="@+id/calendario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="26dp"
+            android:background="#FFC107"
+            android:text="Calendário"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="26dp" />
+
+        <TextView
+            android:id="@+id/estatisticas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="26dp"
+            android:background="#FFC107"
+            android:text="Estatísticas"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="26dp" />
+
+        <TextView
+            android:id="@+id/fotos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="26dp"
+            android:background="#FFC107"
+            android:text="Fotos"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="26dp" />
+
+        <TextView
+            android:id="@+id/contato"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="26dp"
+            android:background="#FFC107"
+            android:text="Contato"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="26dp" />
+
+        <TextView
+            android:id="@+id/mensagens"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="26dp"
+            android:background="#FFC107"
+            android:text="Mensagens"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="26dp" />
+
+    </LinearLayout>
+
+</ScrollView>

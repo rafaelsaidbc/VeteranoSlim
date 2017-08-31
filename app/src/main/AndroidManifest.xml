@@ -16,6 +16,121 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".FotosActivity"
+            android:label="Fotos" />
+        <activity
+            android:name=".JogadoresActivity"
+            android:label="Jogadores" />
+
+        <activity
+            android:name=".ContatoActivity"
+            android:label="Contato" />
+        <activity
+            android:name=".RafaelActivity"
+            android:label="Rafael" />
+        <activity
+            android:name=".DouglasActivity"
+            android:label="Douglas" />
+        <activity
+            android:name=".ErliActivity"
+            android:label="Erli" />
+        <activity
+            android:name=".ErickActivity"
+            android:label="Erick" />
+        <activity
+            android:name=".RomarioActivity"
+            android:label="Romário" />
+        <activity
+            android:name=".PelotaActivity"
+            android:label="Pelota" />
+        <activity
+            android:name=".PaulinhoActivity"
+            android:label="Paulinho" />
+        <activity
+            android:name=".BaianoActivity"
+            android:label="Baiano" />
+        <activity
+            android:name=".AlexActivity"
+            android:label="Alex" />
+        <activity
+            android:name=".MensagensActivity"
+            android:label="Mensagens" />
+        <activity
+            android:name=".AlissonActivity"
+            android:label="Alisson" />
+        <activity
+            android:name=".BilinActivity"
+            android:label="Bilim" />
+        <activity
+            android:name=".BoizinhoActivity"
+            android:label="Boizinho" />
+        <activity
+            android:name=".BrunoActivity"
+            android:label="Bruno Pupu" />
+        <activity
+            android:name=".EdmundoActivity"
+            android:label="Edmundo" />
+        <activity
+            android:name=".JosielActivity"
+            android:label="Ziel" />
+        <activity
+            android:name=".LuizEduardoActivity"
+            android:label="Du" />
+        <activity
+            android:name=".RicardoActivity"
+            android:label="Ricardo" />
+        <activity
+            android:name=".RobertoActivity"
+            android:label="Roberto" />
+        <activity
+            android:name=".RyanActivity"
+            android:label="Ryan" />
+        <activity
+            android:name=".ZeGatoActivity"
+            android:label="Zé Gato" />
+        <activity
+            android:name=".GabrielActivity"
+            android:label="Ieiel" />
+        <activity
+            android:name=".VanorActivity"
+            android:label="Árbitro" />
+        <activity
+            android:name=".MaurinhoActivity"
+            android:label="Gandula" />
+        <activity android:name=".EstatisticasActivity" />
+
+        <activity android:name=".ResultadosActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AdicionarResultado"
+            android:parentActivityName=".ResultadosActivity">
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ResultadosActivity" />
+        </activity>
+
+        <activity android:name=".CalendarioActivity">        </activity>
+        <activity
+            android:name=".AdicionarCalendario"
+            android:parentActivityName=".CalendarioActivity">
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".CalendarioActivity" />
+        </activity>
+
+        <provider
+            android:name=".data.DbProvider"
+            android:authorities="rafasaid.com.br.santacruzveterano"
+            android:exported="false" />
+
     </application>
 
 </manifest>
