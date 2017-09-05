@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Santa Cruz</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="send_button_label">Send</string>
 
     <!-- Title for the activity to add a new resultado [CHAR LIMIT=20] -->
     <string name="editor_activity_title_new_resultado">Adicionar resultado</string>
