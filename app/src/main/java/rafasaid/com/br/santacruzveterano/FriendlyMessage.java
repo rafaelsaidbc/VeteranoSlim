@@ -4,7 +4,6 @@ package rafasaid.com.br.santacruzveterano;
  * Created by Entomologia on 30/08/2017.
  */
 
-
 public class FriendlyMessage {
 
     private String text;
