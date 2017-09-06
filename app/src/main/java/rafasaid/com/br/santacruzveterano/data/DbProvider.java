@@ -169,9 +169,19 @@ public class DbProvider extends ContentProvider {
             throw new IllegalArgumentException("Data inválida, tem que ser do tipo texto");
         }
 
+        Integer golsStaResultado = values.getAsInteger(ResultadoEntry.COLUMN_GOLS_STA_RESUTALDO);
+        if (golsStaResultado != null && golsStaResultado < 0) {
+            throw new IllegalArgumentException("Resultado requer valor válido");
+        }
+
+        Integer golsAdversarioResultado = values.getAsInteger(ResultadoEntry.COLUMN_GOLS_ADVERSARIO_RESUTALDO);
+        if (golsAdversarioResultado != null && golsAdversarioResultado < 0) {
+            throw new IllegalArgumentException("Resultado requer valor válido");
+        }
+
         //checar se o resultado é válido, requer uma String
-        String times = values.getAsString(ResultadoEntry.COLUMN_RESULTADO_TIMES);
-        if (times == null) {
+        String adversario = values.getAsString(ResultadoEntry.COLUMN_RESULTADO_ADVERSARIO);
+        if (adversario == null) {
             throw new IllegalArgumentException("Inválido. Digite no formato TimeA 1 x 1 TimeB");
         }
 
@@ -283,12 +293,27 @@ public class DbProvider extends ContentProvider {
             }
         }
 
+        if (values.containsKey(ResultadoEntry.COLUMN_GOLS_STA_RESUTALDO)) {
+            Integer golsStaResultado = values.getAsInteger(ResultadoEntry.COLUMN_GOLS_STA_RESUTALDO);
+            if (golsStaResultado != null & golsStaResultado < 0) {
+                throw new IllegalArgumentException("Requer valor válido");
+            }
+        }
+
+        if (values.containsKey(ResultadoEntry.COLUMN_GOLS_ADVERSARIO_RESUTALDO)) {
+            Integer golsAdversarioResultado = values.getAsInteger(ResultadoEntry.COLUMN_GOLS_ADVERSARIO_RESUTALDO);
+            if (golsAdversarioResultado != null & golsAdversarioResultado < 0) {
+                throw new IllegalArgumentException("Requer valor válido");
+            }
+        }
+
+
         // If the {@link PetEntry#COLUMN_PET_WEIGHT} key is present,
         // check that the weight value is valid.
-        if (values.containsKey(ResultadoEntry.COLUMN_RESULTADO_TIMES)) {
-            String times = values.getAsString(ResultadoEntry.COLUMN_RESULTADO_TIMES);
+        if (values.containsKey(ResultadoEntry.COLUMN_RESULTADO_ADVERSARIO)) {
+            String adversario = values.getAsString(ResultadoEntry.COLUMN_RESULTADO_ADVERSARIO);
 
-            if (times == null) {
+            if (adversario == null) {
                 throw new IllegalArgumentException("Resultado requer times");
             }
         }

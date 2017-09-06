@@ -53,7 +53,9 @@ public final class ResultadoContract {
 
         public final static String _ID = BaseColumns._ID;
         public final static String COLUMN_RESULTADO_DATA = "data";
-        public final static String COLUMN_RESULTADO_TIMES = "times";
+        public final static String COLUMN_GOLS_STA_RESUTALDO = "golsSantaCruzResultado";
+        public final static String COLUMN_GOLS_ADVERSARIO_RESUTALDO = "golsAdversarioResultado";
+        public final static String COLUMN_RESULTADO_ADVERSARIO = "adversario";
         public final static String COLUMN_RESULTADO_GOLS = "gols";
     }
 }

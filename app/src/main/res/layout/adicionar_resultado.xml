@@ -13,17 +13,49 @@
         android:hint="Data do jogo"
         android:inputType="textCapWords" />
 
-    <EditText
-        android:id="@+id/times_add_resultado"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Resultado"
-        android:inputType="textCapWords" />
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Santa Cruz" />
+
+        <EditText
+            android:id="@+id/gols_sta_add_resultado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="0"
+            android:inputType="textCapWords" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" x " />
+
+        <EditText
+            android:id="@+id/gols_adversario_add_resultado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="0"
+            android:inputType="textCapWords" />
+
+        <EditText
+            android:id="@+id/adversario_add_resultado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Adversário"
+            android:inputType="textCapWords" />
+
+    </LinearLayout>
 
     <EditText
         android:id="@+id/gols_add_resultado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Gols" />
+        android:hint="Gols marcados por..."
+        android:inputType="textCapWords" />
 
 </LinearLayout>

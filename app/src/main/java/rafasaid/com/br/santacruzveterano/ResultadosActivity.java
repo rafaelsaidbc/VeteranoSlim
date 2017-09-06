@@ -150,7 +150,9 @@ public class ResultadosActivity extends AppCompatActivity implements LoaderManag
         String[] projection = {
                 ResultadoEntry._ID,
                 ResultadoEntry.COLUMN_RESULTADO_DATA,
-                ResultadoEntry.COLUMN_RESULTADO_TIMES,
+                ResultadoEntry.COLUMN_GOLS_STA_RESUTALDO,
+                ResultadoEntry.COLUMN_GOLS_ADVERSARIO_RESUTALDO,
+                ResultadoEntry.COLUMN_RESULTADO_ADVERSARIO,
                 ResultadoEntry.COLUMN_RESULTADO_GOLS};
         //este loade executará o ContentProvider query method em uma thread de fundo
         return new CursorLoader(this,       //parent activity context

@@ -13,6 +13,7 @@ import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -39,10 +40,14 @@ public class AdicionarResultado extends AppCompatActivity implements LoaderManag
      */
     private EditText mDataAddResultadoEditText;
 
+    private EditText mGolsStaAddResultadoEditText;
+
+    private EditText mGolsAdversarioAddResultadoEditText;
+
     /**
      * EditText field to enter the resultado's breed
      */
-    private EditText mTimesAddResultadoEditText;
+    private EditText mAdversarioAddResultadoEditText;
 
     /**
      * EditText field to enter the resultado's weight
@@ -98,14 +103,18 @@ public class AdicionarResultado extends AppCompatActivity implements LoaderManag
 
         // Find all relevant views that we will need to read user input from
         mDataAddResultadoEditText = (EditText) findViewById(R.id.data_add_resultado);
-        mTimesAddResultadoEditText = (EditText) findViewById(R.id.times_add_resultado);
+        mGolsStaAddResultadoEditText = (EditText) findViewById(R.id.gols_sta_add_resultado);
+        mGolsAdversarioAddResultadoEditText = (EditText) findViewById(R.id.gols_adversario_add_resultado);
+        mAdversarioAddResultadoEditText = (EditText) findViewById(R.id.adversario_add_resultado);
         mGolsAddResultadoEditText = (EditText) findViewById(R.id.gols_add_resultado);
 
         // Setup OnTouchListeners on all the input fields, so we can determine if the user
         // has touched or modified them. This will let us know if there are unsaved changes
         // or not, if the user tries to leave the editor without saving.
         mDataAddResultadoEditText.setOnTouchListener(mTouchListener);
-        mTimesAddResultadoEditText.setOnTouchListener(mTouchListener);
+        mGolsStaAddResultadoEditText.setOnTouchListener(mTouchListener);
+        mGolsAdversarioAddResultadoEditText.setOnTouchListener(mTouchListener);
+        mAdversarioAddResultadoEditText.setOnTouchListener(mTouchListener);
         mGolsAddResultadoEditText.setOnTouchListener(mTouchListener);
 
     }
@@ -118,14 +127,39 @@ public class AdicionarResultado extends AppCompatActivity implements LoaderManag
         //método .trim() elimina os espaços excedentes, garante que o usuário não deigitará
         //espaços desnecessários antes e depois da string
         String dataResultadoString = mDataAddResultadoEditText.getText().toString().trim();
-        String timesResultadoString = mTimesAddResultadoEditText.getText().toString().trim();
+        String golsStaResultadoString = mGolsStaAddResultadoEditText.getText().toString().trim();
+        String golsAdversarioResultadoString = mGolsAdversarioAddResultadoEditText.getText().toString().trim();
+        String adversarioResultadoString = mAdversarioAddResultadoEditText.getText().toString().trim();
         String golsResultadoString = mGolsAddResultadoEditText.getText().toString().trim();
+
+        if (mCurrentResultadoUri == null &&
+                TextUtils.isEmpty(dataResultadoString) && TextUtils.isEmpty(golsStaResultadoString) &&
+                TextUtils.isEmpty(golsAdversarioResultadoString) && TextUtils.isEmpty(adversarioResultadoString) &&
+                TextUtils.isEmpty(golsResultadoString)) {
+            // Since no fields were modified, we can return early without creating a new pet.
+            // No need to create ContentValues and no need to do any ContentProvider operations.
+            return;
+        }
 
         //cria um objeto ContentValues onde as colunas são as chaves, e os atributos (data, times
         //gols) são os valores
         ContentValues values = new ContentValues();
         values.put(ResultadoEntry.COLUMN_RESULTADO_DATA, dataResultadoString);
-        values.put(ResultadoEntry.COLUMN_RESULTADO_TIMES, timesResultadoString);
+
+        int golsStaResultado = 0;
+        if (!TextUtils.isEmpty(golsStaResultadoString)) {
+            golsStaResultado = Integer.parseInt(golsStaResultadoString);
+        }
+        values.put(ResultadoEntry.COLUMN_GOLS_STA_RESUTALDO, golsStaResultado);
+
+        int golsAdversarioResultado = 0;
+        if (!TextUtils.isEmpty(golsAdversarioResultadoString)) {
+            golsAdversarioResultado = Integer.parseInt(golsAdversarioResultadoString);
+        }
+        values.put(ResultadoEntry.COLUMN_GOLS_ADVERSARIO_RESUTALDO, golsAdversarioResultado);
+
+        values.put(ResultadoEntry.COLUMN_RESULTADO_ADVERSARIO, adversarioResultadoString);
+
         values.put(ResultadoEntry.COLUMN_RESULTADO_GOLS, golsResultadoString);
 
         //determine if this is a new or existing resultado by checking if mCurrentResultadoUri is null or not
@@ -274,7 +308,9 @@ public class AdicionarResultado extends AppCompatActivity implements LoaderManag
         String[] projection = {
                 ResultadoEntry._ID,
                 ResultadoEntry.COLUMN_RESULTADO_DATA,
-                ResultadoEntry.COLUMN_RESULTADO_TIMES,
+                ResultadoEntry.COLUMN_GOLS_STA_RESUTALDO,
+                ResultadoEntry.COLUMN_GOLS_ADVERSARIO_RESUTALDO,
+                ResultadoEntry.COLUMN_RESULTADO_ADVERSARIO,
                 ResultadoEntry.COLUMN_RESULTADO_GOLS};
 
         // This loader will execute the ContentProvider's query method on a background thread
@@ -299,17 +335,23 @@ public class AdicionarResultado extends AppCompatActivity implements LoaderManag
         if (cursor.moveToFirst()) {
             // Find the columns of resultado attributes that we're interested in
             int dataColumnIndex = cursor.getColumnIndex(ResultadoEntry.COLUMN_RESULTADO_DATA);
-            int timesColumnIndex = cursor.getColumnIndex(ResultadoEntry.COLUMN_RESULTADO_TIMES);
+            int golsStaColumnIndex = cursor.getColumnIndex(ResultadoEntry.COLUMN_GOLS_STA_RESUTALDO);
+            int golsAdversarioColumnIndex = cursor.getColumnIndex(ResultadoEntry.COLUMN_GOLS_ADVERSARIO_RESUTALDO);
+            int adversarioColumnIndex = cursor.getColumnIndex(ResultadoEntry.COLUMN_RESULTADO_ADVERSARIO);
             int golsColumnIndex = cursor.getColumnIndex(ResultadoEntry.COLUMN_RESULTADO_GOLS);
 
             // Extract out the value from the Cursor for the given column index
             String data = cursor.getString(dataColumnIndex);
-            String times = cursor.getString(timesColumnIndex);
+            int golsStaResultado = cursor.getInt(golsStaColumnIndex);
+            int golsAdversarioResultado = cursor.getInt(golsAdversarioColumnIndex);
+            String adversario = cursor.getString(adversarioColumnIndex);
             String gols = cursor.getString(golsColumnIndex);
 
             // Update the views on the screen with the values from the database
             mDataAddResultadoEditText.setText(data);
-            mTimesAddResultadoEditText.setText(times);
+            mGolsStaAddResultadoEditText.setText(Integer.toString(golsStaResultado));
+            mGolsAdversarioAddResultadoEditText.setText(Integer.toString(golsAdversarioResultado));
+            mAdversarioAddResultadoEditText.setText(adversario);
             mGolsAddResultadoEditText.setText(gols);
         }
     }
@@ -319,7 +361,9 @@ public class AdicionarResultado extends AppCompatActivity implements LoaderManag
 
         // If the loader is invalidated, clear out all the data from the input fields.
         mDataAddResultadoEditText.setText("");
-        mTimesAddResultadoEditText.setText("");
+        mGolsStaAddResultadoEditText.setText("");
+        mGolsAdversarioAddResultadoEditText.setText("");
+        mAdversarioAddResultadoEditText.setText("");
         mGolsAddResultadoEditText.setText("");
     }
 

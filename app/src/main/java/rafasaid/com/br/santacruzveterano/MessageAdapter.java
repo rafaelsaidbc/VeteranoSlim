@@ -11,7 +11,6 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 import java.util.List;
-
 public class MessageAdapter extends ArrayAdapter<FriendlyMessage> {
     public MessageAdapter(Context context, int resource, List<FriendlyMessage> objects) {
         super(context, resource, objects);
@@ -20,12 +19,12 @@ public class MessageAdapter extends ArrayAdapter<FriendlyMessage> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
-            convertView = ((Activity) getContext()).getLayoutInflater().inflate(R.layout.fotos_message, parent, false);
+            convertView = ((Activity) getContext()).getLayoutInflater().inflate(R.layout.item_message, parent, false);
         }
 
-        ImageView photoImageView = (ImageView) convertView.findViewById(R.id.fotosImageView);
-        TextView messageTextView = (TextView) convertView.findViewById(R.id.fotos_messageTextView);
-        TextView authorTextView = (TextView) convertView.findViewById(R.id.fotos_nameTextView);
+        ImageView photoImageView = (ImageView) convertView.findViewById(R.id.photoImageView);
+        TextView messageTextView = (TextView) convertView.findViewById(R.id.messageTextView);
+        TextView authorTextView = (TextView) convertView.findViewById(R.id.nameTextView);
 
         FriendlyMessage message = getItem(position);
 
@@ -46,3 +45,5 @@ public class MessageAdapter extends ArrayAdapter<FriendlyMessage> {
         return convertView;
     }
 }
+
+

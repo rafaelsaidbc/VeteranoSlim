@@ -47,7 +47,7 @@ public class MensagensActivity extends AppCompatActivity {
     public static final int DEFAULT_MSG_LENGTH_LIMIT = 1000;
     public static final String FRIENDLY_MSG_LENGTH_KEY = "friendly_msg_length";
     public static final int RC_SIGN_IN = 1;
-    private static final String TAG = "MainActivity";
+    private static final String TAG = "MensagensActivity";
     private static final int RC_PHOTO_PICKER = 2;
 
     private ListView mMessageListView;
@@ -160,7 +160,8 @@ public class MensagensActivity extends AppCompatActivity {
                                     .setIsSmartLockEnabled(false)
                                     .setProviders(
                                             AuthUI.EMAIL_PROVIDER,
-                                            AuthUI.GOOGLE_PROVIDER)
+                                            AuthUI.GOOGLE_PROVIDER,
+                                            AuthUI.FACEBOOK_PROVIDER)
                                     .build(),
                             RC_SIGN_IN);
                 }

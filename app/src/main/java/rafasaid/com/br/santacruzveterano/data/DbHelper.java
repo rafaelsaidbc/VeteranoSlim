@@ -39,7 +39,9 @@ public class DbHelper extends SQLiteOpenHelper {
         String SQL_CREATE_RESULTADOS_TABLE = "CREATE TABLE " + ResultadoContract.ResultadoEntry.TABLE_NAME + "("
                 + ResultadoEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + ResultadoEntry.COLUMN_RESULTADO_DATA + " TEXT NOT NULL, "
-                + ResultadoEntry.COLUMN_RESULTADO_TIMES + " TEXT NOT NULL, "
+                + ResultadoEntry.COLUMN_GOLS_STA_RESUTALDO + " INTEGER NOT NULL, "
+                + ResultadoEntry.COLUMN_GOLS_ADVERSARIO_RESUTALDO + " INTEGER NOT NULL, "
+                + ResultadoEntry.COLUMN_RESULTADO_ADVERSARIO + " TEXT NOT NULL, "
                 + ResultadoEntry.COLUMN_RESULTADO_GOLS + " TEXT NOT NULL);";
 
         String SQL_CREATE_CALENDARIO_TABLE = "CREATE TABLE " + CalendarioContract.CalendarioEntry.TABLE_NAME_CALENDARIO + "("

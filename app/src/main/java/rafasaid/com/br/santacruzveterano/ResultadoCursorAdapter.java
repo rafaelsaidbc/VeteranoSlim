@@ -60,22 +60,30 @@ public class ResultadoCursorAdapter extends CursorAdapter {
     public void bindView(View view, Context context, Cursor cursor) {
         // Find individual views that we want to modify in the list item layout
         TextView dataListaResultadoTextView = view.findViewById(R.id.data_lista_resultado);
-        TextView timesListaResultadoTextView = view.findViewById(R.id.times_lista_resultado);
+        TextView golsStaListaResultadoTextView = view.findViewById(R.id.gols_sta_lista_resultado);
+        TextView golsAdversarioListaResultadoTextView = view.findViewById(R.id.gols_adversario_lista_resultado);
+        TextView adversarioListaResultadoTextView = view.findViewById(R.id.adversario_lista_resultado);
         TextView golsListaResultadoTextView = view.findViewById(R.id.gols_lista_resultado);
 
         // Find the columns of pet attributes that we're interested in
         int dataListaResultadoColumnIndex = cursor.getColumnIndex(ResultadoEntry.COLUMN_RESULTADO_DATA);
-        int timesListaResultadoColumnIndex = cursor.getColumnIndex(ResultadoEntry.COLUMN_RESULTADO_TIMES);
+        int golsStaListaResultadoColumnIndex = cursor.getColumnIndex(ResultadoEntry.COLUMN_GOLS_STA_RESUTALDO);
+        int golsAdversarioListaResultadoColumnIndex = cursor.getColumnIndex(ResultadoEntry.COLUMN_GOLS_ADVERSARIO_RESUTALDO);
+        int adversarioListaResultadoColumnIndex = cursor.getColumnIndex(ResultadoEntry.COLUMN_RESULTADO_ADVERSARIO);
         int golsListaResultadoColumnIndex = cursor.getColumnIndex(ResultadoEntry.COLUMN_RESULTADO_GOLS);
 
         // Read the pet attributes from the Cursor for the current pet
         String resultadoData = cursor.getString(dataListaResultadoColumnIndex);
-        String resultadoTimes = cursor.getString(timesListaResultadoColumnIndex);
+        int resultadoGolsSta = cursor.getInt(golsStaListaResultadoColumnIndex);
+        int resultadoGolsAdversario = cursor.getInt(golsAdversarioListaResultadoColumnIndex);
+        String resultadoAdversario = cursor.getString(adversarioListaResultadoColumnIndex);
         String resultadoGols = cursor.getString(golsListaResultadoColumnIndex);
 
         // Update the TextViews with the attributes for the current pet
         dataListaResultadoTextView.setText(resultadoData);
-        timesListaResultadoTextView.setText(resultadoTimes);
+        golsStaListaResultadoTextView.append(String.valueOf(resultadoGolsSta));
+        golsAdversarioListaResultadoTextView.append(String.valueOf(resultadoGolsAdversario));
+        adversarioListaResultadoTextView.setText(resultadoAdversario);
         golsListaResultadoTextView.setText(resultadoGols);
     }
 }
