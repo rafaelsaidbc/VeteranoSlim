@@ -126,6 +126,9 @@
             android:authorities="rafasaid.com.br.santacruzveterano"
             android:exported="false" />
 
+        <uses-permission android:name="android.permission.INTERNET" />
+
+
     </application>
 
 </manifest>

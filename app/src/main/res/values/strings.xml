@@ -3,6 +3,10 @@
     <string name="sign_out">Sign Out</string>
     <string name="send_button_label">Send</string>
 
+    <string name="facebook_app_id">147940105799602</string>
+    <string name="fb_login_protocol_scheme">fb147940105799602</string>
+
+
     <!-- Title for the activity to add a new resultado [CHAR LIMIT=20] -->
     <string name="editor_activity_title_new_resultado">Adicionar resultado</string>
 
