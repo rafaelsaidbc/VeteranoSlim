@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     android:orientation="vertical"
-    tools:context="rafasaid.com.br.santacruzveterano.ContatoActivity">
+    tools:context=".EstatisticasActivity">
 
     <TextView
         android:id="@+id/estatisticas_ano"
@@ -17,6 +17,130 @@
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="26dp" />
+
+    <EditText
+        android:id="@+id/gols_marcados_santa_cruz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="gols Santa Cruz" />
+
+    <EditText
+        android:id="@+id/gols_sofridos_santa_cruz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="gols Adversário" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vitórias: " />
+
+        <TextView
+            android:id="@+id/vitorias_estatisticas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="0" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Empates: " />
+
+        <TextView
+            android:id="@+id/empates_estatisticas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="0" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Derrotas: " />
+
+        <TextView
+            android:id="@+id/derrotas_estatisticas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="0" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gols marcados: " />
+
+        <TextView
+            android:id="@+id/gols_marcados_estatisticas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="0" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gols sofridos: " />
+
+        <TextView
+            android:id="@+id/gols_sofridos_estatisticas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="0" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Saldo de gols: " />
+
+        <TextView
+            android:id="@+id/saldo_gols_estatisticas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="0" />
+
+    </LinearLayout>
 
 
 </LinearLayout>

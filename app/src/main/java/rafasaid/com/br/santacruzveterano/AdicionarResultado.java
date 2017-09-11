@@ -204,7 +204,6 @@ public class AdicionarResultado extends AppCompatActivity implements LoaderManag
 
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu options from the res/menu/menu_adicionar_resultadonar_resultado.xml file.
