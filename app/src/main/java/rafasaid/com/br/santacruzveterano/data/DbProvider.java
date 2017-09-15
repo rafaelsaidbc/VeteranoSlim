@@ -9,7 +9,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.util.Log;
 
-import rafasaid.com.br.santacruzveterano.data.CalendarioContract.CalendarioEntry;
 import rafasaid.com.br.santacruzveterano.data.ResultadoContract.ResultadoEntry;
 
 /**
@@ -24,9 +23,6 @@ public class DbProvider extends ContentProvider {
     //URI matcher code para o conteúdo URI para um único resultado na tabela de resultados2017
     private static final int RESULTADOS_ID = 101;
 
-    private static final int CALENDARIO = 200;
-
-    private static final int CALENDARIO_ID = 201;
     /*
     Objeto UriMatcher para encontrar um conteúdo URI no código correspondente. A entrada passada
      dentro do construtor representa o código de retorno do URI root. É comum usar NO_MATCH como
@@ -51,7 +47,6 @@ public class DbProvider extends ContentProvider {
         // integer code {@link #PETS}. This URI is used to provide access to MULTIPLE rows
         // of the pets table.
         sUriMatcher.addURI(ResultadoContract.CONTENT_AUTHORITY, ResultadoContract.PATH_RESULTADOS, RESULTADOS);
-        sUriMatcher.addURI(CalendarioContract.CONTENT_AUTHORITY_CALENDARIO, CalendarioContract.PATH_CALENDARIO, CALENDARIO);
 
 
         // The content URI of the form "content://com.example.android.pets/pets/#" will map to the
@@ -62,7 +57,6 @@ public class DbProvider extends ContentProvider {
         // For example, "content://com.example.android.pets/pets/3" matches, but
         // "content://com.example.android.pets/pets" (without a number at the end) doesn't match.
         sUriMatcher.addURI(ResultadoContract.CONTENT_AUTHORITY, ResultadoContract.PATH_RESULTADOS + "/#", RESULTADOS_ID);
-        sUriMatcher.addURI(CalendarioContract.CONTENT_AUTHORITY_CALENDARIO, CalendarioContract.PATH_CALENDARIO + "/#", CALENDARIO_ID);
 
     }
 
@@ -102,10 +96,6 @@ public class DbProvider extends ContentProvider {
                 cursor = database.query(ResultadoEntry.TABLE_NAME, projection, selection,
                         selectionArgs, null, null, sortOrder);
                 break;
-            case CALENDARIO:
-                cursor = database.query(CalendarioEntry.TABLE_NAME_CALENDARIO, projection,
-                        selection, selectionArgs, null, null, sortOrder);
-                break;
 
             case RESULTADOS_ID:
                 //Para o código RESULTADOS_ID, extraia o ID do URI. Para um exemplo de URI
@@ -123,13 +113,6 @@ public class DbProvider extends ContentProvider {
                         selection, selectionArgs, null, null, sortOrder);
                 break;
 
-            case CALENDARIO_ID:
-                selection = CalendarioEntry._ID + "=?";
-                selectionArgs = new String[]{String.valueOf(ContentUris.parseId(uri))};
-
-                cursor = database.query(CalendarioEntry.TABLE_NAME_CALENDARIO, projection,
-                        selection, selectionArgs, null, null, sortOrder);
-                break;
             default:
                 throw new IllegalArgumentException("Cannot query unknown URI " + uri);
 
@@ -152,8 +135,6 @@ public class DbProvider extends ContentProvider {
             case RESULTADOS:
                 return insertResultado(uri, contentValues);
 
-            case CALENDARIO:
-                return insertCalendario(uri, contentValues);
 
             default:
                 throw new IllegalArgumentException("Inserção não suportada pelo " + uri);
@@ -208,42 +189,6 @@ public class DbProvider extends ContentProvider {
         return ContentUris.withAppendedId(uri, id);
     }
 
-    private Uri insertCalendario(Uri uri, ContentValues values) {
-
-        //Checar se o nome é válido ou não, se a data é uma String
-        String dataCalendario = values.getAsString(CalendarioEntry.COLUMN_CALENDARIO_DATA);
-        if (dataCalendario == null) {
-            throw new IllegalArgumentException("Data inválida, tem que ser do tipo texto");
-        }
-
-        //checar se o adversário é válido, requer uma String
-        String adversario = values.getAsString(CalendarioEntry.COLUMN_CALENDARIO_ADVERSARIO);
-        if (adversario == null) {
-            throw new IllegalArgumentException("Inválido. Digite no formato Adversário");
-        }
-
-        String local = values.getAsString(CalendarioEntry.COLUMN_CALENDARIO_LOCAL);
-        if (local == null) {
-            throw new IllegalArgumentException("Tem que ter um local para o jogo...");
-        }
-
-        //Obtem modo escrever na database
-        SQLiteDatabase database = mDbHelper.getWritableDatabase();
-
-        //insere um novo calendario com os valores dados
-        long id = database.insert(CalendarioEntry.TABLE_NAME_CALENDARIO, null, values);
-
-        //se o ID for = -1 então a inserção falhou. Log e erro retornam nulo
-        if (id == -1) {
-            Log.e(LOG_TAG, "Falha ao inserir linha para " + uri);
-            return null;
-        }
-        // Notify all listeners that the data has changed for the pet content URI
-        getContext().getContentResolver().notifyChange(uri, null);
-
-
-        return ContentUris.withAppendedId(uri, id);
-    }
 
     //Atualizar os dados informados pela selection e pela selection arguments, com os novos
     //ContentValues
@@ -254,9 +199,6 @@ public class DbProvider extends ContentProvider {
             case RESULTADOS:
                 return updateResultado(uri, contentValues, selection, selectionArgs);
 
-            case CALENDARIO:
-                return updateCalendario(uri, contentValues, selection, selectionArgs);
-
             case RESULTADOS_ID:
                 // Para o código PET_ID, extraia o ID do URI,
                 // para que saibamos qual registro atualizar. Selection será "_id=?" and selection
@@ -264,11 +206,6 @@ public class DbProvider extends ContentProvider {
                 selection = ResultadoEntry._ID + "=?";
                 selectionArgs = new String[]{String.valueOf(ContentUris.parseId(uri))};
                 return updateResultado(uri, contentValues, selection, selectionArgs);
-
-            case CALENDARIO_ID:
-                selection = CalendarioEntry._ID + "=?";
-                selectionArgs = new String[]{String.valueOf(ContentUris.parseId(uri))};
-                return updateCalendario(uri, contentValues, selection, selectionArgs);
 
             default:
                 throw new IllegalArgumentException("Atualização não é suportada pelo " + uri);
@@ -345,55 +282,6 @@ public class DbProvider extends ContentProvider {
         return rowsUpdated;
     }
 
-    private int updateCalendario(Uri uri, ContentValues values, String selection, String[] selectionArgs) {
-
-
-        // If the {@link PetEntry#COLUMN_PET_GENDER} key is present,
-        // check that the gender value is valid.
-        if (values.containsKey(CalendarioEntry.COLUMN_CALENDARIO_DATA)) {
-            String dataCalendario = values.getAsString(CalendarioEntry.COLUMN_CALENDARIO_DATA);
-            if (dataCalendario == null) {
-                throw new IllegalArgumentException("Calendario precisa de uma data");
-            }
-        }
-
-        // If the {@link PetEntry#COLUMN_PET_WEIGHT} key is present,
-        // check that the weight value is valid.
-        if (values.containsKey(CalendarioEntry.COLUMN_CALENDARIO_ADVERSARIO)) {
-            String adversario = values.getAsString(CalendarioEntry.COLUMN_CALENDARIO_ADVERSARIO);
-
-            if (adversario == null) {
-                throw new IllegalArgumentException("Calendario requer adversário");
-            }
-        }
-
-        if (values.containsKey(CalendarioEntry.COLUMN_CALENDARIO_LOCAL)) {
-            String local = values.getAsString(CalendarioEntry.COLUMN_CALENDARIO_LOCAL);
-            if (local == null) {
-                throw new IllegalArgumentException("Não há local para o jogo");
-            }
-        }
-
-        // If there are no values to update, then don't try to update the database
-        if (values.size() == 0) {
-            return 0;
-        }
-        // Otherwise, get writeable database to update the data
-        SQLiteDatabase database = mDbHelper.getWritableDatabase();
-
-        // Perform the update on the database and get the number of rows affected
-        int rowsUpdated = database.update(CalendarioEntry.TABLE_NAME_CALENDARIO, values, selection, selectionArgs);
-
-        // If 1 or more rows were updated, then notify all listeners that the data at the
-        // given URI has changed
-        if (rowsUpdated != 0) {
-            getContext().getContentResolver().notifyChange(uri, null);
-        }
-
-        // Return the number of rows updated
-        return rowsUpdated;
-    }
-
     //Deleta todos os dados informados pela selection e pela selection arguments
     @Override
     public int delete(Uri uri, String selection, String[] selectionArgs) {
@@ -411,10 +299,6 @@ public class DbProvider extends ContentProvider {
                 rowsDeleted = database.delete(ResultadoEntry.TABLE_NAME, selection, selectionArgs);
                 break;
 
-            case CALENDARIO:
-                rowsDeleted = database.delete(CalendarioEntry.TABLE_NAME_CALENDARIO, selection, selectionArgs);
-                break;
-
             case RESULTADOS_ID:
                 // Deleta um único registro dado pelo ID na URI
                 selection = ResultadoEntry._ID + "=?";
@@ -422,15 +306,6 @@ public class DbProvider extends ContentProvider {
                 selectionArgs = new String[]{String.valueOf(ContentUris.parseId(uri))};
 
                 rowsDeleted = database.delete(ResultadoEntry.TABLE_NAME, selection, selectionArgs);
-                break;
-
-            case CALENDARIO_ID:
-                selection = CalendarioEntry._ID + "=?";
-
-                selectionArgs = new String[]{String.valueOf(ContentUris.parseId(uri))};
-
-                rowsDeleted = database.delete(CalendarioEntry.TABLE_NAME_CALENDARIO,
-                        selection, selectionArgs);
                 break;
 
             default:
@@ -456,14 +331,8 @@ public class DbProvider extends ContentProvider {
             case RESULTADOS:
                 return ResultadoEntry.CONTENT_LIST_TYPE;
 
-            case CALENDARIO:
-                return CalendarioEntry.CONTENT_LIST_TYPE_CALENDARIO;
-
             case RESULTADOS_ID:
                 return ResultadoEntry.CONTENT_ITEM_TYPE;
-
-            case CALENDARIO_ID:
-                return CalendarioEntry.CONTENT_LIST_TYPE_CALENDARIO;
 
             default:
                 throw new IllegalStateException("Unknown URI " + uri + " with match " + match);

@@ -1,144 +1,118 @@
 package rafasaid.com.br.santacruzveterano;
 
-
-import android.content.ContentUris;
-import android.content.ContentValues;
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.LoaderManager;
-import android.support.v4.content.CursorLoader;
-import android.support.v4.content.Loader;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 
-import rafasaid.com.br.santacruzveterano.data.CalendarioContract.CalendarioEntry;
-import rafasaid.com.br.santacruzveterano.data.DbHelper;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 
-public class CalendarioActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
+import java.util.ArrayList;
+import java.util.List;
 
+public class CalendarioActivity extends AppCompatActivity {
 
-    private static final int CALENDARIO_LOADER = 1;
+    private static final String TAG = "CalendarioActivity";
 
-    CalendarioCursorAdapter mCursorAdapterCalendario;
+    private ListView mCalendarioListView;
+    private CalendarioAdapter mCalendarioAdapter;
+    private ProgressBar mProgressBar;
 
-    private DbHelper mDbHelper;
+    // Firebase instance variables
+    private FirebaseDatabase mFirebaseDatabase;//ponto de acesso do app ao Database
+    private DatabaseReference mCalendarioDatabaseReference;//classe que faz referência a uma parte específica da Database;
+    //para cada referência que for utilizar a database, deve ter
+    //uma classe
 
+    //leitura e exibição dos dados da database na ListView
+    private ChildEventListener mChildEventListener;
+    private FirebaseRemoteConfig mFirebaseRemoteConfig;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendario);
 
-        FloatingActionButton fabCalendario = (FloatingActionButton) findViewById(R.id.btn_add_calendario);
-        fabCalendario.setOnClickListener(new View.OnClickListener() {
+
+        // Find the View that shows the AdicionarCalendario category
+        FloatingActionButton btnAddListCalendario = (FloatingActionButton) findViewById(R.id.btn_add_calendario);
+
+        // Set a click listener on that View
+        btnAddListCalendario.setOnClickListener(new View.OnClickListener() {
+            // The code in this method will be executed when the jogadores category is clicked on.
             @Override
             public void onClick(View view) {
-                Intent intentCalendario = new Intent(CalendarioActivity.this, AdicionarCalendario.class);
-                startActivity(intentCalendario);
+                // Create a new intent to open the {@link JogadoresActivity}
+                Intent btnAddListCalendarioIntent = new Intent(CalendarioActivity.this, AdicionarCalendario.class);
+
+                // Start the new activity (show jogadores activity)
+                startActivity(btnAddListCalendarioIntent);
             }
+
         });
 
 
-        ListView calendarioListView = (ListView) findViewById(R.id.list_calendario);
+        // Initialize Firebase components
+        mFirebaseDatabase = FirebaseDatabase.getInstance(); //é o ponto de acesso principal do Database
+        mFirebaseRemoteConfig = FirebaseRemoteConfig.getInstance();
 
-        mCursorAdapterCalendario = new CalendarioCursorAdapter(this, null);
 
-        calendarioListView.setAdapter(mCursorAdapterCalendario);
+        //mFirebaseDatabase.getReference() faz referência ao nó raiz; child() faz referência à parte de interesse, no caso calendario,
+        //pode ser calendário, resultados, fotos (no lugar de messages)
+        mCalendarioDatabaseReference = mFirebaseDatabase.getReference().child("calendario");
 
-        calendarioListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        // Inicializa as referências das Views
+        mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
+        mCalendarioListView = (ListView) findViewById(R.id.calendarioListView);
 
+        // Initialize message ListView and its adapter, o ArrayList é a fonte de dados do CalendarioAdapter
+        //pelo objeto mCalendarioAdapter
+        List<CalendarioFirebase> calendarioFirebases = new ArrayList<>();
+        mCalendarioAdapter = new CalendarioAdapter(this, R.layout.add_item_calendario, calendarioFirebases);
+        mCalendarioListView.setAdapter(mCalendarioAdapter);
+
+        // Initialize progress bar
+        mProgressBar.setVisibility(ProgressBar.INVISIBLE);
+
+        //leitura e exibição dos dados da database no app
+        mChildEventListener = new ChildEventListener() {
+
+            //chamado quando uma partida for inserida na lista de calendario
             @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                //obtêm os dados do novo calendário
+                CalendarioFirebase calendarioFirebase = dataSnapshot.getValue(CalendarioFirebase.class);//desserializa o calendario do banco de dados para o objeto CalendarioFirebase
+                //o objeto CalendarioFirebase deve ter os mesmos campos dos objetos de calendario do banco de dados
 
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-
-                Intent intent = new Intent(CalendarioActivity.this, AdicionarCalendario.class);
-
-                Uri currentCalendarioUri = ContentUris.withAppendedId(CalendarioEntry.CONTENT_URI_CALENDARIO, id);
-
-                intent.setData(currentCalendarioUri);
-
-                startActivity(intent);
+                mCalendarioAdapter.add(calendarioFirebase);//adiciona o objeto CalendarioFirebase ao Adapter, converte
+                //o calendario em um objeto CalendarioFirebase e adiciona ao Adapter, que será exibido na ListView
             }
-        });
 
-        getSupportLoaderManager().initLoader(CALENDARIO_LOADER, null, this);
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+            }
 
-        mDbHelper = new DbHelper(this);
-    }
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+            }
 
-    private void insertCalendario() {
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+            }
 
-        SQLiteDatabase db = mDbHelper.getWritableDatabase();
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        };
+        mCalendarioDatabaseReference.addChildEventListener(mChildEventListener);
 
-        ContentValues values = new ContentValues();
 
-        long newRowId = db.insert(CalendarioEntry.TABLE_NAME_CALENDARIO, null, values);
-
-        Log.v("AdicionarCalendario", "Calendario adicionado" + newRowId);
-
-    }
-
-    private void deleteAllCalendario() {
-        int rowsDeleted = getContentResolver().delete(CalendarioEntry.CONTENT_URI_CALENDARIO, null, null);
-        Log.v("CalendarioActivity", rowsDeleted + " rows deleted from calendario database");
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_activity_calendario, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_delete_all_entries_calendario:
-                //deleteAllCalendario();
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public Loader<Cursor> onCreateLoader(int id, Bundle args) {
-        String[] projection = {
-                CalendarioEntry._ID,
-                CalendarioEntry.COLUMN_CALENDARIO_DATA,
-                CalendarioEntry.COLUMN_CALENDARIO_ADVERSARIO,
-                CalendarioEntry.COLUMN_CALENDARIO_LOCAL};
-
-        return new CursorLoader(this,       //parent activity context
-                CalendarioEntry.CONTENT_URI_CALENDARIO, //provider contet URI to query
-                projection,                 //colunas que incluirão o resultado cursor
-                null,                       //sem clausula de seleção
-                null,                       //sem seleção de argumentos
-                null);                      //ordem de classificação padrão
 
     }
 
-    @Override
-    public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
-        mCursorAdapterCalendario.swapCursor(data);
 
-    }
-
-    @Override
-    public void onLoaderReset(Loader<Cursor> loader) {
-        mCursorAdapterCalendario.swapCursor(null);
-
-    }
-
-    @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {
-
-    }
 }

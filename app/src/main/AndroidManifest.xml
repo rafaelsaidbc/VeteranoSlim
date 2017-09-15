@@ -17,9 +17,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".FotosActivity"
-            android:label="Fotos" />
-        <activity
             android:name=".JogadoresActivity"
             android:label="Jogadores" />
 
@@ -98,7 +95,6 @@
         <activity
             android:name=".MaurinhoActivity"
             android:label="Gandula" />
-        <activity android:name=".EstatisticasActivity" />
 
         <activity android:name=".ResultadosActivity">
         </activity>

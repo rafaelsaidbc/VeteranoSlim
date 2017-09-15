@@ -72,35 +72,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-        TextView estatisticas = (TextView) findViewById(R.id.estatisticas);
-
-        // Set a click listener on that View
-        estatisticas.setOnClickListener(new OnClickListener() {
-            // The code in this method will be executed when the estatisticas category is clicked on.
-            @Override
-            public void onClick(View view) {
-                // Create a new intent to open the {@link EstatisticasActivity}
-                Intent estatisticasIntent = new Intent(MainActivity.this, EstatisticasActivity.class);
-
-                // Start the new activity
-                startActivity(estatisticasIntent);
-            }
-        });
-
-
-        TextView fotos = (TextView) findViewById(R.id.fotos);
-
-        fotos.setOnClickListener(new OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                Intent fotosIntent = new Intent(MainActivity.this, rafasaid.com.br.santacruzveterano.FotosActivity.class);
-
-                startActivity(fotosIntent);
-            }
-        });
-
         TextView contato = (TextView) findViewById(R.id.contato);
 
         contato.setOnClickListener(new OnClickListener() {

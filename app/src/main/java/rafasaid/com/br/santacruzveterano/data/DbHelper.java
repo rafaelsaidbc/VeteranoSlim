@@ -5,7 +5,6 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import rafasaid.com.br.santacruzveterano.data.CalendarioContract.CalendarioEntry;
 import rafasaid.com.br.santacruzveterano.data.ResultadoContract.ResultadoEntry;
 
 /**
@@ -44,14 +43,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 + ResultadoEntry.COLUMN_RESULTADO_ADVERSARIO + " TEXT NOT NULL, "
                 + ResultadoEntry.COLUMN_RESULTADO_GOLS + " TEXT NOT NULL);";
 
-        String SQL_CREATE_CALENDARIO_TABLE = "CREATE TABLE " + CalendarioContract.CalendarioEntry.TABLE_NAME_CALENDARIO + "("
-                + CalendarioEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + CalendarioEntry.COLUMN_CALENDARIO_DATA + " TEXT NOT NULL, "
-                + CalendarioEntry.COLUMN_CALENDARIO_ADVERSARIO + " TEXT NOT NULL, "
-                + CalendarioEntry.COLUMN_CALENDARIO_LOCAL + " TEXT NOT NULL);";
-
         db.execSQL(SQL_CREATE_RESULTADOS_TABLE);
-        db.execSQL(SQL_CREATE_CALENDARIO_TABLE);
     }
 
     @Override
