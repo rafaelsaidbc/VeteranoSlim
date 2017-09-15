@@ -117,11 +117,6 @@
                 android:value=".CalendarioActivity" />
         </activity>
 
-        <provider
-            android:name=".data.DbProvider"
-            android:authorities="rafasaid.com.br.santacruzveterano"
-            android:exported="false" />
-
         <uses-permission android:name="android.permission.INTERNET" />
 
 
