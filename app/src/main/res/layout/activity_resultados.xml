@@ -30,12 +30,4 @@
         android:background="@color/colorPrimary"
         android:src="@drawable/circle_add" />
 
-    <ProgressBar
-        android:id="@+id/progressBarResultado"
-        style="?android:attr/progressBarStyleLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true" />
-
 </RelativeLayout>
