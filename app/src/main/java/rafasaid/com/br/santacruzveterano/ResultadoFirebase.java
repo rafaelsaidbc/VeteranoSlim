@@ -7,6 +7,8 @@ package rafasaid.com.br.santacruzveterano;
 public class ResultadoFirebase {
 
     //classes utilizadas para implementar a database
+    private String anoAddResultado;
+    private String idAddResultado;
     private String dataAddResultado;
     private String golsStaCruzAddResultado;
     private String golsAdversarioAddResultado;
@@ -16,13 +18,31 @@ public class ResultadoFirebase {
     public ResultadoFirebase() {
     }
 
-    public ResultadoFirebase(String dataAddResultado, String golsStaCruzAddResultado, String golsAdversarioAddResultado,
+    public ResultadoFirebase(String anoAddResultado, String idAddResultado, String dataAddResultado, String golsStaCruzAddResultado, String golsAdversarioAddResultado,
                              String adversarioAddResultado, String golsMarcadoresAddResultado) {
+        this.anoAddResultado = anoAddResultado;
+        this.idAddResultado = idAddResultado;
         this.dataAddResultado = dataAddResultado;
         this.golsStaCruzAddResultado = golsStaCruzAddResultado;
         this.golsAdversarioAddResultado = golsAdversarioAddResultado;
         this.adversarioAddResultado = adversarioAddResultado;
         this.golsMarcadoresAddResultado = golsMarcadoresAddResultado;
+    }
+
+    public String getAnoAddResultado() {
+        return anoAddResultado;
+    }
+
+    public void setAnoAddResultado(String anoAddResultado) {
+        this.anoAddResultado = anoAddResultado;
+    }
+
+    public String getIdAddResultado() {
+        return idAddResultado;
+    }
+
+    public void setIdAddResultado(String idAddResultado) {
+        this.idAddResultado = idAddResultado;
     }
 
     public String getDataAddResultado() {

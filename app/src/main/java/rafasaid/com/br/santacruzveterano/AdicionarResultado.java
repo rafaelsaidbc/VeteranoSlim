@@ -25,9 +25,12 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class AdicionarResultado extends AppCompatActivity {
 
+
     //instâncias de autenticação
     public static final int RC_SIGN_IN = 1;
     private Button mBtnAddItemResultado;
+    private EditText mAnoAddResultadoEditText;
+    private EditText mIdAddResultadoEditText;
     private EditText mDataAddResultadoEditText;
     private EditText mGolsStaAddResultadoEditText;
     private EditText mGolsAdversarioAddResultadoEditText;
@@ -55,6 +58,8 @@ public class AdicionarResultado extends AppCompatActivity {
         //pode ser calendário, resultados, fotos (no lugar de messages)
         mResultadoDatabaseReference = mFirebaseDatabase.getReference().child("resultado");
 
+        mAnoAddResultadoEditText = (EditText) findViewById(R.id.ano_add_resultado);
+        mIdAddResultadoEditText = (EditText) findViewById(R.id.id_add_resultado);
         mDataAddResultadoEditText = (EditText) findViewById(R.id.data_add_resultado);
         mGolsStaAddResultadoEditText = (EditText) findViewById(R.id.gols_sta_cruz_add_resultado);
         mGolsAdversarioAddResultadoEditText = (EditText) findViewById(R.id.gols_adversario_add_resultado);
@@ -68,6 +73,8 @@ public class AdicionarResultado extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 ResultadoFirebase resultadoFirebase = new ResultadoFirebase(
+                        mAnoAddResultadoEditText.getText().toString(),
+                        mIdAddResultadoEditText.getText().toString(),
                         mDataAddResultadoEditText.getText().toString(),
                         mGolsStaAddResultadoEditText.getText().toString(),
                         mGolsAdversarioAddResultadoEditText.getText().toString(),
@@ -78,6 +85,8 @@ public class AdicionarResultado extends AppCompatActivity {
                 mResultadoDatabaseReference.push().setValue(resultadoFirebase);
 
                 // Clear input box
+                mAnoAddResultadoEditText.setText("");
+                mIdAddResultadoEditText.setText("");
                 mDataAddResultadoEditText.setText("");
                 mGolsStaAddResultadoEditText.setText("");
                 mGolsAdversarioAddResultadoEditText.setText("");

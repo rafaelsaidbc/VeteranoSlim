@@ -86,6 +86,7 @@ public class ResultadosActivity extends AppCompatActivity {
                 ResultadoFirebase resultadoFirebase = dataSnapshot.getValue(ResultadoFirebase.class);//desserializa o resultado do banco de dados para o objeto ResultadoFirebase
                 //o objeto ResultadoFirebase deve ter os mesmos campos dos objetos de resultado do banco de dados
 
+
                 mResultadoAdapter.add(resultadoFirebase);//adiciona o objeto ResultadoFirebase ao Adapter, converte
                 //o resultado em um objeto ResultadoFirebase e adiciona ao Adapter, que será exibido na ListView
             }
@@ -102,7 +103,7 @@ public class ResultadosActivity extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         };
-        mResultadoDatabaseReference.addChildEventListener(mChildEventListener);
+        mResultadoDatabaseReference.orderByChild("idAddResultado").addChildEventListener(mChildEventListener);
 
 
     }
