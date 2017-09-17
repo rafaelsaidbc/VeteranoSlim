@@ -6,7 +6,6 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ListView;
-import android.widget.ProgressBar;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -24,7 +23,6 @@ public class CalendarioActivity extends AppCompatActivity {
 
     private ListView mCalendarioListView;
     private CalendarioAdapter mCalendarioAdapter;
-    private ProgressBar mProgressBar;
 
     // Firebase instance variables
     private FirebaseDatabase mFirebaseDatabase;//ponto de acesso do app ao Database
@@ -70,7 +68,6 @@ public class CalendarioActivity extends AppCompatActivity {
         mCalendarioDatabaseReference = mFirebaseDatabase.getReference().child("calendario");
 
         // Inicializa as referências das Views
-        mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
         mCalendarioListView = (ListView) findViewById(R.id.calendarioListView);
 
         // Initialize message ListView and its adapter, o ArrayList é a fonte de dados do CalendarioAdapter
@@ -79,8 +76,6 @@ public class CalendarioActivity extends AppCompatActivity {
         mCalendarioAdapter = new CalendarioAdapter(this, R.layout.add_item_calendario, calendarioFirebases);
         mCalendarioListView.setAdapter(mCalendarioAdapter);
 
-        // Initialize progress bar
-        mProgressBar.setVisibility(ProgressBar.INVISIBLE);
 
         //leitura e exibição dos dados da database no app
         mChildEventListener = new ChildEventListener() {
@@ -108,7 +103,7 @@ public class CalendarioActivity extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         };
-        mCalendarioDatabaseReference.addChildEventListener(mChildEventListener);
+        mCalendarioDatabaseReference.orderByChild("idAddCalendario").addChildEventListener(mChildEventListener);
 
 
 

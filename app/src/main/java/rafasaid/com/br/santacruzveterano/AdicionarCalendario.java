@@ -28,6 +28,8 @@ public class AdicionarCalendario extends AppCompatActivity {
     //instâncias de autenticação
     public static final int RC_SIGN_IN = 1;
     private Button mBtnAddItemCalendario;
+    private EditText mAnoAddCalendarioEditText;
+    private EditText mIdAddCalendarioEditText;
     private EditText mDataAddCalendarioEditText;
     private EditText mHoraAddCalendarioEditText;
     private EditText mAdversarioAddCalendarioEditText;
@@ -55,6 +57,8 @@ public class AdicionarCalendario extends AppCompatActivity {
         //pode ser calendário, resultados, fotos (no lugar de messages)
         mCalendarioDatabaseReference = mFirebaseDatabase.getReference().child("calendario");
 
+        mAnoAddCalendarioEditText = (EditText) findViewById(R.id.ano_add_calendario);
+        mIdAddCalendarioEditText = (EditText) findViewById(R.id.id_add_calendario);
         mDataAddCalendarioEditText = (EditText) findViewById(R.id.data_add_calendario);
         mHoraAddCalendarioEditText = (EditText) findViewById(R.id.hora_add_calendario);
         mAdversarioAddCalendarioEditText = (EditText) findViewById(R.id.adversario_add_calendario);
@@ -65,7 +69,10 @@ public class AdicionarCalendario extends AppCompatActivity {
         mBtnAddItemCalendario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                CalendarioFirebase calendarioFirebase = new CalendarioFirebase(mDataAddCalendarioEditText.getText().toString(),
+                CalendarioFirebase calendarioFirebase = new CalendarioFirebase(
+                        mAnoAddCalendarioEditText.getText().toString(),
+                        mIdAddCalendarioEditText.getText().toString(),
+                        mDataAddCalendarioEditText.getText().toString(),
                         mHoraAddCalendarioEditText.getText().toString(),
                         mAdversarioAddCalendarioEditText.getText().toString(),
                         mLocalAddCalendarioEditText.getText().toString());
@@ -74,6 +81,8 @@ public class AdicionarCalendario extends AppCompatActivity {
                 mCalendarioDatabaseReference.push().setValue(calendarioFirebase);
 
                 // Clear input box
+                mAnoAddCalendarioEditText.setText("");
+                mIdAddCalendarioEditText.setText("");
                 mDataAddCalendarioEditText.setText("");
                 mHoraAddCalendarioEditText.setText("");
                 mAdversarioAddCalendarioEditText.setText("");

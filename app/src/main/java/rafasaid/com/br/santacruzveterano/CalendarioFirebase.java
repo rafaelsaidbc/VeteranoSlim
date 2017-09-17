@@ -7,6 +7,8 @@ package rafasaid.com.br.santacruzveterano;
 public class CalendarioFirebase {
 
     //classes utilizadas para implementar a database
+    private String anoAddCalendario;
+    private String idAddCalendario;
     private String dataAddCalendario;
     private String horaAddCalendario;
     private String adversarioAddCalendario;
@@ -15,12 +17,30 @@ public class CalendarioFirebase {
     public CalendarioFirebase() {
     }
 
-    public CalendarioFirebase(String dataAddCalendario, String horaAddCalendario, String adversarioAddCalendario,
+    public CalendarioFirebase(String anoAddCalendario, String idAddCalendario, String dataAddCalendario, String horaAddCalendario, String adversarioAddCalendario,
                               String localAddCalendario) {
+        this.anoAddCalendario = anoAddCalendario;
+        this.idAddCalendario = idAddCalendario;
         this.dataAddCalendario = dataAddCalendario;
         this.horaAddCalendario = horaAddCalendario;
         this.adversarioAddCalendario = adversarioAddCalendario;
         this.localAddCalendario = localAddCalendario;
+    }
+
+    public String getAnoAddCalendario() {
+        return anoAddCalendario;
+    }
+
+    public void setAnoAddCalendario(String anoAddCalendario) {
+        this.anoAddCalendario = anoAddCalendario;
+    }
+
+    public String getIdAddCalendario() {
+        return idAddCalendario;
+    }
+
+    public void setIdAddCalendario() {
+        this.idAddCalendario = idAddCalendario;
     }
 
     public String getDataAddCalendario() {

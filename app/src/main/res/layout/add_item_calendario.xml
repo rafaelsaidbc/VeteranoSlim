@@ -9,6 +9,30 @@
     android:background="@color/colorPrimary"
     android:orientation="vertical">
 
+    <EditText
+        android:id="@+id/ano_add_calendario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_weight="0"
+        android:gravity="bottom"
+        android:hint="Ano"
+        android:inputType="textCapWords"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        tools:text="Ano" />
+
+    <EditText
+        android:id="@+id/id_add_calendario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_weight="0"
+        android:gravity="bottom"
+        android:hint="Jogo nº"
+        android:inputType="textCapWords"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        tools:text="01" />
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
