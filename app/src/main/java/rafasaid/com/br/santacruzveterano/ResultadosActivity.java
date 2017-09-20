@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 
@@ -108,5 +111,25 @@ public class ResultadosActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_activity_resultados, menu);
+        return true;
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.acessarResultados2016:
+                Intent intentResultados2016 = new Intent(this, ResultadosActivity2016.class);
+                ;
+                this.startActivity(intentResultados2016);
+                break;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+        return true;
+    }
 }

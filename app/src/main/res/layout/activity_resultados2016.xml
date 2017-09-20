@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    tools:context=".ResultadosActivity2016">
+
+    <ListView
+        android:id="@+id/resultado2016ListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="#000000"
+        android:dividerHeight="2dp"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll"
+        tools:listitem="@layout/item_resultado" />
+
+</RelativeLayout>

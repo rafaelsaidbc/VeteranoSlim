@@ -160,8 +160,7 @@ public class MensagensActivity extends AppCompatActivity {
                                     .setIsSmartLockEnabled(false)
                                     .setProviders(
                                             AuthUI.EMAIL_PROVIDER,
-                                            AuthUI.GOOGLE_PROVIDER,
-                                            AuthUI.FACEBOOK_PROVIDER)
+                                            AuthUI.GOOGLE_PROVIDER)
                                     .build(),
                             RC_SIGN_IN);
                 }

@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
+//O Adapter define como as informações serão mostradas no layout
 public class CalendarioAdapter extends ArrayAdapter<CalendarioFirebase> {
     public CalendarioAdapter(Context context, int resource, List<CalendarioFirebase> objects) {
         super(context, resource, objects);

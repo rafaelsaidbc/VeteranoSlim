@@ -10,7 +10,7 @@
     android:orientation="vertical">
 
     <EditText
-        android:id="@+id/ano_add_resultado"
+        android:id="@+id/ano_add_resultado2016"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
@@ -22,7 +22,7 @@
         tools:text="2017" />
 
     <EditText
-        android:id="@+id/id_add_resultado"
+        android:id="@+id/id_add_resultado2016"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
@@ -34,7 +34,7 @@
         tools:text="01" />
 
     <EditText
-        android:id="@+id/data_add_resultado"
+        android:id="@+id/data_add_resultado2016"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
@@ -51,7 +51,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/santa_cruz_add_resultado"
+            android:id="@+id/santa_cruz_add_resultado2016"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
@@ -60,7 +60,7 @@
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <EditText
-            android:id="@+id/gols_sta_cruz_add_resultado"
+            android:id="@+id/gols_sta_cruz_add_resultado2016"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
@@ -71,7 +71,7 @@
             tools:text="0" />
 
         <TextView
-            android:id="@+id/separador_x_times_add_resultado"
+            android:id="@+id/separador_x_times_add_resultado2016"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
@@ -80,7 +80,7 @@
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <EditText
-            android:id="@+id/gols_adversario_add_resultado"
+            android:id="@+id/gols_adversario_add_resultado2016"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
@@ -92,7 +92,7 @@
 
 
         <EditText
-            android:id="@+id/adversario_add_resultado"
+            android:id="@+id/adversario_add_resultado2016"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
@@ -110,18 +110,18 @@
         android:orientation="horizontal">
 
         <EditText
-        android:id="@+id/gols_marcadores_add_resultado"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:layout_weight="0"
-        android:hint="Marcador 1, Marcador 1, Marcador 1"
-        android:inputType="textCapWords"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        tools:text="Rafael 1, Erick 1, Douglas 1" />
+            android:id="@+id/gols_marcadores_add_resultado2016"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="0"
+            android:hint="Marcador 1, Marcador 1, Marcador 1"
+            android:inputType="textCapWords"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            tools:text="Rafael 1, Erick 1, Douglas 1" />
 
         <Button
-            android:id="@+id/btnAddMarcadoresResultado"
+            android:id="@+id/btnAddMarcadoresResultado2016"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:onClick="onClick"
@@ -131,7 +131,7 @@
 
 
     <Button
-        android:id="@+id/btnAddItemResultado"
+        android:id="@+id/btnAddItemResultado2016"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Adicionar" />
