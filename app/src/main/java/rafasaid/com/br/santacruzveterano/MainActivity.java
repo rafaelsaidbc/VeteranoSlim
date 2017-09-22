@@ -100,5 +100,21 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(mensagensIntent);
             }
         });
+
+
+        TextView fotos = (TextView) findViewById(R.id.fotos);
+
+        // Set a click listener on that View
+        fotos.setOnClickListener(new OnClickListener() {
+            // The code in this method will be executed when the contato category is clicked on.
+            @Override
+            public void onClick(View view) {
+                // Create a new intent to open the {@link PhrasesActivity}
+                Intent fotosIntent = new Intent(MainActivity.this, FotosActivity.class);
+
+                // Start the new activity
+                startActivity(fotosIntent);
+            }
+        });
     }
 }

@@ -19,7 +19,6 @@
         <activity
             android:name=".JogadoresActivity"
             android:label="Jogadores" />
-
         <activity
             android:name=".ContatoActivity"
             android:label="Contato" />
@@ -95,33 +94,31 @@
         <activity
             android:name=".MaurinhoActivity"
             android:label="Gandula" />
-
-        <activity android:name=".ResultadosActivity">
-        </activity>
+        <activity android:name=".ResultadosActivity"></activity>
         <activity
             android:name=".AdicionarResultado"
             android:parentActivityName=".ResultadosActivity">
+
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ResultadosActivity" />
         </activity>
-
-        <activity android:name=".CalendarioActivity">        </activity>
+        <activity android:name=".CalendarioActivity"></activity>
         <activity
             android:name=".AdicionarCalendario"
             android:parentActivityName=".CalendarioActivity">
+
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".CalendarioActivity" />
         </activity>
-
         <activity android:name=".ResultadosActivity2016" />
 
         <uses-permission android:name="android.permission.INTERNET" />
 
-
+        <activity android:name=".FotosActivity"></activity>
     </application>
 
 </manifest>

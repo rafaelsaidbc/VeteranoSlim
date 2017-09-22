@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/sign_out_menu_fotos"
-        android:title="@string/sign_out"
+        android:id="@+id/desconectaFotos"
+        android:title="Desconectar"
         app:showAsAction="never" />
 </menu>
