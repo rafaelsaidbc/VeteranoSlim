@@ -13,7 +13,7 @@
         android:layout_margin="16dp"
         android:background="#FFC107"
         android:gravity="center"
-        android:text="Estatísticas 2017"
+        android:text="Estatísticas 2016"
         android:textColor="#000000"
         android:textSize="30dp" />
 
@@ -31,7 +31,7 @@
             android:textSize="25dp" />
 
         <TextView
-            android:id="@+id/vitoriasStaCruz"
+            android:id="@+id/vitoriasStaCruz2016"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#000000"
@@ -52,7 +52,7 @@
             android:textSize="25dp" />
 
         <TextView
-            android:id="@+id/empatesStaCruz"
+            android:id="@+id/empatesStaCruz2016"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#000000"
@@ -74,7 +74,7 @@
             android:textSize="25dp" />
 
         <TextView
-            android:id="@+id/derrotasStaCruz"
+            android:id="@+id/derrotasStaCruz2016"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#000000"
@@ -96,7 +96,7 @@
             android:textSize="25dp" />
 
         <TextView
-            android:id="@+id/golsMarcadosStaCruz"
+            android:id="@+id/golsMarcadosStaCruz2016"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#000000"
@@ -118,7 +118,7 @@
             android:textSize="25dp" />
 
         <TextView
-            android:id="@+id/golsSofridosStaCruz"
+            android:id="@+id/golsSofridosStaCruz2016"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#000000"
@@ -140,7 +140,7 @@
             android:textSize="25dp" />
 
         <TextView
-            android:id="@+id/saldoGolsStaCruz"
+            android:id="@+id/saldoGolsStaCruz2016"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#000000"

@@ -1,8 +1,12 @@
 package rafasaid.com.br.santacruzveterano;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.google.firebase.database.ChildEventListener;
@@ -89,5 +93,26 @@ public class EstatisticasActivity extends AppCompatActivity {
             }
         });
         ;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_activity_estatisticas, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.acessarEstatisticas2016:
+                Intent intentEstatisticas2016 = new Intent(this, Estatisticas2016Activity.class);
+                this.startActivity(intentEstatisticas2016);
+                break;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+        return true;
     }
 }

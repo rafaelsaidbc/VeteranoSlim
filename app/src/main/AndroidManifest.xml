@@ -64,37 +64,51 @@
         <activity
             android:name=".BrunoActivity"
             android:label="Bruno Pupu" />
+
         <activity
             android:name=".EdmundoActivity"
             android:label="Edmundo" />
+
         <activity
             android:name=".JosielActivity"
             android:label="Ziel" />
+
         <activity
             android:name=".LuizEduardoActivity"
             android:label="Du" />
+
         <activity
             android:name=".RicardoActivity"
             android:label="Ricardo" />
+
         <activity
             android:name=".RobertoActivity"
             android:label="Roberto" />
+
         <activity
             android:name=".RyanActivity"
             android:label="Ryan" />
+
         <activity
             android:name=".ZeGatoActivity"
             android:label="Zé Gato" />
+
         <activity
             android:name=".GabrielActivity"
             android:label="Ieiel" />
+
         <activity
             android:name=".VanorActivity"
             android:label="Árbitro" />
+
         <activity
             android:name=".MaurinhoActivity"
             android:label="Gandula" />
-        <activity android:name=".ResultadosActivity" />
+
+        <activity
+            android:name=".ResultadosActivity"
+            android:label="Resultados 2017" />
+
         <activity
             android:name=".AdicionarResultado"
             android:parentActivityName=".ResultadosActivity">
@@ -104,7 +118,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ResultadosActivity" />
         </activity>
-        <activity android:name=".CalendarioActivity" />
+
+        <activity
+            android:name=".CalendarioActivity"
+            android:label="Calendário" />
+
         <activity
             android:name=".AdicionarCalendario"
             android:parentActivityName=".CalendarioActivity">
@@ -114,12 +132,25 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".CalendarioActivity" />
         </activity>
-        <activity android:name=".ResultadosActivity2016" />
+
+        <activity
+            android:name=".ResultadosActivity2016"
+            android:label="Resultados 2016" />
 
         <uses-permission android:name="android.permission.INTERNET" />
 
-        <activity android:name=".FotosActivity" />
-        <activity android:name=".EstatisticasActivity" />
+
+        <activity
+            android:name=".FotosActivity"
+            android:label="Fotos" />
+
+        <activity
+            android:name=".EstatisticasActivity"
+            android:label="Estatísticas 2017" />
+
+        <activity
+            android:name=".Estatisticas2016Activity"
+            android:label="Estatísticas 2016" />
     </application>
 
 </manifest>
