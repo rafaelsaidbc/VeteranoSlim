@@ -72,6 +72,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        TextView estatisticas = (TextView) findViewById(R.id.estatisticas);
+
+        estatisticas.setOnClickListener(new OnClickListener() {
+            // The code in this method will be executed when the colors category is clicked on.
+            @Override
+            public void onClick(View view) {
+                Intent estatisticasIntent = new Intent(MainActivity.this, EstatisticasActivity.class);
+
+                startActivity(estatisticasIntent);
+            }
+        });
+
         TextView contato = (TextView) findViewById(R.id.contato);
 
         contato.setOnClickListener(new OnClickListener() {
