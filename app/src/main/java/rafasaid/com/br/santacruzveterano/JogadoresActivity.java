@@ -5,6 +5,29 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import rafasaid.com.br.santacruzveterano.jogadores.AlexActivity;
+import rafasaid.com.br.santacruzveterano.jogadores.AlissonActivity;
+import rafasaid.com.br.santacruzveterano.jogadores.BaianoActivity;
+import rafasaid.com.br.santacruzveterano.jogadores.BilinActivity;
+import rafasaid.com.br.santacruzveterano.jogadores.BoizinhoActivity;
+import rafasaid.com.br.santacruzveterano.jogadores.BrunoActivity;
+import rafasaid.com.br.santacruzveterano.jogadores.DouglasActivity;
+import rafasaid.com.br.santacruzveterano.jogadores.EdmundoActivity;
+import rafasaid.com.br.santacruzveterano.jogadores.ErickActivity;
+import rafasaid.com.br.santacruzveterano.jogadores.ErliActivity;
+import rafasaid.com.br.santacruzveterano.jogadores.FlavioActivity;
+import rafasaid.com.br.santacruzveterano.jogadores.GabrielActivity;
+import rafasaid.com.br.santacruzveterano.jogadores.JosielActivity;
+import rafasaid.com.br.santacruzveterano.jogadores.LuizEduardoActivity;
+import rafasaid.com.br.santacruzveterano.jogadores.PaulinhoActivity;
+import rafasaid.com.br.santacruzveterano.jogadores.PelotaActivity;
+import rafasaid.com.br.santacruzveterano.jogadores.RafaelActivity;
+import rafasaid.com.br.santacruzveterano.jogadores.RicardoActivity;
+import rafasaid.com.br.santacruzveterano.jogadores.RobertoActivity;
+import rafasaid.com.br.santacruzveterano.jogadores.RomarioActivity;
+import rafasaid.com.br.santacruzveterano.jogadores.RyanActivity;
+import rafasaid.com.br.santacruzveterano.jogadores.ZeGatoActivity;
+
 public class JogadoresActivity extends AppCompatActivity {
 
     @Override
@@ -23,6 +46,11 @@ public class JogadoresActivity extends AppCompatActivity {
     public void startDouglasDados(View view) {
         Intent startDouglasDados = new Intent(this, DouglasActivity.class);
         startActivity(startDouglasDados);
+    }
+
+    public void startFlavioDados(View view) {
+        Intent startFlavioDados = new Intent(this, FlavioActivity.class);
+        startActivity(startFlavioDados);
     }
 
     public void startErickDados(View view) {

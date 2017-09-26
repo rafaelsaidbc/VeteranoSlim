@@ -1,4 +1,4 @@
-package rafasaid.com.br.santacruzveterano;
+package rafasaid.com.br.santacruzveterano.jogadores;
 
 /**
  * Created by Rafael on 14/08/2017.
@@ -10,7 +10,11 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class PelotaActivity extends AppCompatActivity {
+import rafasaid.com.br.santacruzveterano.Jogador;
+import rafasaid.com.br.santacruzveterano.JogadorAdapter;
+import rafasaid.com.br.santacruzveterano.R;
+
+public class AlexActivity extends AppCompatActivity {
 
 
     @Override
@@ -19,9 +23,9 @@ public class PelotaActivity extends AppCompatActivity {
         setContentView(R.layout.lista_info_jogadores);
 
         ArrayList<Jogador> jogadores = new ArrayList<Jogador>();
-        jogadores.add(new Jogador(R.drawable.pelota_corpo, "Nome: Rayllander Ronalt Oliveira",
-                "Apelido: Pelota", "Data de Nascimento: 21/09/1995", "Posição: Coringa", "Número da camisa: 11",
-                "Ano de ingresso: 2016"));
+        jogadores.add(new Jogador(R.drawable.alex_corpo, "Nome: Alex",
+                "Apelido: ", "Data de Nascimento: XX/XX/XXX", "Posição: Atacante", "Número da camisa: XX",
+                "Ano de ingresso: 2014"));
 
         JogadorAdapter adapter = new JogadorAdapter(this, jogadores);
 

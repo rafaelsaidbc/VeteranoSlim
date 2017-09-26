@@ -23,78 +23,81 @@
             android:name=".ContatoActivity"
             android:label="Contato" />
         <activity
-            android:name=".RafaelActivity"
+            android:name=".jogadores.RafaelActivity"
             android:label="Rafael" />
         <activity
-            android:name=".DouglasActivity"
+            android:name=".jogadores.DouglasActivity"
             android:label="Douglas" />
         <activity
-            android:name=".ErliActivity"
+            android:name=".jogadores.FlavioActivity"
+            android:label="Flávio" />
+        <activity
+            android:name=".jogadores.ErliActivity"
             android:label="Erli" />
         <activity
-            android:name=".ErickActivity"
+            android:name=".jogadores.ErickActivity"
             android:label="Erick" />
         <activity
-            android:name=".RomarioActivity"
+            android:name=".jogadores.RomarioActivity"
             android:label="Romário" />
         <activity
-            android:name=".PelotaActivity"
+            android:name=".jogadores.PelotaActivity"
             android:label="Pelota" />
         <activity
-            android:name=".PaulinhoActivity"
+            android:name=".jogadores.PaulinhoActivity"
             android:label="Paulinho" />
         <activity
-            android:name=".BaianoActivity"
+            android:name=".jogadores.BaianoActivity"
             android:label="Baiano" />
         <activity
-            android:name=".AlexActivity"
+            android:name=".jogadores.AlexActivity"
             android:label="Alex" />
         <activity
             android:name=".MensagensActivity"
             android:label="Mensagens" />
         <activity
-            android:name=".AlissonActivity"
+            android:name=".jogadores.AlissonActivity"
             android:label="Alisson" />
         <activity
-            android:name=".BilinActivity"
+            android:name=".jogadores.BilinActivity"
             android:label="Bilim" />
         <activity
-            android:name=".BoizinhoActivity"
+            android:name=".jogadores.BoizinhoActivity"
             android:label="Boizinho" />
         <activity
-            android:name=".BrunoActivity"
+            android:name=".jogadores.BrunoActivity"
             android:label="Bruno Pupu" />
 
         <activity
-            android:name=".EdmundoActivity"
+            android:name=".jogadores.EdmundoActivity"
             android:label="Edmundo" />
 
         <activity
-            android:name=".JosielActivity"
+            android:name=".jogadores.JosielActivity"
             android:label="Ziel" />
 
         <activity
-            android:name=".LuizEduardoActivity"
+            android:name=".jogadores.LuizEduardoActivity"
             android:label="Du" />
 
         <activity
-            android:name=".RicardoActivity"
+            android:name=".jogadores.RicardoActivity"
             android:label="Ricardo" />
 
         <activity
-            android:name=".RobertoActivity"
+            android:name=".jogadores.RobertoActivity"
             android:label="Roberto" />
 
         <activity
-            android:name=".RyanActivity"
+            android:name=".jogadores.RyanActivity"
             android:label="Ryan" />
 
         <activity
-            android:name=".ZeGatoActivity"
+            android:name=".jogadores.ZeGatoActivity"
             android:label="Zé Gato" />
 
         <activity
-            android:name=".GabrielActivity"
+            android:name=".jogadores.GabrielActivity"
             android:label="Ieiel" />
 
         <activity

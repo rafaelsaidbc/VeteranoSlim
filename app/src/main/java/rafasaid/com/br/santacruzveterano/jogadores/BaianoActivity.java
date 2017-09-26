@@ -1,4 +1,4 @@
-package rafasaid.com.br.santacruzveterano;
+package rafasaid.com.br.santacruzveterano.jogadores;
 
 /**
  * Created by Rafael on 14/08/2017.
@@ -10,7 +10,11 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class EdmundoActivity extends AppCompatActivity {
+import rafasaid.com.br.santacruzveterano.Jogador;
+import rafasaid.com.br.santacruzveterano.JogadorAdapter;
+import rafasaid.com.br.santacruzveterano.R;
+
+public class BaianoActivity extends AppCompatActivity {
 
 
     @Override
@@ -19,8 +23,8 @@ public class EdmundoActivity extends AppCompatActivity {
         setContentView(R.layout.lista_info_jogadores);
 
         ArrayList<Jogador> jogadores = new ArrayList<Jogador>();
-        jogadores.add(new Jogador(R.drawable.edmundo_corpo, "Nome: Edmundo Pinto de Souza",
-                "Apelido: Ed", "Data de Nascimento: 27/10/1975", "Posição: Volante", "Número da camisa: 22",
+        jogadores.add(new Jogador(R.drawable.baiano_corpo, "Nome: Baiano",
+                "Apelido: Baiano", "Data de Nascimento: 19/08/1975", "Posição: Lateral", "Número da camisa: 2",
                 "Ano de ingresso: XXXX"));
 
         JogadorAdapter adapter = new JogadorAdapter(this, jogadores);

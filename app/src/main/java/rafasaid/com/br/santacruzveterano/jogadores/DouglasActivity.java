@@ -1,4 +1,4 @@
-package rafasaid.com.br.santacruzveterano;
+package rafasaid.com.br.santacruzveterano.jogadores;
 
 /**
  * Created by Rafael on 14/08/2017.
@@ -10,7 +10,11 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class AlexActivity extends AppCompatActivity {
+import rafasaid.com.br.santacruzveterano.Jogador;
+import rafasaid.com.br.santacruzveterano.JogadorAdapter;
+import rafasaid.com.br.santacruzveterano.R;
+
+public class DouglasActivity extends AppCompatActivity {
 
 
     @Override
@@ -19,9 +23,9 @@ public class AlexActivity extends AppCompatActivity {
         setContentView(R.layout.lista_info_jogadores);
 
         ArrayList<Jogador> jogadores = new ArrayList<Jogador>();
-        jogadores.add(new Jogador(R.drawable.alex_corpo, "Nome: Alex",
-                "Apelido: ", "Data de Nascimento: XX/XX/XXX", "Posição: Atacante", "Número da camisa: XX",
-                "Ano de ingresso: 2014"));
+        jogadores.add(new Jogador(R.drawable.douglas_corpo, "Nome: Douglas Gonçalves",
+                "Apelido: Pezão", "Data de Nascimento: 04/12/1987", "Posição: Zagueiro", "Número da camisa: 4",
+                "Ano de ingresso: 2005"));
 
         JogadorAdapter adapter = new JogadorAdapter(this, jogadores);
 

@@ -1,4 +1,4 @@
-package rafasaid.com.br.santacruzveterano;
+package rafasaid.com.br.santacruzveterano.jogadores;
 
 /**
  * Created by Rafael on 14/08/2017.
@@ -10,7 +10,11 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class BoizinhoActivity extends AppCompatActivity {
+import rafasaid.com.br.santacruzveterano.Jogador;
+import rafasaid.com.br.santacruzveterano.JogadorAdapter;
+import rafasaid.com.br.santacruzveterano.R;
+
+public class RomarioActivity extends AppCompatActivity {
 
 
     @Override
@@ -19,8 +23,8 @@ public class BoizinhoActivity extends AppCompatActivity {
         setContentView(R.layout.lista_info_jogadores);
 
         ArrayList<Jogador> jogadores = new ArrayList<Jogador>();
-        jogadores.add(new Jogador(R.drawable.boizinho_corpo, "Nome: Walisson Luiz Medeiros",
-                "Apelido: Boizinho", "Data de Nascimento: 09/10/1991", "Posição: Zagueiro", "Número da camisa: 22",
+        jogadores.add(new Jogador(R.drawable.romario_corpo, "Nome: Romário da Silva",
+                "Apelido: Mulão", "Data de Nascimento: 31/05/1990", "Posição: Goleiro", "Número da camisa: 1",
                 "Ano de ingresso: 2017"));
 
         JogadorAdapter adapter = new JogadorAdapter(this, jogadores);
