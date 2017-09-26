@@ -24,8 +24,8 @@ public class ErliActivity extends AppCompatActivity {
 
         ArrayList<Jogador> jogadores = new ArrayList<Jogador>();
         jogadores.add(new Jogador(R.drawable.erli_corpo, "Nome: Erli",
-                "Apelido: ", "Data de Nascimento: 08/01/1985", "Posição: Atacante", "Número da camisa: 9",
-                "Ano de ingresso: XXXX"));
+                null, "Data de Nascimento: 08/01/1985", "Posição: Atacante", "Número da camisa: 9",
+                null));
 
         JogadorAdapter adapter = new JogadorAdapter(this, jogadores);
 

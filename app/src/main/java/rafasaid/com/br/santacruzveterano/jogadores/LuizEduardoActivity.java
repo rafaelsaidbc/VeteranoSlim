@@ -24,8 +24,8 @@ public class LuizEduardoActivity extends AppCompatActivity {
 
         ArrayList<Jogador> jogadores = new ArrayList<Jogador>();
         jogadores.add(new Jogador(R.drawable.luiz_eduardo_corpo, "Nome: Luiz Eduardo",
-                "Apelido: De", "Data de Nascimento: XX/XX/XXXX", "Posição: Armador", "Número da camisa: XX",
-                "Ano de ingresso: XXXX"));
+                "Apelido: De", null, "Posição: Armador", null,
+                null));
 
         JogadorAdapter adapter = new JogadorAdapter(this, jogadores);
 

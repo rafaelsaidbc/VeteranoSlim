@@ -24,8 +24,8 @@ public class JosielActivity extends AppCompatActivity {
 
         ArrayList<Jogador> jogadores = new ArrayList<Jogador>();
         jogadores.add(new Jogador(R.drawable.josiel_corpo, "Nome: Josiel Sales",
-                "Apelido: Ziel", "Data de Nascimento: XX/XX/XXXX", "Posição: Atacante", "Número da camisa: XX",
-                "Ano de ingresso: XXXX"));
+                "Apelido: Ziel", null, "Posição: Atacante", null,
+                null));
 
         JogadorAdapter adapter = new JogadorAdapter(this, jogadores);
 

@@ -25,7 +25,7 @@ public class BaianoActivity extends AppCompatActivity {
         ArrayList<Jogador> jogadores = new ArrayList<Jogador>();
         jogadores.add(new Jogador(R.drawable.baiano_corpo, "Nome: Baiano",
                 "Apelido: Baiano", "Data de Nascimento: 19/08/1975", "Posição: Lateral", "Número da camisa: 2",
-                "Ano de ingresso: XXXX"));
+                "Ano de ingresso: 2002"));
 
         JogadorAdapter adapter = new JogadorAdapter(this, jogadores);
 

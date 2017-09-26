@@ -25,7 +25,7 @@ public class EdmundoActivity extends AppCompatActivity {
         ArrayList<Jogador> jogadores = new ArrayList<Jogador>();
         jogadores.add(new Jogador(R.drawable.edmundo_corpo, "Nome: Edmundo Pinto de Souza",
                 "Apelido: Ed", "Data de Nascimento: 27/10/1975", "Posição: Volante", "Número da camisa: 22",
-                "Ano de ingresso: XXXX"));
+                null));
 
         JogadorAdapter adapter = new JogadorAdapter(this, jogadores);
 

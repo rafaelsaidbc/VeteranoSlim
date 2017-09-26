@@ -24,8 +24,8 @@ public class PaulinhoActivity extends AppCompatActivity {
 
         ArrayList<Jogador> jogadores = new ArrayList<Jogador>();
         jogadores.add(new Jogador(R.drawable.paulinho_corpo, "Nome: Paulo Arcanjo",
-                "Apelido: Paulinho", "Data de Nascimento: XX/XX/XXXX", "Posição: Zagueiro", "Número da camisa: XX",
-                "Ano de ingresso: XXXX"));
+                "Apelido: Paulinho", null, "Posição: Zagueiro", null,
+                null));
 
         JogadorAdapter adapter = new JogadorAdapter(this, jogadores);
 

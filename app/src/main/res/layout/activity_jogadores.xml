@@ -251,6 +251,43 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
+            android:text="Torcedores"
+            android:textColor="#FFFFFF" />
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:columnCount="3"
+            android:rowCount="1">
+
+            <ImageView
+                android:id="@+id/torcedor1_rosto"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:onClick="startDelinhaDados"
+                android:src="@drawable/delinha_rosto" />
+
+            <ImageView
+                android:id="@+id/torcedor2_rosto"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:onClick="startToninhoDados"
+                android:src="@drawable/toninho_rosto" />
+
+            <ImageView
+                android:id="@+id/torcedor3_rosto"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:onClick="startDanielDados"
+                android:src="@drawable/daniel_rosto" />
+
+        </GridLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
             android:text="Arbitragem"
             android:textColor="#FFFFFF" />
 
@@ -293,42 +330,7 @@
 
         </GridLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="4dp"
-            android:text="Torcedores"
-            android:textColor="#FFFFFF" />
 
-        <GridLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="4dp"
-            android:columnCount="3"
-            android:rowCount="1">
-
-            <ImageView
-                android:id="@+id/torcedor1_rosto"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:onClick="startDelinhaDados"
-                android:src="@drawable/delinha_rosto" />
-
-            <ImageView
-                android:id="@+id/torcedor2_rosto"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:onClick="startToninhoDados"
-                android:src="@drawable/toninho_rosto" />
-
-            <ImageView
-                android:id="@+id/torcedor3_rosto"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:onClick="startDanielDados"
-                android:src="@drawable/daniel_rosto" />
-
-        </GridLayout>
 
     </LinearLayout>
 

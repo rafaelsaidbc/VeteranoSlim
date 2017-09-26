@@ -24,8 +24,8 @@ public class GabrielActivity extends AppCompatActivity {
 
         ArrayList<Jogador> jogadores = new ArrayList<Jogador>();
         jogadores.add(new Jogador(R.drawable.gabriel_corpo, "Nome: Gabriel Arcanjo",
-                "Apelido: Ieiel", "Data de Nascimento: XX/XX/XXXX", "Posição: Volante", "Número da camisa: 20",
-                "Ano de ingresso: XXXX"));
+                "Apelido: Ieiel", null, "Posição: Volante", "Número da camisa: 20",
+                null));
 
         JogadorAdapter adapter = new JogadorAdapter(this, jogadores);
 

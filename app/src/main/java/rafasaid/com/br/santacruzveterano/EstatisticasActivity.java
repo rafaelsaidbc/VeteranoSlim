@@ -15,10 +15,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 public class EstatisticasActivity extends AppCompatActivity {
 
     //estatísticas do time
@@ -106,7 +102,7 @@ public class EstatisticasActivity extends AppCompatActivity {
                 saldoGols = golsMarcados - golsSofridos;
                 TextView saldoGolsStaCruz = (TextView) findViewById(R.id.saldoGolsStaCruz);
                 saldoGolsStaCruz.setText(String.valueOf(saldoGols));
-
+/*
                 //cria a String golsMarcadores2017 como objeto resultadoFirebase.getGolsMarcadoresAddResultado();
                 //que pega a lista de marcadores do gols na database resultado da Firebasedatabase
                 String golsMarcadores2017 = resultadoFirebase.getGolsMarcadoresAddResultado();
@@ -156,6 +152,7 @@ public class EstatisticasActivity extends AppCompatActivity {
                     TextView golsZeGato2017TextView = (TextView) findViewById(R.id.golsZeGato2017);
                     golsZeGato2017TextView.setText(String.valueOf(golsZeGato2017));
                 }
+
                 if (separadorGolsMarcadores.contains("Rafael")) {
                     golsRafael2017++;
                     TextView golsRafael2017TextView = (TextView) findViewById(R.id.golsRafael2017);
@@ -225,7 +222,7 @@ public class EstatisticasActivity extends AppCompatActivity {
                     golsRyan2017++;
                     TextView golsRyan2017TextView = (TextView) findViewById(R.id.golsRyan2017);
                     golsRyan2017TextView.setText(String.valueOf(golsRyan2017));
-                }
+                }*/
 
             }
 

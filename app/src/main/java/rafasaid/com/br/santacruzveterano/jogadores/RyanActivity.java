@@ -24,7 +24,7 @@ public class RyanActivity extends AppCompatActivity {
 
         ArrayList<Jogador> jogadores = new ArrayList<Jogador>();
         jogadores.add(new Jogador(R.drawable.ryan_corpo, "Nome: Ryan",
-                "Apelido: ", "Data de Nascimento: XX/XX/XXXX", "Posição: Atacante", "Número da camisa: XX",
+                null, null, "Posição: Atacante", null,
                 "Ano de ingresso: 2017"));
 
         JogadorAdapter adapter = new JogadorAdapter(this, jogadores);

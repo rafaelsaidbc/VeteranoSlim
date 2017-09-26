@@ -24,8 +24,8 @@ public class ZeGatoActivity extends AppCompatActivity {
 
         ArrayList<Jogador> jogadores = new ArrayList<Jogador>();
         jogadores.add(new Jogador(R.drawable.ze_gato_corpo, "Nome: José Vanderlei",
-                "Apelido: Zé Gato", "Data de Nascimento: XX/XX/XXXX", "Posição: Lateral-esquerdo", "Número da camisa: 6",
-                "Ano de ingresso: XXXX"));
+                "Apelido: Zé Gato", null, "Posição: Lateral-esquerdo", "Número da camisa: 6",
+                null));
 
         JogadorAdapter adapter = new JogadorAdapter(this, jogadores);
 

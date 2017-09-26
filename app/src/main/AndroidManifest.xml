@@ -99,6 +99,15 @@
         <activity
             android:name=".jogadores.GabrielActivity"
             android:label="Ieiel" />
+        <activity
+            android:name=".torcedores.Delinha"
+            android:label="Delinha" />
+        <activity
+            android:name=".torcedores.Toninho"
+            android:label="Toninho" />
+        <activity
+            android:name=".torcedores.Daniel"
+            android:label="Daniel" />
 
         <activity
             android:name=".VanorActivity"

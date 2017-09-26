@@ -25,7 +25,7 @@ public class ErickActivity extends AppCompatActivity {
         ArrayList<Jogador> jogadores = new ArrayList<Jogador>();
         jogadores.add(new Jogador(R.drawable.erick_corpo, "Nome: Erick Alex Andrade de Souza",
                 "Apelido: Coquinho", "Data de Nascimento: 03/03/1984", "Posição: Atacante", "Número da camisa: 19",
-                "Ano de ingresso: XXXX"));
+                null));
 
         JogadorAdapter adapter = new JogadorAdapter(this, jogadores);
 

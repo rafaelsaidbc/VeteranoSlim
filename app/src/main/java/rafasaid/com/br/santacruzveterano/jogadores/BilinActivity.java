@@ -24,7 +24,7 @@ public class BilinActivity extends AppCompatActivity {
 
         ArrayList<Jogador> jogadores = new ArrayList<Jogador>();
         jogadores.add(new Jogador(R.drawable.bilin_corpo, "Nome: Rayllender Ronalt",
-                "Apelido: Bilin", "Data de Nascimento: XX/XX/XXXX", "Posição: Atacante/Lateral", "Número da camisa: XX",
+                "Apelido: Bilin", null, "Posição: Atacante", null,
                 "Ano de ingresso: 2016"));
 
         JogadorAdapter adapter = new JogadorAdapter(this, jogadores);

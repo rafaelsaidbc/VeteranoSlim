@@ -23,8 +23,8 @@ public class AlissonActivity extends AppCompatActivity {
 
         ArrayList<Jogador> jogadores = new ArrayList<Jogador>();
         jogadores.add(new Jogador(R.drawable.alisson_corpo, "Nome: Alisson",
-                "Apelido: Rogerinho", "Data de Nascimento: XX/XX/XXXX", "Posição: Volante", "Número da camisa: 10",
-                "Ano de ingresso: XXXX"));
+                "Apelido: Rogerinho", null, "Posição: Volante", "Número da camisa: 10",
+                null));
 
         JogadorAdapter adapter = new JogadorAdapter(this, jogadores);
 

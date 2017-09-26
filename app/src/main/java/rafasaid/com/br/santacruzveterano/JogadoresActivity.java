@@ -27,6 +27,9 @@ import rafasaid.com.br.santacruzveterano.jogadores.RobertoActivity;
 import rafasaid.com.br.santacruzveterano.jogadores.RomarioActivity;
 import rafasaid.com.br.santacruzveterano.jogadores.RyanActivity;
 import rafasaid.com.br.santacruzveterano.jogadores.ZeGatoActivity;
+import rafasaid.com.br.santacruzveterano.torcedores.Daniel;
+import rafasaid.com.br.santacruzveterano.torcedores.Delinha;
+import rafasaid.com.br.santacruzveterano.torcedores.Toninho;
 
 public class JogadoresActivity extends AppCompatActivity {
 
@@ -156,5 +159,20 @@ public class JogadoresActivity extends AppCompatActivity {
     public void startMaurinhoDados(View view) {
         Intent startMaurinhoDados = new Intent(this, MaurinhoActivity.class);
         startActivity(startMaurinhoDados);
+    }
+
+    public void startDelinhaDados(View view) {
+        Intent startDelinhaDados = new Intent(this, Delinha.class);
+        startActivity(startDelinhaDados);
+    }
+
+    public void startToninhoDados(View view) {
+        Intent startToninhoDados = new Intent(this, Toninho.class);
+        startActivity(startToninhoDados);
+    }
+
+    public void startDanielDados(View view) {
+        Intent startDanielDados = new Intent(this, Daniel.class);
+        startActivity(startDanielDados);
     }
 }
