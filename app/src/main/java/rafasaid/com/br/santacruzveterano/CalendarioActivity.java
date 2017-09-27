@@ -12,7 +12,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +31,6 @@ public class CalendarioActivity extends AppCompatActivity {
 
     //leitura e exibição dos dados da database na ListView
     private ChildEventListener mChildEventListener;
-    private FirebaseRemoteConfig mFirebaseRemoteConfig;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +58,6 @@ public class CalendarioActivity extends AppCompatActivity {
 
         // Initialize Firebase components
         mFirebaseDatabase = FirebaseDatabase.getInstance(); //é o ponto de acesso principal do Database
-        mFirebaseRemoteConfig = FirebaseRemoteConfig.getInstance();
 
 
         //mFirebaseDatabase.getReference() faz referência ao nó raiz; child() faz referência à parte de interesse, no caso calendario,

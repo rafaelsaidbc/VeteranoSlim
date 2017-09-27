@@ -22,6 +22,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
 
+import com.google.firebase.database.FirebaseDatabase;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -29,6 +31,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(rafasaid.com.br.santacruzveterano.R.layout.activity_main);
+
+        FirebaseDatabase.getInstance().setPersistenceEnabled(true); //faz o download dos dados do Firebase
+        //para o dispositivo, armazenando localmente os dados
+
 
         // Find the View that shows the jogadores category
         TextView jogadores = (TextView) findViewById(R.id.jogadores);
