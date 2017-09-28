@@ -17,9 +17,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ResultadosActivity2016 extends AppCompatActivity {
+public class Resultados2016 extends AppCompatActivity {
 
-    private static final String TAG = "ResultadosActivity2016";
+    private static final String TAG = "Resultados2016";
 
     private ListView mResultado2016ListView;
     private ResultadoAdapter2016 mResultado2016Adapter;
@@ -36,7 +36,7 @@ public class ResultadosActivity2016 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_resultados2016);
+        setContentView(R.layout.resultados2016);
 
         // Initialize Firebase components
         mFirebaseDatabase = FirebaseDatabase.getInstance(); //é o ponto de acesso principal do Database
@@ -68,6 +68,8 @@ public class ResultadosActivity2016 extends AppCompatActivity {
 
                 mResultado2016Adapter.add(resultadoFirebase2016);//adiciona o objeto ResultadoFirebase ao Adapter, converte
                 //o resultado em um objeto ResultadoFirebase e adiciona ao Adapter, que será exibido na ListView
+
+
             }
 
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {

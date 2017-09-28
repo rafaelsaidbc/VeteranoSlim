@@ -102,6 +102,8 @@ public class EstatisticasActivity extends AppCompatActivity {
                 saldoGols = golsMarcados - golsSofridos;
                 TextView saldoGolsStaCruz = (TextView) findViewById(R.id.saldoGolsStaCruz);
                 saldoGolsStaCruz.setText(String.valueOf(saldoGols));
+
+
                 //cria a String golsMarcadores2017 como objeto resultadoFirebase.getGolsMarcadoresAddResultado();
                 //que pega a lista de marcadores do gols na database resultado da Firebasedatabase
                 String golsMarcadores2017 = resultadoFirebase.getGolsMarcadoresAddResultado();
@@ -141,7 +143,7 @@ public class EstatisticasActivity extends AppCompatActivity {
                             TextView golsBoizinho2017TextView = (TextView) findViewById(R.id.golsBoizinho2017);
                             golsBoizinho2017TextView.setText(String.valueOf(golsBoizinho2017));
                         }
-                        if (separadorGolsMarcadores[i].equals("Flávio")) {
+                        if (separadorGolsMarcadores[i].equals("Flavio")) {
                             golsFlavio2017++;
                             TextView golsFlavio2017TextView = (TextView) findViewById(R.id.golsFlavio2017);
                             golsFlavio2017TextView.setText(String.valueOf(golsFlavio2017));
@@ -156,7 +158,7 @@ public class EstatisticasActivity extends AppCompatActivity {
                             TextView golsBaiano2017TextView = (TextView) findViewById(R.id.golsBaiano2017);
                             golsBaiano2017TextView.setText(String.valueOf(golsBaiano2017));
                         }
-                        if (separadorGolsMarcadores[i].equals("Zé Gato")) {
+                        if (separadorGolsMarcadores[i].equals("Ze Gato")) {
                             golsZeGato2017++;
                             TextView golsZeGato2017TextView = (TextView) findViewById(R.id.golsZeGato2017);
                             golsZeGato2017TextView.setText(String.valueOf(golsZeGato2017));
@@ -269,7 +271,7 @@ public class EstatisticasActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.acessarEstatisticas2016:
-                Intent intentEstatisticas2016 = new Intent(this, Estatisticas2016Activity.class);
+                Intent intentEstatisticas2016 = new Intent(this, Estatisticas2016.class);
                 this.startActivity(intentEstatisticas2016);
                 break;
 

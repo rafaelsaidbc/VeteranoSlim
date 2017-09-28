@@ -119,7 +119,7 @@ public class ResultadosActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.acessarResultados2016:
-                Intent intentResultados2016 = new Intent(this, ResultadosActivity2016.class);
+                Intent intentResultados2016 = new Intent(this, Resultados2016.class);
                 ;
                 this.startActivity(intentResultados2016);
                 break;

@@ -146,7 +146,7 @@
         </activity>
 
         <activity
-            android:name=".ResultadosActivity2016"
+            android:name=".Resultados2016"
             android:label="Resultados 2016" />
 
         <uses-permission android:name="android.permission.INTERNET" />
@@ -161,7 +161,7 @@
             android:label="Estatísticas 2017" />
 
         <activity
-            android:name=".Estatisticas2016Activity"
+            android:name=".Estatisticas2016"
             android:label="Estatísticas 2016" />
     </application>
 

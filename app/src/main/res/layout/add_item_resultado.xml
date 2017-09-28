@@ -65,7 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:layout_weight="0"
-            android:hint="0"
+            android:hint="Gols"
             android:inputType="textCapWords"
             android:textAppearance="?android:attr/textAppearanceMedium"
             tools:text="0" />
@@ -85,7 +85,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:layout_weight="0"
-            android:hint="0"
+            android:hint="Gols"
             android:inputType="textCapWords"
             android:textAppearance="?android:attr/textAppearanceMedium"
             tools:text="0" />
@@ -115,20 +115,12 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:layout_weight="0"
-        android:hint="Marcador 1, Marcador 1, Marcador 1"
+            android:hint="Rafael, Rafael, Rafael, Douglas, Douglas, Erick..."
         android:inputType="textCapWords"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        tools:text="Rafael 1, Erick 1, Douglas 1" />
-
-        <Button
-            android:id="@+id/btnAddMarcadoresResultado"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:onClick="onClick"
-            android:text="+" />
+            tools:text="Rafael, Rafael, Rafael, Douglas, Douglas, Erick..." />
 
     </LinearLayout>
-
 
     <Button
         android:id="@+id/btnAddItemResultado"
