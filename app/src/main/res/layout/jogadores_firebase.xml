@@ -7,8 +7,7 @@
     android:paddingBottom="16dp"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
-    android:paddingTop="16dp"
-    tools:context=".jogadores.firebase.Jogadores">
+    android:paddingTop="16dp">
 
     <ListView
         android:id="@+id/alexDadosListView"
@@ -224,6 +223,56 @@
 
     <ListView
         android:id="@+id/zeGatoDadosListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="#000000"
+        android:dividerHeight="2dp"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll"
+        tools:listitem="@layout/item_jogadores" />
+
+    <ListView
+        android:id="@+id/delinhaDadosListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="#000000"
+        android:dividerHeight="2dp"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll"
+        tools:listitem="@layout/item_jogadores" />
+
+    <ListView
+        android:id="@+id/danielDadosListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="#000000"
+        android:dividerHeight="2dp"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll"
+        tools:listitem="@layout/item_jogadores" />
+
+    <ListView
+        android:id="@+id/toninhoDadosListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="#000000"
+        android:dividerHeight="2dp"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll"
+        tools:listitem="@layout/item_jogadores" />
+
+    <ListView
+        android:id="@+id/vanorDadosListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="#000000"
+        android:dividerHeight="2dp"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll"
+        tools:listitem="@layout/item_jogadores" />
+
+    <ListView
+        android:id="@+id/maurinhoDadosListView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:divider="#000000"

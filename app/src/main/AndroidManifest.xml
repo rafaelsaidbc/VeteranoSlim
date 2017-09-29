@@ -100,21 +100,21 @@
             android:name=".jogadores.GabrielActivity"
             android:label="Ieiel" />
         <activity
-            android:name=".torcedores.Delinha"
+            android:name=".colaboradores.Delinha"
             android:label="Delinha" />
         <activity
-            android:name=".torcedores.Toninho"
+            android:name=".colaboradores.Toninho"
             android:label="Toninho" />
         <activity
-            android:name=".torcedores.Daniel"
+            android:name=".colaboradores.Daniel"
             android:label="Daniel" />
 
         <activity
-            android:name=".VanorActivity"
+            android:name=".colaboradores.VanorActivity"
             android:label="Árbitro" />
 
         <activity
-            android:name=".MaurinhoActivity"
+            android:name=".colaboradores.MaurinhoActivity"
             android:label="Gandula" />
 
         <activity

@@ -57,7 +57,7 @@ public class EstatisticasActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_estatisticas);
 
-        // Get a reference to our posts
+        // obtém a referêcia dos resultados
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference ref = database.getReference("resultado");
 
