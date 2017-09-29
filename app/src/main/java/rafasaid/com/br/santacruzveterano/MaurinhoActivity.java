@@ -4,14 +4,10 @@ package rafasaid.com.br.santacruzveterano;
  * Created by Rafael on 14/08/2017.
  */
 
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.ListView;
-
-import java.util.ArrayList;
 
 public class MaurinhoActivity extends AppCompatActivity {
-
+/*
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,5 +25,5 @@ public class MaurinhoActivity extends AppCompatActivity {
 
         listView.setAdapter(adapter);
     }
-
+*/
 }

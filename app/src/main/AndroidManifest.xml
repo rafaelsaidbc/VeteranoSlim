@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".JogadoresActivity"
+            android:name=".jogadores.firebase.JogadoresActivity"
             android:label="Jogadores" />
         <activity
             android:name=".ContatoActivity"

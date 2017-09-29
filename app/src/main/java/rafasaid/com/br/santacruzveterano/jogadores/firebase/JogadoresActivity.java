@@ -1,10 +1,13 @@
-package rafasaid.com.br.santacruzveterano;
+package rafasaid.com.br.santacruzveterano.jogadores.firebase;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import rafasaid.com.br.santacruzveterano.MaurinhoActivity;
+import rafasaid.com.br.santacruzveterano.R;
+import rafasaid.com.br.santacruzveterano.VanorActivity;
 import rafasaid.com.br.santacruzveterano.jogadores.AlexActivity;
 import rafasaid.com.br.santacruzveterano.jogadores.AlissonActivity;
 import rafasaid.com.br.santacruzveterano.jogadores.BaianoActivity;

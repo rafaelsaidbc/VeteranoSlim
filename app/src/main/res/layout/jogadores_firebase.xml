@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    tools:context=".jogadores.firebase.Jogadores">
+
+    <ListView
+        android:id="@+id/alexDadosListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="#000000"
+        android:dividerHeight="2dp"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll"
+        tools:listitem="@layout/item_jogadores" />
+
+    <ListView
+        android:id="@+id/alissonDadosListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="#000000"
+        android:dividerHeight="2dp"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll"
+        tools:listitem="@layout/item_jogadores" />
+
+
+    <ListView
+        android:id="@+id/baianoDadosListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="#000000"
+        android:dividerHeight="2dp"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll"
+        tools:listitem="@layout/item_jogadores" />
+
+    <ListView
+        android:id="@+id/bilinDadosListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="#000000"
+        android:dividerHeight="2dp"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll"
+        tools:listitem="@layout/item_jogadores" />
+
+    <ListView
+        android:id="@+id/boizinhoDadosListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="#000000"
+        android:dividerHeight="2dp"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll"
+        tools:listitem="@layout/item_jogadores" />
+
+    <ListView
+        android:id="@+id/brunoDadosListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="#000000"
+        android:dividerHeight="2dp"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll"
+        tools:listitem="@layout/item_jogadores" />
+
+    <ListView
+        android:id="@+id/douglasDadosListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="#000000"
+        android:dividerHeight="2dp"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll"
+        tools:listitem="@layout/item_jogadores" />
+
+    <ListView
+        android:id="@+id/edmundoDadosListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="#000000"
+        android:dividerHeight="2dp"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll"
+        tools:listitem="@layout/item_jogadores" />
+
+    <ListView
+        android:id="@+id/erickDadosListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="#000000"
+        android:dividerHeight="2dp"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll"
+        tools:listitem="@layout/item_jogadores" />
+
+    <ListView
+        android:id="@+id/erliDadosListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="#000000"
+        android:dividerHeight="2dp"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll"
+        tools:listitem="@layout/item_jogadores" />
+
+    <ListView
+        android:id="@+id/flavioDadosListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="#000000"
+        android:dividerHeight="2dp"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll"
+        tools:listitem="@layout/item_jogadores" />
+
+    <ListView
+        android:id="@+id/gabrielDadosListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="#000000"
+        android:dividerHeight="2dp"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll"
+        tools:listitem="@layout/item_jogadores" />
+
+    <ListView
+        android:id="@+id/josielDadosListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="#000000"
+        android:dividerHeight="2dp"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll"
+        tools:listitem="@layout/item_jogadores" />
+
+    <ListView
+        android:id="@+id/luizEduardoDadosListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="#000000"
+        android:dividerHeight="2dp"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll"
+        tools:listitem="@layout/item_jogadores" />
+
+    <ListView
+        android:id="@+id/paulinhoDadosListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="#000000"
+        android:dividerHeight="2dp"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll"
+        tools:listitem="@layout/item_jogadores" />
+
+    <ListView
+        android:id="@+id/pelotaDadosListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="#000000"
+        android:dividerHeight="2dp"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll"
+        tools:listitem="@layout/item_jogadores" />
+
+
+    <ListView
+        android:id="@+id/rafaelDadosListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="#000000"
+        android:dividerHeight="2dp"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll"
+        tools:listitem="@layout/item_jogadores" />
+
+    <ListView
+        android:id="@+id/ricardoDadosListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="#000000"
+        android:dividerHeight="2dp"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll"
+        tools:listitem="@layout/item_jogadores" />
+
+    <ListView
+        android:id="@+id/robertoDadosListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="#000000"
+        android:dividerHeight="2dp"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll"
+        tools:listitem="@layout/item_jogadores" />
+
+    <ListView
+        android:id="@+id/romarioDadosListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="#000000"
+        android:dividerHeight="2dp"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll"
+        tools:listitem="@layout/item_jogadores" />
+
+    <ListView
+        android:id="@+id/ryanDadosListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="#000000"
+        android:dividerHeight="2dp"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll"
+        tools:listitem="@layout/item_jogadores" />
+
+    <ListView
+        android:id="@+id/zeGatoDadosListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="#000000"
+        android:dividerHeight="2dp"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll"
+        tools:listitem="@layout/item_jogadores" />
+
+
+</RelativeLayout>

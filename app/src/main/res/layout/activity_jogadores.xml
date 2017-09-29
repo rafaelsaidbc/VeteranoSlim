@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/colorPrimary"
-    tools:context="rafasaid.com.br.santacruzveterano.JogadoresActivity">
+    tools:context="rafasaid.com.br.santacruzveterano.jogadores.firebase.JogadoresActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

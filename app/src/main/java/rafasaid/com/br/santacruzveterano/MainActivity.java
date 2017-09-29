@@ -24,6 +24,8 @@ import android.widget.TextView;
 
 import com.google.firebase.database.FirebaseDatabase;
 
+import rafasaid.com.br.santacruzveterano.jogadores.firebase.JogadoresActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -46,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 // Create a new intent to open the {@link JogadoresActivity}
-                Intent jogadoresIntent = new Intent(MainActivity.this, rafasaid.com.br.santacruzveterano.JogadoresActivity.class);
+                Intent jogadoresIntent = new Intent(MainActivity.this, JogadoresActivity.class);
 
                 // Start the new activity (show jogadores activity)
                 startActivity(jogadoresIntent);
