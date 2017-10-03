@@ -9,6 +9,29 @@
     android:background="@color/colorPrimary"
     android:orientation="vertical">
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:gravity="bottom"
+            android:text="Jogo "
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/idJogoResultado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:gravity="bottom"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            tools:text="20" />
+    </LinearLayout>
+
     <TextView
         android:id="@+id/data_resultado"
         android:layout_width="wrap_content"

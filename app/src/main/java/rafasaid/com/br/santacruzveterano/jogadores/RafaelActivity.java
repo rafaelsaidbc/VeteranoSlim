@@ -21,7 +21,10 @@ public class RafaelActivity extends AppCompatActivity {
 
     private static final String TAG = "Rafael";
 
+    // cria a variável mDanielListView como uma ListView
     private ListView mRafaelListView;
+
+    //criar a variável mDanielFirebaseAdapter como um Adapter de JogadoresFirebaseAdapter
     private JogadoresFirebaseAdapter mRafaelFirebaseAdapter;
 
     // Firebase instance variables
@@ -30,7 +33,7 @@ public class RafaelActivity extends AppCompatActivity {
     //para cada referência que for utilizar a database, deve ter
     //uma classe
 
-    //leitura e exibição dos dados da database na ListView
+    //leitura e exibição dos dados da database na ListView indicada
     private ChildEventListener mChildEventListener;
 
     @Override
@@ -38,12 +41,13 @@ public class RafaelActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.jogadores_firebase);
 
-        // Initialize Firebase components
+        // Inicializa os componentes do Firebase
         mFirebaseDatabase = FirebaseDatabase.getInstance(); //é o ponto de acesso principal do Database
 
 
-        //mFirebaseDatabase.getReference() faz referência ao nó raiz; child() faz referência à parte de interesse, no caso resultado,
-        //pode ser calendário, resultados, fotos (no lugar de messages)
+        //mFirebaseDatabase.getReference() faz referência ao nó raiz; child() faz referência à parte
+        // de interesse, no caso jogadores > Rafael, no Firebase ainda tem o campo (child)
+        //Dados, que é de onde as informações serão retiradas
         mRafaelDatabaseReference = mFirebaseDatabase.getReference().child("jogadores").child("meioCampo").child("Rafael");
 
         // Inicializa as referências das Views

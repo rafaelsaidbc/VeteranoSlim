@@ -21,6 +21,7 @@ public class CalendarioAdapter extends ArrayAdapter<CalendarioFirebase> {
             convertView = ((Activity) getContext()).getLayoutInflater().inflate(R.layout.item_calendario, parent, false);
         }
 
+        TextView idAddCalendarioTextView = (TextView) convertView.findViewById(R.id.idJogoCalendario);
         TextView dataAddCalendarioTextView = (TextView) convertView.findViewById(R.id.data_calendario);
         TextView horaAddCalendarioTextView = (TextView) convertView.findViewById(R.id.hora_calendario);
         TextView adversarioAddCalendarioTextView = (TextView) convertView.findViewById(R.id.adversario_calendario);
@@ -28,6 +29,7 @@ public class CalendarioAdapter extends ArrayAdapter<CalendarioFirebase> {
 
         CalendarioFirebase calendario = getItem(position);
 
+        idAddCalendarioTextView.setText(calendario.getIdAddCalendario());
         dataAddCalendarioTextView.setText(calendario.getDataAddCalendario());
         horaAddCalendarioTextView.setText(calendario.getHoraAddCalendario());
         adversarioAddCalendarioTextView.setText(calendario.getAdversarioAddCalendario());

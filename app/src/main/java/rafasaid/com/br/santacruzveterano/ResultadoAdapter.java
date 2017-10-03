@@ -20,6 +20,7 @@ public class ResultadoAdapter extends ArrayAdapter<ResultadoFirebase> {
             convertView = ((Activity) getContext()).getLayoutInflater().inflate(R.layout.item_resultado, parent, false);
         }
 
+        TextView idAddResultadoTextView = (TextView) convertView.findViewById(R.id.idJogoResultado);
         TextView dataAddResultadoTextView = (TextView) convertView.findViewById(R.id.data_resultado);
         TextView golsStaCruzAddResultadoTextView = (TextView) convertView.findViewById(R.id.gols_sta_cruz_resultado);
         TextView golsAdversarioAddResultadoTextView = (TextView) convertView.findViewById(R.id.gols_adversario_resultado);
@@ -28,6 +29,7 @@ public class ResultadoAdapter extends ArrayAdapter<ResultadoFirebase> {
 
         ResultadoFirebase resultado = getItem(position);
 
+        idAddResultadoTextView.setText(resultado.getIdAddResultado());
         dataAddResultadoTextView.setText(resultado.getDataAddResultado());
         golsStaCruzAddResultadoTextView.setText(resultado.getGolsStaCruzAddResultado());
         golsAdversarioAddResultadoTextView.setText(resultado.getGolsAdversarioAddResultado());

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/nomeMarcadorGol"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        tools:text="Rafael" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text=": "
+        android:textColor="#000000"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/golsMarcadosJogador"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        tools:text="15" />
+
+</LinearLayout>

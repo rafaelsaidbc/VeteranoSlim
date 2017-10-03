@@ -21,16 +21,18 @@ public class Daniel extends AppCompatActivity {
 
     private static final String TAG = "Daniel";
 
+    // cria a variável mDanielListView como uma ListView
     private ListView mDanielListView;
+
+    //criar a variável mDanielFirebaseAdapter como um Adapter de JogadoresFirebaseAdapter
     private JogadoresFirebaseAdapter mDanielFirebaseAdapter;
 
-    // Firebase instance variables
+    // Variáveis de instâncias do Firebase
     private FirebaseDatabase mFirebaseDatabase;//ponto de acesso do app ao Database
-    private DatabaseReference mDanielDatabaseReference;//classe que faz referência a uma parte específica da Database;
-    //para cada referência que for utilizar a database, deve ter
-    //uma classe
+    private DatabaseReference mDanielDatabaseReference;//classe que faz referência a uma parte
+    // específica da Database; para cada referência que for utilizar a database, deve ter uma classe
 
-    //leitura e exibição dos dados da database na ListView
+    //leitura e exibição dos dados da database na ListView indicada
     private ChildEventListener mChildEventListener;
 
     @Override
@@ -38,19 +40,20 @@ public class Daniel extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.jogadores_firebase);
 
-        // Initialize Firebase components
+        // Inicializa os componentes do Firebase
         mFirebaseDatabase = FirebaseDatabase.getInstance(); //é o ponto de acesso principal do Database
 
 
-        //mFirebaseDatabase.getReference() faz referência ao nó raiz; child() faz referência à parte de interesse, no caso resultado,
-        //pode ser calendário, resultados, fotos (no lugar de messages)
+        //mFirebaseDatabase.getReference() faz referência ao nó raiz; child() faz referência à parte
+        // de interesse, no caso jogadores > torcedores > Daniel, no Firebase ainda tem o campo (child)
+        //Dados, que é de onde as informações serão retiradas
         mDanielDatabaseReference = mFirebaseDatabase.getReference().child("jogadores").child("torcedores").child("Daniel");
 
         // Inicializa as referências das Views
         mDanielListView = (ListView) findViewById(R.id.danielDadosListView);
 
 
-        // Initialize danielListView and its adapter, o ArrayList é a fonte de dados do DanielFirebaseAdapter
+        // Inicializa danielListView e o adapter, o ArrayList é a fonte de dados do DanielFirebaseAdapter
         //pelo objeto mDanielFirebaseAdapter
         List<JogadoresFirebase> jogadoresFirebase = new ArrayList<>();
         mDanielFirebaseAdapter = new JogadoresFirebaseAdapter(this, R.layout.jogadores_firebase, jogadoresFirebase);
