@@ -200,32 +200,6 @@ public class EstatisticasActivity extends AppCompatActivity {
                             golsRyan2017++;
                         }
 
-                        /*int[] golsMarcadosJogadores;
-                        golsMarcadosJogadores = new int[22];
-
-                        golsMarcadosJogadores [0] = golsRomario2017;
-                        golsMarcadosJogadores [1] = golsDouglas2017;
-                        golsMarcadosJogadores [2] = golsPaulinho2017;
-                        golsMarcadosJogadores [3] = golsBoizinho2017;
-                        golsMarcadosJogadores [4] = golsFlavio2017;
-                        golsMarcadosJogadores [5] = golsPelota2017;
-                        golsMarcadosJogadores [6] = golsBaiano2017;
-                        golsMarcadosJogadores [7] = golsZeGato2017;
-                        golsMarcadosJogadores [8] = golsRafael2017;
-                        golsMarcadosJogadores [9] = golsAlisson2017;
-                        golsMarcadosJogadores [10] = golsEdmundo2017;
-                        golsMarcadosJogadores [11] = golsDu2017;
-                        golsMarcadosJogadores [12] = golsRicardo2017;
-                        golsMarcadosJogadores [13] = golsRoberto2017;
-                        golsMarcadosJogadores [14] = golsGabriel2017;
-                        golsMarcadosJogadores [15] = golsErick2017;
-                        golsMarcadosJogadores [16] = golsErli2017;
-                        golsMarcadosJogadores [17] = golsAlex2017;
-                        golsMarcadosJogadores [18] = golsBilin2017;
-                        golsMarcadosJogadores [19] = golsBruno2017;
-                        golsMarcadosJogadores [20] = golsZiel2017;
-                        golsMarcadosJogadores [21] = golsRyan2017;*/
-
                         //cria um ArrayList chamado arrayMarcadoresGols tendo como parâmetros os dados definidos na classe
                         //Estatisticas.java
                         ArrayList<Estatisticas> arrayMarcadoresGols = new ArrayList<Estatisticas>();
@@ -237,6 +211,7 @@ public class EstatisticasActivity extends AppCompatActivity {
 
                         //cria a ListView golsOsMarcadores2017 e informa onde a lista será exibida
                         final ListView golsOsMarcadores2017 = (ListView) findViewById(listaMarcadoresGols2017);
+
 
                         //pega a ListView golsOsMarcadores2017 criada acima e coloca-a no formato do
                         //adapter criado adapterMarcadoresGols

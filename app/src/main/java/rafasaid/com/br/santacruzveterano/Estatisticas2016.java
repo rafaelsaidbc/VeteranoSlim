@@ -3,6 +3,7 @@ package rafasaid.com.br.santacruzveterano;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.google.firebase.database.ChildEventListener;
@@ -10,6 +11,11 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+
+import static rafasaid.com.br.santacruzveterano.R.id.listaMarcadoresGols2016;
 
 public class Estatisticas2016 extends AppCompatActivity {
 
@@ -116,117 +122,171 @@ public class Estatisticas2016 extends AppCompatActivity {
                         //o parâmetro a ser encontrado em cada item do array, se for igual conta mais 1 [++]
                         if (separadorGolsMarcadores[i].equals("Romario")) {
                             golsRomario2016++; //retorna e aumenta a contagem se o retorno do separadorGolsMarcadores for verdadeiro
-                            TextView golsRomario2016TextView = (TextView) findViewById(R.id.golsRomario2016);//cria uma golsRomario2016TextView identificando-a pelo R.id.
-                            golsRomario2016TextView.setText(String.valueOf(golsRomario2016));//retorna o valor colocando um valor inteiro(String.valueOf) na textview informada
                         }
                         if (separadorGolsMarcadores[i].equals("Douglas")) {
                             golsDouglas2016++;
-                            TextView golsDouglas2016TextView = (TextView) findViewById(R.id.golsDouglas2016);
-                            golsDouglas2016TextView.setText(String.valueOf(golsDouglas2016));
                         }
                         if (separadorGolsMarcadores[i].equals("Paulinho")) {
                             golsPaulinho2016++;
-                            TextView golsPaulinho2016TextView = (TextView) findViewById(R.id.golsPaulinho2016);
-                            golsPaulinho2016TextView.setText(String.valueOf(golsPaulinho2016));
                         }
                         if (separadorGolsMarcadores[i].equals("Deim")) {
                             golsDeim2016++;
-                            TextView golsBoizinho2016TextView = (TextView) findViewById(R.id.golsDeim2016);
-                            golsBoizinho2016TextView.setText(String.valueOf(golsDeim2016));
                         }
                         if (separadorGolsMarcadores[i].equals("Flávio")) {
                             golsFlavio2016++;
-                            TextView golsFlavio2016TextView = (TextView) findViewById(R.id.golsFlavio2016);
-                            golsFlavio2016TextView.setText(String.valueOf(golsFlavio2016));
                         }
                         if (separadorGolsMarcadores[i].equals("Pelota")) {
                             golsPelota2016++;
-                            TextView golsPelota2016TextView = (TextView) findViewById(R.id.golsPelota2016);
-                            golsPelota2016TextView.setText(String.valueOf(golsPelota2016));
                         }
                         if (separadorGolsMarcadores[i].equals("Baiano")) {
                             golsBaiano2016++;
-                            TextView golsBaiano2016TextView = (TextView) findViewById(R.id.golsBaiano2016);
-                            golsBaiano2016TextView.setText(String.valueOf(golsBaiano2016));
                         }
                         if (separadorGolsMarcadores[i].equals("Zé Gato")) {
                             golsZeGato2016++;
-                            TextView golsZeGato2016TextView = (TextView) findViewById(R.id.golsZeGato2016);
-                            golsZeGato2016TextView.setText(String.valueOf(golsZeGato2016));
                         }
 
                         if (separadorGolsMarcadores[i].equals("Rafael")) {
                             golsRafael2016++;
-                            TextView golsRafael2016TextView = (TextView) findViewById(R.id.golsRafael2016);
-                            golsRafael2016TextView.setText(String.valueOf(golsRafael2016));
                         }
                         if (separadorGolsMarcadores[i].equals("Alisson")) {
                             golsAlisson2016++;
-                            TextView golsAlisson2016TextView = (TextView) findViewById(R.id.golsAlisson2016);
-                            golsAlisson2016TextView.setText(String.valueOf(golsAlisson2016));
                         }
                         if (separadorGolsMarcadores[i].equals("Edmundo")) {
                             golsEdmundo2016++;
-                            TextView golsEdmundo2016TextView = (TextView) findViewById(R.id.golsEdmundo2016);
-                            golsEdmundo2016TextView.setText(String.valueOf(golsEdmundo2016));
                         }
                         if (separadorGolsMarcadores[i].equals("Du")) {
                             golsDu2016++;
-                            TextView golsDu2016TextView = (TextView) findViewById(R.id.golsDu2016);
-                            golsDu2016TextView.setText(String.valueOf(golsDu2016));
                         }
                         if (separadorGolsMarcadores[i].equals("Ricardo")) {
                             golsRicardo2016++;
-                            TextView golsRicardo2016TextView = (TextView) findViewById(R.id.golsRicardo2016);
-                            golsRicardo2016TextView.setText(String.valueOf(golsRicardo2016));
                         }
                         if (separadorGolsMarcadores[i].equals("Roberto")) {
                             golsRoberto2016++;
-                            TextView golsRoberto2016TextView = (TextView) findViewById(R.id.golsRoberto2016);
-                            golsRoberto2016TextView.setText(String.valueOf(golsRoberto2016));
                         }
                         if (separadorGolsMarcadores[i].equals("Gabriel")) {
                             golsGabriel2016++;
-                            TextView golsGabriel2016TextView = (TextView) findViewById(R.id.golsGabriel2016);
-                            golsGabriel2016TextView.setText(String.valueOf(golsGabriel2016));
                         }
 
                         if (separadorGolsMarcadores[i].equals("Erick")) {
                             golsErick2016++;
-                            TextView golsErick2016TextView = (TextView) findViewById(R.id.golsErick2016);
-                            golsErick2016TextView.setText(String.valueOf(golsErick2016));
                         }
 
                         if (separadorGolsMarcadores[i].equals("Erli")) {
                             golsErli2016++;
-                            TextView golsErli2016TextView = (TextView) findViewById(R.id.golsErli2016);
-                            golsErli2016TextView.setText(String.valueOf(golsErli2016));
                         }
                         if (separadorGolsMarcadores[i].equals("Alex")) {
                             golsAlex2016++;
-                            TextView golsAlex2016TextView = (TextView) findViewById(R.id.golsAlex2016);
-                            golsAlex2016TextView.setText(String.valueOf(golsAlex2016));
                         }
                         if (separadorGolsMarcadores[i].equals("João Victor")) {
                             golsJoaoVictor2016++;
-                            TextView golsBilin2016TextView = (TextView) findViewById(R.id.golsJoaoVictor2016);
-                            golsBilin2016TextView.setText(String.valueOf(golsJoaoVictor2016));
                         }
                         if (separadorGolsMarcadores[i].equals("Bruno")) {
                             golsBruno2016++;
-                            TextView golsBruno2016TextView = (TextView) findViewById(R.id.golsBruno2016);
-                            golsBruno2016TextView.setText(String.valueOf(golsBruno2016));
                         }
                         if (separadorGolsMarcadores[i].equals("Ziel")) {
                             golsZiel2016++;
-                            TextView golsZiel2016TextView = (TextView) findViewById(R.id.golsZiel2016);
-                            golsZiel2016TextView.setText(String.valueOf(golsZiel2016));
                         }
                         if (separadorGolsMarcadores[i].equals("Paulo Otávio")) {
                             golsPauloOtavio2016++;
-                            TextView golsRyan2016TextView = (TextView) findViewById(R.id.golsPauloOtavio2016);
-                            golsRyan2016TextView.setText(String.valueOf(golsPauloOtavio2016));
                         }
+
+                        //cria um ArrayList chamado arrayMarcadoresGols tendo como parâmetros os dados definidos na classe
+                        //Estatisticas.java
+                        ArrayList<Estatisticas> arrayMarcadoresGols = new ArrayList<Estatisticas>();
+
+                        //cria um EstatísticasAdapter chamado adapterMarcadoresGols com o contexto
+                        //definido na class EstatisticasAdapter.java, definindo naquela classe como
+                        //os dados serão exibidos
+                        EstatisticasAdapter adapterMarcadoresGols = new EstatisticasAdapter(getApplicationContext(), arrayMarcadoresGols);
+
+                        //cria a ListView golsOsMarcadores2016 e informa onde a lista será exibida
+                        final ListView golsOsMarcadores2016 = (ListView) findViewById(listaMarcadoresGols2016);
+
+                        //pega a ListView golsOsMarcadores2016 criada acima e coloca-a no formato do
+                        //adapter criado adapterMarcadoresGols
+                        golsOsMarcadores2016.setAdapter(adapterMarcadoresGols);
+
+                        //cria um objeto romarioGols2016 no formato definido na classe Estatisticas.java
+                        Estatisticas romarioGols2016 = new Estatisticas("Romario", golsRomario2016);
+                        //adiciona os dados informados acima no adapterMarcadoresGols
+                        adapterMarcadoresGols.add(romarioGols2016);
+
+                        Estatisticas douglasGols2016 = new Estatisticas("Douglas", golsDouglas2016);
+                        adapterMarcadoresGols.add(douglasGols2016);
+
+                        Estatisticas paulinhoGols2016 = new Estatisticas("Paulinho", golsPaulinho2016);
+                        adapterMarcadoresGols.add(paulinhoGols2016);
+
+                        Estatisticas boizinhooGols2016 = new Estatisticas("João Victor", golsJoaoVictor2016);
+                        adapterMarcadoresGols.add(boizinhooGols2016);
+
+                        Estatisticas flavioGols2016 = new Estatisticas("Flávio", golsFlavio2016);
+                        adapterMarcadoresGols.add(flavioGols2016);
+
+                        Estatisticas pelotaGols2016 = new Estatisticas("Pelota", golsPelota2016);
+                        adapterMarcadoresGols.add(pelotaGols2016);
+
+                        Estatisticas baianoGols2016 = new Estatisticas("Baiano", golsBaiano2016);
+                        adapterMarcadoresGols.add(baianoGols2016);
+
+                        Estatisticas zeGatoGols2016 = new Estatisticas("Zé Gato", golsZeGato2016);
+                        adapterMarcadoresGols.add(zeGatoGols2016);
+
+                        Estatisticas rafaelGols2016 = new Estatisticas("Rafael", golsRafael2016);
+                        adapterMarcadoresGols.add(rafaelGols2016);
+
+                        Estatisticas alissonGols2016 = new Estatisticas("Alisson", golsAlisson2016);
+                        adapterMarcadoresGols.add(alissonGols2016);
+
+                        Estatisticas edmundoGols2016 = new Estatisticas("Edmundo", golsEdmundo2016);
+                        adapterMarcadoresGols.add(edmundoGols2016);
+
+                        Estatisticas duGols2016 = new Estatisticas("Du", golsDu2016);
+                        adapterMarcadoresGols.add(duGols2016);
+
+                        Estatisticas ricardoGols2016 = new Estatisticas("Ricardo", golsRicardo2016);
+                        adapterMarcadoresGols.add(ricardoGols2016);
+
+                        Estatisticas robertoGols2016 = new Estatisticas("Roberto", golsRoberto2016);
+                        adapterMarcadoresGols.add(robertoGols2016);
+
+                        Estatisticas gabrielGols2016 = new Estatisticas("Gabriel", golsGabriel2016);
+                        adapterMarcadoresGols.add(gabrielGols2016);
+
+                        Estatisticas erickGols2016 = new Estatisticas("Erick", golsErick2016);
+                        adapterMarcadoresGols.add(erickGols2016);
+
+                        Estatisticas erliGols2016 = new Estatisticas("Erli", golsErli2016);
+                        adapterMarcadoresGols.add(erliGols2016);
+
+                        Estatisticas alexGols2016 = new Estatisticas("Alex", golsAlex2016);
+                        adapterMarcadoresGols.add(alexGols2016);
+
+                        Estatisticas bilinGols2016 = new Estatisticas("Deim", golsDeim2016);
+                        adapterMarcadoresGols.add(bilinGols2016);
+
+                        Estatisticas brunoGols2016 = new Estatisticas("Bruno", golsBruno2016);
+                        adapterMarcadoresGols.add(brunoGols2016);
+
+                        Estatisticas zielGols2016 = new Estatisticas("Ziel", golsZiel2016);
+                        adapterMarcadoresGols.add(zielGols2016);
+
+                        Estatisticas ryanGols2016 = new Estatisticas("Paulo Otávio", golsPauloOtavio2016);
+                        adapterMarcadoresGols.add(ryanGols2016);
+
+                        //faz o adapter ordenar os dados de acordo com os parâmteros passados abaixo
+                        adapterMarcadoresGols.sort(new Comparator<Estatisticas>() {
+                            @Override
+                            public int compare(Estatisticas gols1, Estatisticas gols2) {
+                                Estatisticas g1 = (Estatisticas) gols1; //cria o comparador 1
+                                Estatisticas g2 = (Estatisticas) gols2; //cria o comparador 2
+                                //define como os dados serão ordenados, neste caso em ordem decrescente
+                                //de gols marcados, ou seja, quem marcou mais gols aparece primeiro
+                                return g1.golsMarcador > g2.golsMarcador ? -1 : (g1.golsMarcador > g2.golsMarcador ? +1 : 0);
+
+                            }
+
+                        });
                     }
                 }
             }
