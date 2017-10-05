@@ -17,9 +17,9 @@
         android:layout_weight="0"
         android:gravity="bottom"
         android:hint="Ano"
-        android:inputType="textCapWords"
+        android:inputType="number"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        tools:text="Ano" />
+        tools:text="2017" />
 
     <EditText
         android:id="@+id/id_add_calendario"
@@ -29,7 +29,7 @@
         android:layout_weight="0"
         android:gravity="bottom"
         android:hint="Jogo nº"
-        android:inputType="textCapWords"
+        android:inputType="number"
         android:textAppearance="?android:attr/textAppearanceMedium"
         tools:text="01" />
 
@@ -46,7 +46,7 @@
             android:layout_weight="0"
             android:gravity="bottom"
             android:hint="Data"
-            android:inputType="textCapWords"
+            android:inputType="date"
             android:textAppearance="?android:attr/textAppearanceMedium"
             tools:text="05/09/1986" />
 
@@ -67,7 +67,7 @@
             android:layout_weight="0"
             android:gravity="bottom"
             android:hint="Hora"
-            android:inputType="textCapWords"
+            android:inputType="time"
             android:textAppearance="?android:attr/textAppearanceMedium"
             tools:text="08:00" />
 

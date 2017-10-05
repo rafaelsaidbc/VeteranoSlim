@@ -169,7 +169,8 @@
         <ListView
             android:id="@+id/listaMarcadoresGols2017"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:divider="@android:color/transparent">
 
         </ListView>
 

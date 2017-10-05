@@ -17,7 +17,7 @@
         android:layout_weight="0"
         android:gravity="bottom"
         android:hint="Ano"
-        android:inputType="textCapWords"
+        android:inputType="number"
         android:textAppearance="?android:attr/textAppearanceMedium"
         tools:text="2017" />
 
@@ -29,7 +29,7 @@
         android:layout_weight="0"
         android:gravity="bottom"
         android:hint="Jogo nº"
-        android:inputType="textCapWords"
+        android:inputType="number"
         android:textAppearance="?android:attr/textAppearanceMedium"
         tools:text="01" />
 
@@ -41,7 +41,7 @@
         android:layout_weight="0"
         android:gravity="bottom"
         android:hint="Data"
-        android:inputType="textCapWords"
+        android:inputType="date"
         android:textAppearance="?android:attr/textAppearanceMedium"
         tools:text="05/09/1986" />
 
@@ -66,7 +66,7 @@
             android:layout_margin="8dp"
             android:layout_weight="0"
             android:hint="Gols"
-            android:inputType="textCapWords"
+            android:inputType="number"
             android:textAppearance="?android:attr/textAppearanceMedium"
             tools:text="0" />
 
@@ -86,7 +86,7 @@
             android:layout_margin="8dp"
             android:layout_weight="0"
             android:hint="Gols"
-            android:inputType="textCapWords"
+            android:inputType="number"
             android:textAppearance="?android:attr/textAppearanceMedium"
             tools:text="0" />
 

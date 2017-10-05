@@ -4,7 +4,7 @@
 
     <item
         android:id="@+id/sign_out_menu"
-        android:title="@string/sign_out"
+        android:title="Desconectar"
         app:showAsAction="never" />
 
 </menu>

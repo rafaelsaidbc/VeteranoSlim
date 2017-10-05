@@ -1,6 +1,7 @@
 package rafasaid.com.br.santacruzveterano;
 
 import android.content.Intent;
+import android.icu.util.Calendar;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -27,6 +28,11 @@ public class AdicionarCalendario extends AppCompatActivity {
 
     //instâncias de autenticação
     public static final int RC_SIGN_IN = 1;
+    //calendário
+    private Calendar calendarCalendario;
+    private int diaCalendario;
+    private int mesCalendario;
+    private int anoCalendario;
     private Button mBtnAddItemCalendario;
     private EditText mAnoAddCalendarioEditText;
     private EditText mIdAddCalendarioEditText;
@@ -120,6 +126,7 @@ public class AdicionarCalendario extends AppCompatActivity {
 
 
     }
+
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
