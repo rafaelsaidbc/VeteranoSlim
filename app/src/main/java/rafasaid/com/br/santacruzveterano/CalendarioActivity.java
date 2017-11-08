@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.google.firebase.database.ChildEventListener;
@@ -67,11 +68,20 @@ public class CalendarioActivity extends AppCompatActivity {
         // Inicializa as referências das Views
         mCalendarioListView = (ListView) findViewById(R.id.calendarioListView);
 
+        //Permite que os itens exibidos em calendário sejam clicáveis
+        mCalendarioListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                Object listItem = mCalendarioListView.getItemAtPosition(position);
+            }
+        });
+
         // Initialize message ListView and its adapter, o ArrayList é a fonte de dados do CalendarioAdapter
         //pelo objeto mCalendarioAdapter
         List<CalendarioFirebase> calendarioFirebases = new ArrayList<>();
         mCalendarioAdapter = new CalendarioAdapter(this, R.layout.add_item_calendario, calendarioFirebases);
         mCalendarioListView.setAdapter(mCalendarioAdapter);
+
 
 
         //leitura e exibição dos dados da database no app
@@ -89,9 +99,11 @@ public class CalendarioActivity extends AppCompatActivity {
             }
 
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                //ToDo 1: adicionar métodos para mudar dados do calendário
             }
 
             public void onChildRemoved(DataSnapshot dataSnapshot) {
+
             }
 
             public void onChildMoved(DataSnapshot dataSnapshot, String s) {

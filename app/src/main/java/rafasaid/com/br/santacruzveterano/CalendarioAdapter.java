@@ -19,6 +19,8 @@ public class CalendarioAdapter extends ArrayAdapter<CalendarioFirebase> {
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
             convertView = ((Activity) getContext()).getLayoutInflater().inflate(R.layout.item_calendario, parent, false);
+            //ToDo 4: adicionar compartilhar calendário com facebook e whatsapp
+
         }
 
         TextView idAddCalendarioTextView = (TextView) convertView.findViewById(R.id.idJogoCalendario);

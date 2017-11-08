@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.google.firebase.database.ChildEventListener;
@@ -70,6 +71,14 @@ public class ResultadosActivity extends AppCompatActivity {
         // Inicializa as referências das Views
         mResultadoListView = (ListView) findViewById(R.id.resultadoListView);
 
+        //Permite que os itens exibidos em resultados sejam clicáveis
+        mResultadoListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                Object listItem = mResultadoListView.getItemAtPosition(position);
+            }
+        });
+
         // Initialize message ListView and its adapter, o ArrayList é a fonte de dados do ResultadoAdapter
         //pelo objeto mResultadoAdapter
         List<ResultadoFirebase> resultadoFirebases = new ArrayList<>();
@@ -92,6 +101,7 @@ public class ResultadosActivity extends AppCompatActivity {
             }
 
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                //ToDo 2: adicionar método para mudar dados do resultado
             }
 
             public void onChildRemoved(DataSnapshot dataSnapshot) {

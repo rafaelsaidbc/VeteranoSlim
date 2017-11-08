@@ -18,6 +18,7 @@ public class ResultadoAdapter extends ArrayAdapter<ResultadoFirebase> {
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
             convertView = ((Activity) getContext()).getLayoutInflater().inflate(R.layout.item_resultado, parent, false);
+            //ToDo 3: adicionar compartilhar resultados com facebook e whatsapp
         }
 
         TextView idAddResultadoTextView = (TextView) convertView.findViewById(R.id.idJogoResultado);
@@ -38,6 +39,7 @@ public class ResultadoAdapter extends ArrayAdapter<ResultadoFirebase> {
 
         return convertView;
     }
+
 }
 
 
