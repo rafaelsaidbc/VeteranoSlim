@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.view.ContextMenu;
+import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -67,6 +69,7 @@ public class CalendarioActivity extends AppCompatActivity {
 
         // Inicializa as referências das Views
         mCalendarioListView = (ListView) findViewById(R.id.calendarioListView);
+        registerForContextMenu(mCalendarioListView); //mostra opções quando segura click
 
         //Permite que os itens exibidos em calendário sejam clicáveis
         mCalendarioListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -118,5 +121,20 @@ public class CalendarioActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mCalendarioListView.setAdapter(mCalendarioAdapter);
+        mCalendarioListView.setOnCreateContextMenuListener(new View.OnCreateContextMenuListener() {
+            @Override
+            public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
+                contextMenu.add(Menu.NONE, 1, Menu.NONE, "Deletar");
+                contextMenu.add(Menu.NONE, 2, Menu.NONE, "Atualizar");
 
+            }
+        });
+
+    }
 }
+
+

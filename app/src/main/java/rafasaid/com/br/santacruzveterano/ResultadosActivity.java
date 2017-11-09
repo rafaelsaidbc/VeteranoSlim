@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -70,6 +71,7 @@ public class ResultadosActivity extends AppCompatActivity {
 
         // Inicializa as referências das Views
         mResultadoListView = (ListView) findViewById(R.id.resultadoListView);
+        registerForContextMenu(mResultadoListView); //mostra opções quando segura click
 
         //Permite que os itens exibidos em resultados sejam clicáveis
         mResultadoListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -138,5 +140,20 @@ public class ResultadosActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
         return true;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mResultadoListView.setAdapter(mResultadoAdapter);
+        mResultadoListView.setOnCreateContextMenuListener(new View.OnCreateContextMenuListener() {
+            @Override
+            public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
+                contextMenu.add(Menu.NONE, 1, Menu.NONE, "Deletar");
+                contextMenu.add(Menu.NONE, 2, Menu.NONE, "Atualizar");
+
+            }
+        });
+
     }
 }
