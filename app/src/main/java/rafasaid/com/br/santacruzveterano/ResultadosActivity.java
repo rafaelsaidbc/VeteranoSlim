@@ -147,11 +147,24 @@ public class ResultadosActivity extends AppCompatActivity {
         super.onResume();
         mResultadoListView.setAdapter(mResultadoAdapter);
         mResultadoListView.setOnCreateContextMenuListener(new View.OnCreateContextMenuListener() {
-            @Override
-            public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
-                contextMenu.add(Menu.NONE, 1, Menu.NONE, "Deletar");
-                contextMenu.add(Menu.NONE, 2, Menu.NONE, "Atualizar");
 
+
+            public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
+                contextMenu.add(Menu.NONE, 1, Menu.NONE, "Atualizar");
+                contextMenu.add(Menu.NONE, 2, Menu.NONE, "Deletar");
+
+            }
+
+
+            public boolean onContextItemSelected(MenuItem item) {
+                if (item.getTitle() == "Atualizar") {
+                    //ToDo stuff
+                } else if (item.getTitle() == "Deletar") {
+                    //ToDo stuff
+                } else {
+                    return false;
+                }
+                return true;
             }
         });
 
