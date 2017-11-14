@@ -78,6 +78,7 @@ public class ResultadosActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
                 Object listItem = mResultadoListView.getItemAtPosition(position);
+
             }
         });
 

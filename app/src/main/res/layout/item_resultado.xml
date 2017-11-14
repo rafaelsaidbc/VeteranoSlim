@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:adnroid="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -9,12 +10,15 @@
     android:background="@color/colorPrimary"
     android:orientation="vertical">
 
-    <LinearLayout
+
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:baselineAligned="false"
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0"
@@ -26,11 +30,24 @@
             android:id="@+id/idJogoResultado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/textView"
+            android:layout_toRightOf="@+id/textView"
             android:layout_weight="0"
             android:gravity="bottom"
             android:textAppearance="?android:attr/textAppearanceSmall"
             tools:text="20" />
-    </LinearLayout>
+
+
+        <ImageButton
+            android:id="@+id/btnShareItemResultado2017"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:baselineAlignBottom="false"
+            android:src="@drawable/ic_share_black_24dp" />
+
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/data_resultado"

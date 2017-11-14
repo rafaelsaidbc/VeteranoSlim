@@ -16,6 +16,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +36,9 @@ public class CalendarioActivity extends AppCompatActivity {
 
     //leitura e exibição dos dados da database na ListView
     private ChildEventListener mChildEventListener;
+
+    private ValueEventListener eventListener;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,12 +69,14 @@ public class CalendarioActivity extends AppCompatActivity {
 
 
         //mFirebaseDatabase.getReference() faz referência ao nó raiz; child() faz referência à parte de interesse, no caso calendario,
-        //pode ser calendário, resultados, fotos (no lugar de messages)
+        //pode ser calendário, resultados, fotos (no lugar de calendario)
         mCalendarioDatabaseReference = mFirebaseDatabase.getReference().child("calendario");
 
         // Inicializa as referências das Views
         mCalendarioListView = (ListView) findViewById(R.id.calendarioListView);
         registerForContextMenu(mCalendarioListView); //mostra opções quando segura click
+        mCalendarioListView.setOnCreateContextMenuListener(this);
+
 
         //Permite que os itens exibidos em calendário sejam clicáveis
         mCalendarioListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -123,31 +129,40 @@ public class CalendarioActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-        mCalendarioListView.setAdapter(mCalendarioAdapter);
-        mCalendarioListView.setOnCreateContextMenuListener(new View.OnCreateContextMenuListener() {
-            @Override
-            public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
-                contextMenu.add(Menu.NONE, 1, Menu.NONE, "Atualizar");
-                contextMenu.add(Menu.NONE, 2, Menu.NONE, "Deletar");
+    public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
+        contextMenu.add(Menu.NONE, 1, Menu.NONE, "Atualizar");
+        contextMenu.add(Menu.NONE, 2, Menu.NONE, "Deletar");
 
             }
 
-            public boolean onContextItemSelected(MenuItem item) {
+
+    @Override
+    public boolean onContextItemSelected(final MenuItem item) {
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+        final int position = info.position;
+
                 if (item.getTitle() == "Atualizar") {
                     //ToDo stuff
                 } else if (item.getTitle() == "Deletar") {
                     //ToDo stuff
 
-                } else {
-                    return false;
+                    mCalendarioDatabaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            for (DataSnapshot calendarioSnapshot : dataSnapshot.getChildren()) {
+                                calendarioSnapshot.getRef().removeValue();
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+
+                        }
+                    });
                 }
-                return true;
-            }
-
-        });
-
+        return true;
+        //return CalendarioActivity.super.onContextItemSelected(item);
     }
 }
 
