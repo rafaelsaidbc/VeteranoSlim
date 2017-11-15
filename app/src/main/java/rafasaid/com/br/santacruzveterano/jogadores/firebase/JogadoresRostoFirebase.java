@@ -22,6 +22,7 @@ public class JogadoresRostoFirebase {
     private String erliRosto;
     private String flavioRosto;
     private String gabrielRosto;
+    private String hevertonRosto;
     private String josielRosto;
     private String luizEduardoRosto;
     private String maurinhoRosto;
@@ -55,6 +56,7 @@ public class JogadoresRostoFirebase {
         this.erickRosto = erickRosto;
         this.erliRosto = erliRosto;
         this.flavioRosto = flavioRosto;
+        this.hevertonRosto = hevertonRosto;
         this.gabrielRosto = gabrielRosto;
         this.josielRosto = josielRosto;
         this.luizEduardoRosto = luizEduardoRosto;
@@ -192,6 +194,14 @@ public class JogadoresRostoFirebase {
 
     public void setGabrielRosto(String gabrielRosto) {
         this.gabrielRosto = gabrielRosto;
+    }
+
+    public String getHevertonRosto() {
+        return hevertonRosto;
+    }
+
+    public void setHevertonRosto(String hevertonRosto) {
+        this.hevertonRosto = hevertonRosto;
     }
 
     public String getJosielRosto() {

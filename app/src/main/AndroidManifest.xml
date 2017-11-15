@@ -11,7 +11,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -53,6 +52,9 @@
             android:name=".jogadores.BaianoActivity"
             android:label="Baiano" />
         <activity
+            android:name=".jogadores.Heverton"
+            android:label="Cabeção" />
+        <activity
             android:name=".jogadores.AlexActivity"
             android:label="Alex" />
         <activity
@@ -70,35 +72,27 @@
         <activity
             android:name=".jogadores.BrunoActivity"
             android:label="Bruno Pupu" />
-
         <activity
             android:name=".jogadores.EdmundoActivity"
             android:label="Edmundo" />
-
         <activity
             android:name=".jogadores.JosielActivity"
             android:label="Ziel" />
-
         <activity
             android:name=".jogadores.LuizEduardoActivity"
             android:label="Du" />
-
         <activity
             android:name=".jogadores.RicardoActivity"
             android:label="Ricardo" />
-
         <activity
             android:name=".jogadores.RobertoActivity"
             android:label="Roberto" />
-
         <activity
             android:name=".jogadores.RyanActivity"
             android:label="Ryan" />
-
         <activity
             android:name=".jogadores.ZeGatoActivity"
             android:label="Zé Gato" />
-
         <activity
             android:name=".jogadores.GabrielActivity"
             android:label="Ieiel" />
@@ -111,19 +105,15 @@
         <activity
             android:name=".colaboradores.Daniel"
             android:label="Daniel" />
-
         <activity
             android:name=".colaboradores.VanorActivity"
             android:label="Árbitro" />
-
         <activity
             android:name=".colaboradores.MaurinhoActivity"
             android:label="Gandula" />
-
         <activity
             android:name=".ResultadosActivity"
             android:label="Resultados 2017" />
-
         <activity
             android:name=".AdicionarResultado"
             android:parentActivityName=".ResultadosActivity">
@@ -133,11 +123,9 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ResultadosActivity" />
         </activity>
-
         <activity
             android:name=".CalendarioActivity"
             android:label="Calendário" />
-
         <activity
             android:name=".AdicionarCalendario"
             android:parentActivityName=".CalendarioActivity">
@@ -147,24 +135,19 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".CalendarioActivity" />
         </activity>
-
         <activity
             android:name=".Resultados2016"
             android:label="Resultados 2016" />
-
-
-
         <activity
             android:name=".FotosActivity"
             android:label="Fotos" />
-
         <activity
             android:name=".EstatisticasActivity"
             android:label="Estatísticas 2017" />
-
         <activity
             android:name=".Estatisticas2016"
             android:label="Estatísticas 2016" />
+        <activity android:name=".ResultadoShare"></activity>
     </application>
 
 </manifest>

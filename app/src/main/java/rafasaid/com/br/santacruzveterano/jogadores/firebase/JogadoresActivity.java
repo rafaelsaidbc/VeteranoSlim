@@ -31,6 +31,7 @@ import rafasaid.com.br.santacruzveterano.jogadores.ErickActivity;
 import rafasaid.com.br.santacruzveterano.jogadores.ErliActivity;
 import rafasaid.com.br.santacruzveterano.jogadores.FlavioActivity;
 import rafasaid.com.br.santacruzveterano.jogadores.GabrielActivity;
+import rafasaid.com.br.santacruzveterano.jogadores.Heverton;
 import rafasaid.com.br.santacruzveterano.jogadores.JosielActivity;
 import rafasaid.com.br.santacruzveterano.jogadores.LuizEduardoActivity;
 import rafasaid.com.br.santacruzveterano.jogadores.PaulinhoActivity;
@@ -54,6 +55,7 @@ public class JogadoresActivity extends AppCompatActivity {
     private ImageView mPelotaRostoImageView;
     private ImageView mBaianoRostoImageView;
     private ImageView mZeGatoRostoImageView;
+    private ImageView mHevertonRostoImageView;
     private ImageView mRafaelRostoImageView;
     private ImageView mAlissonRostoImageView;
     private ImageView mEdmundoRostoImageView;
@@ -152,6 +154,10 @@ public class JogadoresActivity extends AppCompatActivity {
                 String zeGatoRostoFoto = jogadoresRostoFirebase.getZeGatoRosto();
                 mZeGatoRostoImageView = (ImageView) findViewById(R.id.zeGato_rosto);
                 Glide.with(getApplicationContext()).load(zeGatoRostoFoto).into(mZeGatoRostoImageView);
+
+                String hevertonRostoFoto = jogadoresRostoFirebase.getHevertonRosto();
+                mHevertonRostoImageView = (ImageView) findViewById(R.id.heverton_rosto);
+                Glide.with(getApplicationContext()).load(hevertonRostoFoto).into(mHevertonRostoImageView);
 
                 String edmundoRostoFoto = jogadoresRostoFirebase.getEdmundoRosto();
                 mEdmundoRostoImageView = (ImageView) findViewById(R.id.edmundo_rosto);
@@ -283,6 +289,11 @@ public class JogadoresActivity extends AppCompatActivity {
     public void startBaianoDados(View view) {
         Intent startBaianoDados = new Intent(this, BaianoActivity.class);
         startActivity(startBaianoDados);
+    }
+
+    public void startHevertonDados(View view) {
+        Intent startHevertonDados = new Intent(this, Heverton.class);
+        startActivity(startHevertonDados);
     }
 
     public void startAlexDados(View view) {
