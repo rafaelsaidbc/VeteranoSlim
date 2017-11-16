@@ -25,17 +25,10 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
-//Display images
-    //Firebase
-
-    // Required only if Facebook login support is required
-
-    // Required only if Twitter login support is required
-    compile("com.twitter.sdk.android:twitter-core:2.3.0@aar") { transitive = true }
-
-    compile 'com.android.support:appcompat-v7:26.+'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    //Display images
     compile 'com.github.bumptech.glide:glide:3.6.1'
+
+    //Firebase
     compile 'com.google.firebase:firebase-core:10.2.0'
     compile 'com.google.firebase:firebase-database:10.2.0'
     compile 'com.google.firebase:firebase-auth:10.2.0'
@@ -43,7 +36,17 @@ dependencies {
     compile 'com.google.firebase:firebase-messaging:10.2.0'
     compile 'com.firebaseui:firebase-ui-auth:1.2.0'
     compile 'com.google.firebase:firebase-config:10.2.0'
+
+    // Required only if Facebook login support is required
     compile 'com.facebook.android:facebook-android-sdk:4.22.1'
+
+    // Required only if Twitter login support is required
+    compile("com.twitter.sdk.android:twitter-core:2.3.0@aar") { transitive = true }
+
+    //Geral
+    compile 'com.android.support:appcompat-v7:26.+'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+
     testCompile 'junit:junit:4.12'
 
 }

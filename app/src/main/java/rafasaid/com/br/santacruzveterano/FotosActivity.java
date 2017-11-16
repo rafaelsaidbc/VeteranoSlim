@@ -24,6 +24,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
@@ -44,6 +45,8 @@ import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -90,7 +93,23 @@ public class FotosActivity extends AppCompatActivity {
 
         // Initialize references to views
         mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
+
         mFotosActivityListView = (ListView) findViewById(R.id.fotosActivityListView);
+        //Permite que os itens exibidos em calendário sejam clicáveis
+        mFotosActivityListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                Object listItem = mFotosActivityListView.getItemAtPosition(position);
+                try {
+                    ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(getApplicationContext()).
+                            build();
+                    ImageLoader.getInstance().init(config);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
         mBtnSelecionarFotosActivity = (ImageButton) findViewById(R.id.btnAddFotosActivity);
         mBtnEnviarFotosActivity = (Button) findViewById(R.id.btnEnviarFotosActivity);
 
