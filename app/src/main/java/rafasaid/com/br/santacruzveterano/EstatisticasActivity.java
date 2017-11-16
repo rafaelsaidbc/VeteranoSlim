@@ -19,6 +19,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 import java.util.Comparator;
 
+import rafasaid.com.br.santacruzveterano.resultados.ResultadoFirebase;
+
 import static rafasaid.com.br.santacruzveterano.R.id.listaMarcadoresGols2017;
 
 public class EstatisticasActivity extends AppCompatActivity {

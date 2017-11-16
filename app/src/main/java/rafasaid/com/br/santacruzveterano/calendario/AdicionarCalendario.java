@@ -1,4 +1,4 @@
-package rafasaid.com.br.santacruzveterano;
+package rafasaid.com.br.santacruzveterano.calendario;
 
 import android.content.Intent;
 import android.icu.util.Calendar;
@@ -18,6 +18,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import rafasaid.com.br.santacruzveterano.R;
 
 
 /**

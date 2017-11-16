@@ -1,4 +1,4 @@
-package rafasaid.com.br.santacruzveterano;
+package rafasaid.com.br.santacruzveterano.resultados;
 
 import android.app.Activity;
 import android.content.Context;
@@ -10,6 +10,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.util.List;
+
+import rafasaid.com.br.santacruzveterano.R;
 
 public class ResultadoAdapter extends ArrayAdapter<ResultadoFirebase> {
     public ResultadoAdapter(Context context, int resource, List<ResultadoFirebase> objects) {

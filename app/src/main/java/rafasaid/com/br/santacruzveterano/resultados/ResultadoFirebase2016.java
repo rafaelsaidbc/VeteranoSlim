@@ -1,10 +1,10 @@
-package rafasaid.com.br.santacruzveterano;
+package rafasaid.com.br.santacruzveterano.resultados;
 
 /**
- * Created by Entomologia on 30/08/2017.
+ * Created by Entomologia on 20/09/2017.
  */
 
-public class ResultadoFirebase {
+public class ResultadoFirebase2016 {
 
     //classes utilizadas para implementar a database
     private String anoAddResultado;
@@ -15,26 +15,27 @@ public class ResultadoFirebase {
     private String adversarioAddResultado;
     private String golsMarcadoresAddResultado;
 
-    public ResultadoFirebase() {
+    public ResultadoFirebase2016() {
     }
 
-    public ResultadoFirebase(String anoAddResultado, String idAddResultado, String dataAddResultado, String golsStaCruzAddResultado, String golsAdversarioAddResultado,
-                             String adversarioAddResultado, String golsMarcadoresAddResultado) {
-        this.anoAddResultado = anoAddResultado;
-        this.idAddResultado = idAddResultado;
-        this.dataAddResultado = dataAddResultado;
-        this.golsStaCruzAddResultado = golsStaCruzAddResultado;
-        this.golsAdversarioAddResultado = golsAdversarioAddResultado;
-        this.adversarioAddResultado = adversarioAddResultado;
-        this.golsMarcadoresAddResultado = golsMarcadoresAddResultado;
+    public ResultadoFirebase2016(String anoAddResultado2016, String idAddResultado2016, String dataAddResultado2016,
+                                 String golsStaCruzAddResultado2016, String golsAdversarioAddResultado2016,
+                                 String adversarioAddResultado2016, String golsMarcadoresAddResultado2016) {
+        this.anoAddResultado = anoAddResultado2016;
+        this.idAddResultado = idAddResultado2016;
+        this.dataAddResultado = dataAddResultado2016;
+        this.golsStaCruzAddResultado = golsStaCruzAddResultado2016;
+        this.golsAdversarioAddResultado = golsAdversarioAddResultado2016;
+        this.adversarioAddResultado = adversarioAddResultado2016;
+        this.golsMarcadoresAddResultado = golsMarcadoresAddResultado2016;
     }
 
     public String getAnoAddResultado() {
         return anoAddResultado;
     }
 
-    public void setAnoAddResultado(String anoAddResultado) {
-        this.anoAddResultado = anoAddResultado;
+    public void setAnoAddResultado(String anoAddResultado2016) {
+        this.anoAddResultado = anoAddResultado2016;
     }
 
     public String getIdAddResultado() {
@@ -86,3 +87,5 @@ public class ResultadoFirebase {
     }
 
 }
+
+

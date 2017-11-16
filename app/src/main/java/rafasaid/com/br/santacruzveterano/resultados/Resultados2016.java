@@ -1,4 +1,4 @@
-package rafasaid.com.br.santacruzveterano;
+package rafasaid.com.br.santacruzveterano.resultados;
 
 /**
  * Created by Entomologia on 20/09/2017.
@@ -16,6 +16,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import rafasaid.com.br.santacruzveterano.R;
 
 public class Resultados2016 extends AppCompatActivity {
 

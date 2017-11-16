@@ -24,7 +24,9 @@ import android.widget.TextView;
 
 import com.google.firebase.database.FirebaseDatabase;
 
+import rafasaid.com.br.santacruzveterano.calendario.CalendarioActivity;
 import rafasaid.com.br.santacruzveterano.jogadores.firebase.JogadoresActivity;
+import rafasaid.com.br.santacruzveterano.resultados.ResultadosActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -62,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
             // The code in this method will be executed when the resultados category is clicked on.
             @Override
             public void onClick(View view) {
-                Intent resultadosIntent = new Intent(MainActivity.this, rafasaid.com.br.santacruzveterano.ResultadosActivity.class);
+                Intent resultadosIntent = new Intent(MainActivity.this, ResultadosActivity.class);
 
                 startActivity(resultadosIntent);
             }
@@ -74,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
             // The code in this method will be executed when the colors category is clicked on.
             @Override
             public void onClick(View view) {
-                Intent calendarioIntent = new Intent(MainActivity.this, rafasaid.com.br.santacruzveterano.CalendarioActivity.class);
+                Intent calendarioIntent = new Intent(MainActivity.this, CalendarioActivity.class);
 
                 startActivity(calendarioIntent);
             }

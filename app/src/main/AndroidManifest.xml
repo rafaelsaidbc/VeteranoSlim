@@ -3,6 +3,7 @@
     package="rafasaid.com.br.santacruzveterano">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -112,31 +113,31 @@
             android:name=".colaboradores.MaurinhoActivity"
             android:label="Gandula" />
         <activity
-            android:name=".ResultadosActivity"
+            android:name=".resultados.ResultadosActivity"
             android:label="Resultados 2017" />
         <activity
-            android:name=".AdicionarResultado"
-            android:parentActivityName=".ResultadosActivity">
+            android:name=".resultados.AdicionarResultado"
+            android:parentActivityName=".resultados.ResultadosActivity">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ResultadosActivity" />
+                android:value=".resultados.ResultadosActivity" />
         </activity>
         <activity
-            android:name=".CalendarioActivity"
+            android:name=".calendario.CalendarioActivity"
             android:label="Calendário" />
         <activity
-            android:name=".AdicionarCalendario"
-            android:parentActivityName=".CalendarioActivity">
+            android:name=".calendario.AdicionarCalendario"
+            android:parentActivityName=".calendario.CalendarioActivity">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".CalendarioActivity" />
+                android:value=".calendario.CalendarioActivity" />
         </activity>
         <activity
-            android:name=".Resultados2016"
+            android:name=".resultados.Resultados2016"
             android:label="Resultados 2016" />
         <activity
             android:name=".FotosActivity"
@@ -147,8 +148,8 @@
         <activity
             android:name=".Estatisticas2016"
             android:label="Estatísticas 2016" />
-        <activity android:name=".ResultadoShare" />
-        <activity android:name=".CalendarioShare"></activity>
+        <activity android:name=".resultados.ResultadoShare" />
+        <activity android:name=".calendario.CalendarioShare"></activity>
     </application>
 
 </manifest>

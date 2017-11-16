@@ -1,4 +1,4 @@
-package rafasaid.com.br.santacruzveterano;
+package rafasaid.com.br.santacruzveterano.calendario;
 
 import android.app.Activity;
 import android.content.Context;
@@ -10,6 +10,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.util.List;
+
+import rafasaid.com.br.santacruzveterano.R;
 
 //O Adapter define como as informações serão mostradas no layout
 public class CalendarioAdapter extends ArrayAdapter<CalendarioFirebase> {

@@ -11,8 +11,9 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 import java.util.List;
-public class MessageAdapter extends ArrayAdapter<FriendlyMessage> {
-    public MessageAdapter(Context context, int resource, List<FriendlyMessage> objects) {
+
+public class MensagensAdapter extends ArrayAdapter<MensagensFirebase> {
+    public MensagensAdapter(Context context, int resource, List<MensagensFirebase> objects) {
         super(context, resource, objects);
     }
 
@@ -26,7 +27,7 @@ public class MessageAdapter extends ArrayAdapter<FriendlyMessage> {
         TextView messageTextView = (TextView) convertView.findViewById(R.id.messageTextView);
         TextView authorTextView = (TextView) convertView.findViewById(R.id.nameTextView);
 
-        FriendlyMessage message = getItem(position);
+        MensagensFirebase message = getItem(position);
 
         boolean isPhoto = message.getPhotoUrl() != null;
         if (isPhoto) {

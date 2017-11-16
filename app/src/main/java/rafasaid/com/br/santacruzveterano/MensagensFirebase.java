@@ -4,16 +4,16 @@ package rafasaid.com.br.santacruzveterano;
  * Created by Entomologia on 30/08/2017.
  */
 
-public class FriendlyMessage {
+public class MensagensFirebase {
 
     private String text;
     private String name;
     private String photoUrl;
 
-    public FriendlyMessage() {
+    public MensagensFirebase() {
     }
 
-    public FriendlyMessage(String text, String name, String photoUrl) {
+    public MensagensFirebase(String text, String name, String photoUrl) {
         this.text = text;
         this.name = name;
         this.photoUrl = photoUrl;

@@ -1,4 +1,4 @@
-package rafasaid.com.br.santacruzveterano;
+package rafasaid.com.br.santacruzveterano.resultados;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import rafasaid.com.br.santacruzveterano.R;
 
 public class ResultadoShare extends AppCompatActivity {
 

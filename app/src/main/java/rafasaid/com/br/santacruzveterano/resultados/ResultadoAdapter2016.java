@@ -1,4 +1,4 @@
-package rafasaid.com.br.santacruzveterano;
+package rafasaid.com.br.santacruzveterano.resultados;
 
 import android.app.Activity;
 import android.content.Context;
@@ -8,6 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import java.util.List;
+
+import rafasaid.com.br.santacruzveterano.R;
 
 /**
  * Created by Entomologia on 20/09/2017.

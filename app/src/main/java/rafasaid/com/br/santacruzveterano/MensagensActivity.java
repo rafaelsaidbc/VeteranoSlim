@@ -51,7 +51,7 @@ public class MensagensActivity extends AppCompatActivity {
     private static final int RC_PHOTO_PICKER = 2;
 
     private ListView mMessageListView;
-    private MessageAdapter mMessageAdapter;
+    private MensagensAdapter mMensagensAdapter;
     private ProgressBar mProgressBar;
     private ImageButton mPhotoPickerButton;
     private EditText mMessageEditText;
@@ -93,9 +93,9 @@ public class MensagensActivity extends AppCompatActivity {
         mSendButton = (Button) findViewById(R.id.sendButton);
 
         // Initialize message ListView and its adapter
-        List<FriendlyMessage> friendlyMessages = new ArrayList<>();
-        mMessageAdapter = new MessageAdapter(this, R.layout.item_message, friendlyMessages);
-        mMessageListView.setAdapter(mMessageAdapter);
+        List<MensagensFirebase> mensagensFirebases = new ArrayList<>();
+        mMensagensAdapter = new MensagensAdapter(this, R.layout.item_message, mensagensFirebases);
+        mMessageListView.setAdapter(mMensagensAdapter);
 
         // Initialize progress bar
         mProgressBar.setVisibility(ProgressBar.INVISIBLE);
@@ -136,8 +136,8 @@ public class MensagensActivity extends AppCompatActivity {
         mSendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FriendlyMessage friendlyMessage = new FriendlyMessage(mMessageEditText.getText().toString(), mUsername, null);
-                mMessagesDatabaseReference.push().setValue(friendlyMessage);
+                MensagensFirebase mensagensFirebase = new MensagensFirebase(mMessageEditText.getText().toString(), mUsername, null);
+                mMessagesDatabaseReference.push().setValue(mensagensFirebase);
 
                 // Clear input box
                 mMessageEditText.setText("");
@@ -210,8 +210,8 @@ public class MensagensActivity extends AppCompatActivity {
                             @SuppressWarnings("VisibleForTests") Uri downloadUrl = taskSnapshot.getDownloadUrl();
 
                             // Set the download URL to the message box, so that the user can send it to the database
-                            FriendlyMessage friendlyMessage = new FriendlyMessage(null, mUsername, downloadUrl.toString());
-                            mMessagesDatabaseReference.push().setValue(friendlyMessage);
+                            MensagensFirebase mensagensFirebase = new MensagensFirebase(null, mUsername, downloadUrl.toString());
+                            mMessagesDatabaseReference.push().setValue(mensagensFirebase);
                         }
                     });
         }
@@ -229,7 +229,7 @@ public class MensagensActivity extends AppCompatActivity {
         if (mAuthStateListener != null) {
             mFirebaseAuth.removeAuthStateListener(mAuthStateListener);
         }
-        mMessageAdapter.clear();
+        mMensagensAdapter.clear();
         detachDatabaseReadListener();
     }
 
@@ -258,7 +258,7 @@ public class MensagensActivity extends AppCompatActivity {
 
     private void onSignedOutCleanup() {
         mUsername = ANONYMOUS;
-        mMessageAdapter.clear();
+        mMensagensAdapter.clear();
         detachDatabaseReadListener();
     }
 
@@ -267,8 +267,8 @@ public class MensagensActivity extends AppCompatActivity {
             mChildEventListener = new ChildEventListener() {
                 @Override
                 public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                    FriendlyMessage friendlyMessage = dataSnapshot.getValue(FriendlyMessage.class);
-                    mMessageAdapter.add(friendlyMessage);
+                    MensagensFirebase mensagensFirebase = dataSnapshot.getValue(MensagensFirebase.class);
+                    mMensagensAdapter.add(mensagensFirebase);
                 }
 
                 public void onChildChanged(DataSnapshot dataSnapshot, String s) {
