@@ -147,7 +147,8 @@
         <activity
             android:name=".Estatisticas2016"
             android:label="Estatísticas 2016" />
-        <activity android:name=".ResultadoShare"></activity>
+        <activity android:name=".ResultadoShare" />
+        <activity android:name=".CalendarioShare"></activity>
     </application>
 
 </manifest>

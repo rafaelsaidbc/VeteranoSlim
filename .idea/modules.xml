@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/SantaCruz.iml" filepath="$PROJECT_DIR$/.idea/SantaCruz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SantaCruzVeterano.iml" filepath="$PROJECT_DIR$/SantaCruzVeterano.iml" />
       <module fileurl="file://C:\Users\Rafael\Downloads\Udacity\AndroidStudioProjects\SantaCruz\SantaCruzVeterano.iml" filepath="C:\Users\Rafael\Downloads\Udacity\AndroidStudioProjects\SantaCruz\SantaCruzVeterano.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>

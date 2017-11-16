@@ -72,12 +72,18 @@ public class ResultadosActivity extends AppCompatActivity {
         // Inicializa as referências das Views
         mResultadoListView = (ListView) findViewById(R.id.resultadoListView);
         registerForContextMenu(mResultadoListView); //mostra opções quando segura click
+        mResultadoListView.setOnCreateContextMenuListener(this);
 
         //Permite que os itens exibidos em resultados sejam clicáveis
         mResultadoListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
                 Object listItem = mResultadoListView.getItemAtPosition(position);
+               /* String shareResultado = mResultadoDatabaseReference.getRef().getKey();
+                Intent shareItemResultado2017 = new Intent(Intent.ACTION_SEND);
+                shareItemResultado2017.setType("text/plain");
+                shareItemResultado2017.putExtra(Intent.EXTRA_TEXT, shareResultado);
+                startActivity(Intent.createChooser(shareItemResultado2017, "Compartilhar resultado com:"));*/
 
             }
         });
@@ -144,30 +150,27 @@ public class ResultadosActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-        mResultadoListView.setAdapter(mResultadoAdapter);
-        mResultadoListView.setOnCreateContextMenuListener(new View.OnCreateContextMenuListener() {
-
-
-            public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
+    public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
                 contextMenu.add(Menu.NONE, 1, Menu.NONE, "Atualizar");
                 contextMenu.add(Menu.NONE, 2, Menu.NONE, "Deletar");
 
             }
 
 
-            public boolean onContextItemSelected(MenuItem item) {
+    @Override
+    public boolean onContextItemSelected(final MenuItem item) {
                 if (item.getTitle() == "Atualizar") {
                     //ToDo stuff
+                    String shareResultado = mResultadoDatabaseReference.getRef().getKey();
+                    Intent shareItemResultado2017 = new Intent(Intent.ACTION_SEND);
+                    shareItemResultado2017.setType("text/plain");
+                    shareItemResultado2017.putExtra(Intent.EXTRA_TEXT, shareResultado);
+                    startActivity(Intent.createChooser(shareItemResultado2017, "Compartilhar resultado com:"));
+
                 } else if (item.getTitle() == "Deletar") {
                     //ToDo stuff
-                } else {
-                    return false;
                 }
                 return true;
             }
-        });
 
-    }
 }

@@ -18,11 +18,8 @@ public class ResultadoAdapter extends ArrayAdapter<ResultadoFirebase> {
 
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
-        final ResultadoAdapter mResultadoAdapter;
         if (convertView == null) {
             convertView = ((Activity) getContext()).getLayoutInflater().inflate(R.layout.item_resultado, parent, false);
-            //ToDo 3: adicionar compartilhar resultados com facebook e whatsapp
-
         }
 
         TextView idAddResultadoTextView = (TextView) convertView.findViewById(R.id.idJogoResultado);
@@ -34,51 +31,40 @@ public class ResultadoAdapter extends ArrayAdapter<ResultadoFirebase> {
 
         final ResultadoFirebase resultado = getItem(position);
 
-        ImageButton mBtnShareItemResultado2017 = (ImageButton) convertView.findViewById(R.id.btnShareItemResultado2017);
+        //faz com que o ImageButton seja clicável
+        ImageButton mBtnShareItemResultado2017 = (ImageButton) convertView.findViewById(R.id.btnShareResultado);
         mBtnShareItemResultado2017.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
+                //estabelece o que acontece quando o ImageButton é clicado, neste caso cria um
+                //intent que abrirá uma nova class [ResultadoShare.class].
                 Intent shareItemResultado2017 = new Intent(getContext(), ResultadoShare.class);
+                //usa-se getContext() no lugar de this porque é um adapter, só aceitar getContext()
+                //para dar certo
                 getContext().startActivity(shareItemResultado2017);
-
-
+                //cria um intent [shareResultado] que armazenará as variáveis para serem recuperadas
+                //em outras activity, neste caso na activity ResultadoShare.class
                 Intent shareResultado = new Intent(getContext(), ResultadoShare.class);
+                //armazena a "dataResultadoIntent", pegando os dados de resultado.getDataAddResultado
+                //buscando assim os dados da data que estão no Firebase
                 shareResultado.putExtra("dataResultadoIntent", resultado.getDataAddResultado());
                 shareResultado.putExtra("golsStaCruzResultadoIntent", resultado.getGolsStaCruzAddResultado());
                 shareResultado.putExtra("golsAdversarioResultadoIntent", resultado.getGolsAdversarioAddResultado());
                 shareResultado.putExtra("adversarioResultadoIntent", resultado.getAdversarioAddResultado());
                 shareResultado.putExtra("golsMarcadoresResultadoIntent", resultado.getGolsMarcadoresAddResultado());
+                //inicia a atividade com os dados armazenados em shareResultado que serão recuperados
+                //em ResultadoShare.class
                 getContext().startActivity(shareResultado);
             }
         });
 
         idAddResultadoTextView.setText(resultado.getIdAddResultado());
-
         dataAddResultadoTextView.setText(resultado.getDataAddResultado());
-        //Intent dataResultadoIntent = new Intent(getContext(), ResultadoShare.class);
-        //dataResultadoIntent.putExtra("dataResultadoIntent", resultado.getDataAddResultado());
-        //getContext().startActivity(dataResultadoIntent);
-
         golsStaCruzAddResultadoTextView.setText(resultado.getGolsStaCruzAddResultado());
-        //Intent golsStaCruzResultadoIntent = new Intent(getContext(), ResultadoShare.class);
-        //golsStaCruzResultadoIntent.putExtra("golsStaCruzResultadoIntent", resultado.getGolsStaCruzAddResultado());
-        //getContext().startActivity(golsStaCruzResultadoIntent);
-
         golsAdversarioAddResultadoTextView.setText(resultado.getGolsAdversarioAddResultado());
-        //Intent golsAdversarioResultadoIntent = new Intent(getContext(), ResultadoShare.class);
-        //golsAdversarioResultadoIntent.putExtra("golsAdversarioResultadoIntent", resultado.getGolsAdversarioAddResultado());
-        //getContext().startActivity(golsAdversarioResultadoIntent);
-
         adversarioAddResultadoTextView.setText(resultado.getAdversarioAddResultado());
-        //Intent adversarioResultadoIntent = new Intent(getContext(), ResultadoShare.class);
-        //adversarioResultadoIntent.putExtra("adversarioResultadoIntent", resultado.getAdversarioAddResultado());
-        //getContext().startActivity(adversarioResultadoIntent);
-
         golsMarcadoresAddResultadoTextView.setText(resultado.getGolsMarcadoresAddResultado());
-        //Intent golsMarcadoresResultadoIntent = new Intent(getContext(), ResultadoShare.class);
-        //golsMarcadoresResultadoIntent.putExtra("golsMarcadoresResultadoIntent", resultado.getGolsMarcadoresAddResultado());
-        //getContext().startActivity(golsMarcadoresResultadoIntent);
 
         return convertView;
 
