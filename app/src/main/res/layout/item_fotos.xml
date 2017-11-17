@@ -12,6 +12,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <ImageButton
+        android:id="@+id/btnFotosFullscreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_open_in_new_black_24dp" />
+
     <TextView
         android:id="@+id/usuarioFotosActivityTextView"
         android:layout_width="wrap_content"

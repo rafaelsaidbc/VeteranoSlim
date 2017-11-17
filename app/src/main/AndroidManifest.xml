@@ -151,6 +151,7 @@
             android:label="Estatísticas 2016" />
         <activity android:name=".resultados.ResultadoShare" />
         <activity android:name=".calendario.CalendarioShare" />
+        <activity android:name=".FotosFullscreen" />
     </application>
 
 </manifest>
