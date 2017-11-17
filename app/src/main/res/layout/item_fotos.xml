@@ -7,16 +7,18 @@
     android:layout_marginLeft="@dimen/activity_horizontal_margin"
     android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/fotosActivityImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
 
     <ImageButton
         android:id="@+id/btnFotosFullscreen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="end"
         android:src="@drawable/ic_open_in_new_black_24dp" />
+
+    <ImageView
+        android:id="@+id/fotosActivityImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/usuarioFotosActivityTextView"

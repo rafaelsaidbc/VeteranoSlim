@@ -137,7 +137,6 @@ public class CalendarioActivity extends AppCompatActivity {
 
             }
 
-
     @Override
     public boolean onContextItemSelected(final MenuItem item) {
         AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
@@ -164,7 +163,6 @@ public class CalendarioActivity extends AppCompatActivity {
                     });
                 }
         return true;
-        //return CalendarioActivity.super.onContextItemSelected(item);
     }
 }
 

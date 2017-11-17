@@ -32,6 +32,5 @@ public class FotosFullscreen extends AppCompatActivity {
         Glide.with(fotosFullScreenImageView.getContext()).load(fotosFullscreen)
                 .into(fotosFullScreenImageView);
         fotosFullScreenImageView.setVisibility(View.VISIBLE);
-
     }
 }
