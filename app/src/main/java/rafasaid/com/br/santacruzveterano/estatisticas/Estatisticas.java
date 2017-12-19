@@ -1,4 +1,4 @@
-package rafasaid.com.br.santacruzveterano;
+package rafasaid.com.br.santacruzveterano.estatisticas;
 
 /**
  * Created by Entomologia on 02/10/2017.

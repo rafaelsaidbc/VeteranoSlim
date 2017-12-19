@@ -25,6 +25,7 @@ import android.widget.TextView;
 import com.google.firebase.database.FirebaseDatabase;
 
 import rafasaid.com.br.santacruzveterano.calendario.CalendarioActivity;
+import rafasaid.com.br.santacruzveterano.estatisticas.EstatisticasActivity;
 import rafasaid.com.br.santacruzveterano.jogadores.firebase.JogadoresActivity;
 import rafasaid.com.br.santacruzveterano.resultados.ResultadosActivity;
 

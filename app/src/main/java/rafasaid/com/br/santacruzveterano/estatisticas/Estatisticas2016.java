@@ -1,4 +1,4 @@
-package rafasaid.com.br.santacruzveterano;
+package rafasaid.com.br.santacruzveterano.estatisticas;
 
 
 import android.os.Bundle;
@@ -15,6 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 import java.util.Comparator;
 
+import rafasaid.com.br.santacruzveterano.R;
 import rafasaid.com.br.santacruzveterano.resultados.ResultadoFirebase;
 
 import static rafasaid.com.br.santacruzveterano.R.id.listaMarcadoresGols2016;

@@ -22,9 +22,9 @@ import rafasaid.com.br.santacruzveterano.colaboradores.VanorActivity;
 import rafasaid.com.br.santacruzveterano.jogadores.AlexActivity;
 import rafasaid.com.br.santacruzveterano.jogadores.AlissonActivity;
 import rafasaid.com.br.santacruzveterano.jogadores.BaianoActivity;
-import rafasaid.com.br.santacruzveterano.jogadores.BilinActivity;
 import rafasaid.com.br.santacruzveterano.jogadores.BoizinhoActivity;
 import rafasaid.com.br.santacruzveterano.jogadores.BrunoActivity;
+import rafasaid.com.br.santacruzveterano.jogadores.Charles;
 import rafasaid.com.br.santacruzveterano.jogadores.DouglasActivity;
 import rafasaid.com.br.santacruzveterano.jogadores.EdmundoActivity;
 import rafasaid.com.br.santacruzveterano.jogadores.ErickActivity;
@@ -75,6 +75,7 @@ public class JogadoresActivity extends AppCompatActivity {
     private ImageView mDanielRostoImageView;
     private ImageView mVanorRostoImageView;
     private ImageView mMaurinhoRostoImageView;
+    private ImageView mCharlesRostoImageView;
 
     private JogadoresRostoFirebaseAdapter mJogadoresRostoAdapter;
 
@@ -120,13 +121,12 @@ public class JogadoresActivity extends AppCompatActivity {
                 mBaianoRostoImageView = (ImageView) findViewById(R.id.baiano_rosto);
                 Glide.with(getApplicationContext()).load(baianoFotoRosto).into(mBaianoRostoImageView);
 
-                String bilinFotoRosto = jogadoresRostoFirebase.getBilinRosto();
-                mBilinRostoImageView = (ImageView) findViewById(R.id.bilin_rosto);
-                Glide.with(getApplicationContext()).load(bilinFotoRosto).into(mBilinRostoImageView);
+                String charlesFotoRosto = jogadoresRostoFirebase.getCharlesRosto();
+                mCharlesRostoImageView = (ImageView) findViewById(R.id.charles_rosto);
+                Glide.with(getApplicationContext()).load(charlesFotoRosto).into(mCharlesRostoImageView);
 
                 // Inicializa as referências das Views
                 String romarioRostoFoto = jogadoresRostoFirebase.getRomarioRosto();
-                ;
                 mRomarioRostoImageView = (ImageView) findViewById(R.id.romario_rosto);
                 Glide.with(getApplicationContext()).load(romarioRostoFoto).into(mRomarioRostoImageView);
 
@@ -256,6 +256,11 @@ public class JogadoresActivity extends AppCompatActivity {
         startActivity(startDouglasDados);
     }
 
+    public void startCharlesDados(View view) {
+        Intent startCharlesDados = new Intent(this, Charles.class);
+        startActivity(startCharlesDados);
+    }
+
     public void startFlavioDados(View view) {
         Intent startFlavioDados = new Intent(this, FlavioActivity.class);
         startActivity(startFlavioDados);
@@ -304,11 +309,6 @@ public class JogadoresActivity extends AppCompatActivity {
     public void startAlissonDados(View view) {
         Intent startAlissonDados = new Intent(this, AlissonActivity.class);
         startActivity(startAlissonDados);
-    }
-
-    public void startBilinDados(View view) {
-        Intent startBilinDados = new Intent(this, BilinActivity.class);
-        startActivity(startBilinDados);
     }
 
     public void startBoizinhoDados(View view) {

@@ -58,7 +58,7 @@ public class AdicionarResultado extends AppCompatActivity {
 
         //mFirebaseDatabase.getReference() faz referência ao nó raiz; child() faz referência à parte de interesse, no caso resultado,
         //pode ser calendário, resultados, fotos (no lugar de messages)
-        mResultadoDatabaseReference = mFirebaseDatabase.getReference().child("resultado");
+        mResultadoDatabaseReference = mFirebaseDatabase.getReference().child("resultados2018");
 
         mAnoAddResultadoEditText = (EditText) findViewById(R.id.ano_add_resultado);
         mIdAddResultadoEditText = (EditText) findViewById(R.id.id_add_resultado);

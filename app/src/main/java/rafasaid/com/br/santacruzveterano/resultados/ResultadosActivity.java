@@ -69,7 +69,7 @@ public class ResultadosActivity extends AppCompatActivity {
 
         //mFirebaseDatabase.getReference() faz referência ao nó raiz; child() faz referência à parte de interesse, no caso resultado,
         //pode ser calendário, resultados, fotos (no lugar de messages)
-        mResultadoDatabaseReference = mFirebaseDatabase.getReference().child("resultado");
+        mResultadoDatabaseReference = mFirebaseDatabase.getReference().child("resultados2018");
 
         // Inicializa as referências das Views
         mResultadoListView = (ListView) findViewById(R.id.resultadoListView);
@@ -143,6 +143,12 @@ public class ResultadosActivity extends AppCompatActivity {
                 Intent intentResultados2016 = new Intent(this, Resultados2016.class);
                 ;
                 this.startActivity(intentResultados2016);
+                break;
+
+            case R.id.acessarResultados2017:
+                Intent intentResultados2017 = new Intent(this, Resultados2017.class);
+                ;
+                this.startActivity(intentResultados2017);
                 break;
 
             default:

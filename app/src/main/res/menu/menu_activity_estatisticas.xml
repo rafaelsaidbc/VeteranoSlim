@@ -3,11 +3,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".EstatisticasActivity">
+    tools:context=".estatisticas.EstatisticasActivity">
 
     <item
         android:id="@+id/acessarEstatisticas2016"
         android:title="Estatísticas 2016"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/acessarEstatisticas2017"
+        android:title="Estatísticas 2017"
         app:showAsAction="never" />
 
 </menu>

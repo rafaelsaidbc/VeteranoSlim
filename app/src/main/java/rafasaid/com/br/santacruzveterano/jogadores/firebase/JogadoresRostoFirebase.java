@@ -11,9 +11,9 @@ public class JogadoresRostoFirebase {
     private String alexRosto;
     private String alissonRosto;
     private String baianoRosto;
-    private String bilinRosto;
     private String boizinhoRosto;
     private String brunoRosto;
+    private String charlesRosto;
     private String danielRosto;
     private String delinhaRosto;
     private String douglasRosto;
@@ -46,9 +46,9 @@ public class JogadoresRostoFirebase {
         this.alexRosto = alexRosto;
         this.alissonRosto = alissonRosto;
         this.baianoRosto = baianoRosto;
-        this.bilinRosto = bilinRosto;
         this.boizinhoRosto = boizinhoRosto;
         this.brunoRosto = brunoRosto;
+        this.charlesRosto = charlesRosto;
         this.danielRosto = danielRosto;
         this.delinhaRosto = delinhaRosto;
         this.douglasRosto = douglasRosto;
@@ -107,15 +107,6 @@ public class JogadoresRostoFirebase {
         this.baianoRosto = baianoRosto;
     }
 
-    public String getBilinRosto() {
-        return bilinRosto;
-    }
-
-    public void setBilinRosto(String bilinRosto) {
-        this.bilinRosto = bilinRosto;
-    }
-
-
     public String getBoizinhoRosto() {
         return boizinhoRosto;
     }
@@ -130,6 +121,14 @@ public class JogadoresRostoFirebase {
 
     public void setBrunoRosto(String brunoRosto) {
         this.brunoRosto = brunoRosto;
+    }
+
+    public String getCharlesRosto() {
+        return charlesRosto;
+    }
+
+    public void setCharlesRosto(String charlesRosto) {
+        this.charlesRosto = charlesRosto;
     }
 
     public String getDanielRosto() {

@@ -41,16 +41,6 @@
         tools:listitem="@layout/item_jogadores" />
 
     <ListView
-        android:id="@+id/bilinDadosListView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:divider="#000000"
-        android:dividerHeight="2dp"
-        android:stackFromBottom="true"
-        android:transcriptMode="alwaysScroll"
-        tools:listitem="@layout/item_jogadores" />
-
-    <ListView
         android:id="@+id/boizinhoDadosListView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -62,6 +52,16 @@
 
     <ListView
         android:id="@+id/brunoDadosListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="#000000"
+        android:dividerHeight="2dp"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll"
+        tools:listitem="@layout/item_jogadores" />
+
+    <ListView
+        android:id="@+id/charlesDadosListView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:divider="#000000"

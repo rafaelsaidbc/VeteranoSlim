@@ -163,14 +163,19 @@
                 android:id="@+id/roberto_rosto"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:onClick="startRobertoDados"
-                tools:src="@drawable/roberto_rosto" />
+                android:onClick="startRobertoDados" />
 
             <ImageView
                 android:id="@+id/gabriel_rosto"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:onClick="startGabrielDados" />
+
+            <ImageView
+                android:id="@+id/charles_rosto"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:onClick="startCharlesDados" />
 
         </GridLayout>
 
@@ -186,7 +191,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:columnCount="3"
-            android:rowCount="3">
+            android:rowCount="2">
 
             <ImageView
                 android:id="@+id/erick_rosto"
@@ -205,12 +210,6 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:onClick="startAlexDados" />
-
-            <ImageView
-                android:id="@+id/bilin_rosto"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:onClick="startBilinDados" />
 
             <ImageView
                 android:id="@+id/bruno_rosto"
@@ -256,8 +255,7 @@
                 android:id="@+id/toninho_rosto"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:onClick="startToninhoDados"
-                tools:src="@drawable/toninho_rosto" />
+                android:onClick="startToninhoDados" />
 
             <ImageView
                 android:id="@+id/daniel_rosto"

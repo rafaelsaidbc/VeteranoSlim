@@ -17,16 +17,16 @@ import rafasaid.com.br.santacruzveterano.R;
 import rafasaid.com.br.santacruzveterano.jogadores.firebase.JogadoresFirebase;
 import rafasaid.com.br.santacruzveterano.jogadores.firebase.JogadoresFirebaseAdapter;
 
-public class BilinActivity extends AppCompatActivity {
+public class Charles extends AppCompatActivity {
 
-    private static final String TAG = "Bilin";
+    private static final String TAG = "Charles";
 
-    private ListView mBilinListView;
-    private JogadoresFirebaseAdapter mBilinFirebaseAdapter;
+    private ListView mCharlesListView;
+    private JogadoresFirebaseAdapter mCharlesFirebaseAdapter;
 
     // Firebase instance variables
     private FirebaseDatabase mFirebaseDatabase;//ponto de acesso do app ao Database
-    private DatabaseReference mBilinDatabaseReference;//classe que faz referência a uma parte específica da Database;
+    private DatabaseReference mCharlesDatabaseReference;//classe que faz referência a uma parte específica da Database;
     //para cada referência que for utilizar a database, deve ter
     //uma classe
 
@@ -44,17 +44,17 @@ public class BilinActivity extends AppCompatActivity {
 
         //mFirebaseDatabase.getReference() faz referência ao nó raiz; child() faz referência à parte de interesse, no caso resultado,
         //pode ser calendário, resultados, fotos (no lugar de messages)
-        mBilinDatabaseReference = mFirebaseDatabase.getReference().child("jogadores").child("atacantes").child("Bilin");
+        mCharlesDatabaseReference = mFirebaseDatabase.getReference().child("jogadores").child("meioCampo").child("Charles");
 
         // Inicializa as referências das Views
-        mBilinListView = (ListView) findViewById(R.id.bilinDadosListView);
+        mCharlesListView = (ListView) findViewById(R.id.charlesDadosListView);
 
 
-        // Initialize bilinListView and its adapter, o ArrayList é a fonte de dados do BilinFirebaseAdapter
-        //pelo objeto mBilinFirebaseAdapter
+        // Initialize charlesListView and its adapter, o ArrayList é a fonte de dados do CharlesFirebaseAdapter
+        //pelo objeto mCharlesFirebaseAdapter
         List<JogadoresFirebase> jogadoresFirebase = new ArrayList<>();
-        mBilinFirebaseAdapter = new JogadoresFirebaseAdapter(this, R.layout.jogadores_firebase, jogadoresFirebase);
-        mBilinListView.setAdapter(mBilinFirebaseAdapter);
+        mCharlesFirebaseAdapter = new JogadoresFirebaseAdapter(this, R.layout.jogadores_firebase, jogadoresFirebase);
+        mCharlesListView.setAdapter(mCharlesFirebaseAdapter);
 
 
         //leitura e exibição dos dados da database no app
@@ -63,12 +63,12 @@ public class BilinActivity extends AppCompatActivity {
             //chamado quando uma partida for inserida na lista de resultado
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                //obtêm os dados de Bilin
-                JogadoresFirebase bilinFirebase = dataSnapshot.getValue(JogadoresFirebase.class);//desserializa o resultado do banco de dados para o objeto ResultadoFirebase
+                //obtêm os dados de Charles
+                JogadoresFirebase charlesFirebase = dataSnapshot.getValue(JogadoresFirebase.class);//desserializa o resultado do banco de dados para o objeto ResultadoFirebase
                 //o objeto ResultadoFirebase deve ter os mesmos campos dos objetos de resultado do banco de dados
 
 
-                mBilinFirebaseAdapter.add(bilinFirebase);//adiciona o objeto ResultadoFirebase ao Adapter, converte
+                mCharlesFirebaseAdapter.add(charlesFirebase);//adiciona o objeto ResultadoFirebase ao Adapter, converte
                 //o resultado em um objeto ResultadoFirebase e adiciona ao Adapter, que será exibido na ListView
             }
 
@@ -84,7 +84,7 @@ public class BilinActivity extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         };
-        mBilinDatabaseReference.addChildEventListener(mChildEventListener);
+        mCharlesDatabaseReference.addChildEventListener(mChildEventListener);
     }
 
 }

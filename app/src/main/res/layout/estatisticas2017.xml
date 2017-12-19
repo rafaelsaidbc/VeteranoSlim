@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     android:fillViewport="true"
-    tools:context=".estatisticas.Estatisticas2016">
+    tools:context=".estatisticas.Estatisticas2017">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,7 +19,7 @@
             android:layout_margin="16dp"
             android:background="#FFC107"
             android:gravity="center"
-            android:text="Estatísticas 2016"
+            android:text="Estatísticas 2017"
             android:textColor="#000000"
             android:textSize="30dp" />
 
@@ -37,7 +37,7 @@
                 android:textSize="20dp" />
 
             <TextView
-                android:id="@+id/vitoriasStaCruz2016"
+                android:id="@+id/vitoriasStaCruz2017"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#000000"
@@ -58,7 +58,7 @@
                 android:textSize="20dp" />
 
             <TextView
-                android:id="@+id/empatesStaCruz2016"
+                android:id="@+id/empatesStaCruz2017"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#000000"
@@ -80,7 +80,7 @@
                 android:textSize="20dp" />
 
             <TextView
-                android:id="@+id/derrotasStaCruz2016"
+                android:id="@+id/derrotasStaCruz2017"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#000000"
@@ -102,7 +102,7 @@
                 android:textSize="20dp" />
 
             <TextView
-                android:id="@+id/golsMarcadosStaCruz2016"
+                android:id="@+id/golsMarcadosStaCruz2017"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#000000"
@@ -124,7 +124,7 @@
                 android:textSize="20dp" />
 
             <TextView
-                android:id="@+id/golsSofridosStaCruz2016"
+                android:id="@+id/golsSofridosStaCruz2017"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#000000"
@@ -146,7 +146,7 @@
                 android:textSize="20dp" />
 
             <TextView
-                android:id="@+id/saldoGolsStaCruz2016"
+                android:id="@+id/saldoGolsStaCruz2017"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#000000"
@@ -160,13 +160,13 @@
             android:layout_margin="16dp"
             android:background="#FFC107"
             android:gravity="center"
-            android:text="Artilharia 2016"
+            android:text="Artilharia 2017"
             android:textColor="#000000"
             android:textSize="24dp" />
 
 
         <ListView
-            android:id="@+id/listaMarcadoresGols2016"
+            android:id="@+id/listaMarcadoresGols2017"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:animationCache="false"
