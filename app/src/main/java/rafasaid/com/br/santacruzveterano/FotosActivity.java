@@ -54,7 +54,7 @@ import java.util.List;
 public class FotosActivity extends AppCompatActivity {
 
     public static final String ANONYMOUS = "anonymous";
-    public static final int RC_SIGN_IN = 11;
+    public static final int RC_SIGN_IN = 1;
     private static final String TAG = "FotosActivity";
     private static final int RC_PHOTO_PICKER = 22;
 
