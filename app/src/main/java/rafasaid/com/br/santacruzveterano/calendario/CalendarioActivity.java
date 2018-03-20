@@ -16,6 +16,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 
@@ -95,8 +96,6 @@ public class CalendarioActivity extends AppCompatActivity {
         mCalendarioAdapter = new CalendarioAdapter(this, R.layout.add_item_calendario, calendarioFirebases);
         mCalendarioListView.setAdapter(mCalendarioAdapter);
 
-
-
         //leitura e exibição dos dados da database no app
         mChildEventListener = new ChildEventListener() {
 
@@ -144,16 +143,22 @@ public class CalendarioActivity extends AppCompatActivity {
         final int position = info.position;
 
                 if (item.getTitle() == "Atualizar") {
-                    //ToDo stuff
-                } else if (item.getTitle() == "Deletar") {
-                    //ToDo stuff
+                    // Cria um intent para abrir {@link AdicionarCalendario}
+                    Intent intentAtualizarCalendario = new Intent(CalendarioActivity.this, AdicionarCalendario.class);
 
-                    mCalendarioDatabaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+                    // Inicia a activity AdicionarCalendario
+                    startActivity(intentAtualizarCalendario);
+
+                } else if (item.getTitle() == "Deletar") {
+
+                    Query removerCalendario = mCalendarioDatabaseReference.limitToFirst(1);
+                    removerCalendario.addListenerForSingleValueEvent(new ValueEventListener() {
 
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
-                            for (DataSnapshot calendarioSnapshot : dataSnapshot.getChildren()) {
-                                calendarioSnapshot.getRef().removeValue();
+                            for (DataSnapshot snapshotRemoverCalendario : dataSnapshot.getChildren()) {
+                                snapshotRemoverCalendario.getRef().removeValue();
+
                             }
                         }
 
