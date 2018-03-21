@@ -41,6 +41,7 @@ public class EstatisticasActivity extends AppCompatActivity {
     int golsBoizinho2018 = 0;
     int golsBruno2018 = 0;
     int golsCharles2018 = 0;
+    int golsContra2018 = 0;
     int golsDouglas2018 = 0;
     int golsDu2018 = 0;
     int golsEdmundo2018 = 0;
@@ -158,6 +159,10 @@ public class EstatisticasActivity extends AppCompatActivity {
                             golsCharles2018++;
                         }
 
+                        if (separadorGolsMarcadores[i].equals("Contra")) {
+                            golsContra2018++;
+                        }
+
                         if (separadorGolsMarcadores[i].equals("Douglas")) {
                             golsDouglas2018++;
                         }
@@ -260,6 +265,9 @@ public class EstatisticasActivity extends AppCompatActivity {
 
                         Estatisticas charlesGols2018 = new Estatisticas("Charles", golsCharles2018);
                         adapterMarcadoresGols.add(charlesGols2018);
+
+                        Estatisticas contraGols2018 = new Estatisticas("Contra", golsContra2018);
+                        adapterMarcadoresGols.add(contraGols2018);
 
                         Estatisticas douglasGols2018 = new Estatisticas("Douglas", golsDouglas2018);
                         adapterMarcadoresGols.add(douglasGols2018);
