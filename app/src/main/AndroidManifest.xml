@@ -165,6 +165,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".calendario.CalendarioActivity" />
         </activity>
+        <activity android:name=".calendario.MudarCalendario" />
 
     </application>
 

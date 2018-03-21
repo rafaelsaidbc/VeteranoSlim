@@ -2,11 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/atualizar_item_calendario"
-        android:title="Atualizar" />
-
-    <item
-        android:id="@+id/deletar_item_calendario"
-        android:title="Deletar" />
+        android:id="@+id/opcoes"
+        android:title="Opções" />
 
 </menu>

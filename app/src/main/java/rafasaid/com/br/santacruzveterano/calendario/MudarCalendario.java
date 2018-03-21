@@ -2,10 +2,9 @@ package rafasaid.com.br.santacruzveterano.calendario;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.view.ContextMenu;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -16,20 +15,20 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import rafasaid.com.br.santacruzveterano.R;
 
-public class CalendarioActivity extends AppCompatActivity {
+public class MudarCalendario extends AppCompatActivity {
 
-    private static final String TAG = "CalendarioActivity";
+    private static final String TAG = "MudarCalendario";
 
     private ListView mCalendarioListView;
-    private CalendarioAdapter mCalendarioAdapter;
+    private CalendarioMudarAdapter mCalendarioMudarAdapter;
 
     // Firebase instance variables
     private FirebaseDatabase mFirebaseDatabase;//ponto de acesso do app ao Database
@@ -39,37 +38,14 @@ public class CalendarioActivity extends AppCompatActivity {
 
     //leitura e exibição dos dados da database na ListView
     private ChildEventListener mChildEventListener;
-    private FirebaseRemoteConfig mFirebaseRemoteConfig;
-    private ValueEventListener eventListener;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calendario);
-
-
-        // Find the View that shows the AdicionarCalendario category
-        FloatingActionButton btnAddListCalendario = (FloatingActionButton) findViewById(R.id.btn_add_calendario);
-
-        // Set a click listener on that View
-        btnAddListCalendario.setOnClickListener(new View.OnClickListener() {
-            // The code in this method will be executed when the jogadores category is clicked on.
-            @Override
-            public void onClick(View view) {
-                // Create a new intent to open the {@link JogadoresActivity}
-                Intent btnAddListCalendarioIntent = new Intent(CalendarioActivity.this, AdicionarCalendario.class);
-
-                // Start the new activity (show jogadores activity)
-                startActivity(btnAddListCalendarioIntent);
-            }
-
-        });
-
+        setContentView(R.layout.calendario_mudar);
 
         // Initialize Firebase components
         mFirebaseDatabase = FirebaseDatabase.getInstance(); //é o ponto de acesso principal do Database
-        mFirebaseRemoteConfig = FirebaseRemoteConfig.getInstance();
 
         //mFirebaseDatabase.getReference() faz referência ao nó raiz; child() faz referência à parte de interesse, no caso calendario,
         //pode ser calendário, resultados, fotos (no lugar de calendario)
@@ -92,8 +68,8 @@ public class CalendarioActivity extends AppCompatActivity {
         // Initialize message ListView and its adapter, o ArrayList é a fonte de dados do CalendarioAdapter
         //pelo objeto mCalendarioAdapter
         List<CalendarioFirebase> calendarioFirebases = new ArrayList<>();
-        mCalendarioAdapter = new CalendarioAdapter(this, R.layout.add_item_calendario, calendarioFirebases);
-        mCalendarioListView.setAdapter(mCalendarioAdapter);
+        mCalendarioMudarAdapter = new CalendarioMudarAdapter(this, R.layout.add_item_calendario, calendarioFirebases);
+        mCalendarioListView.setAdapter(mCalendarioMudarAdapter);
 
         //leitura e exibição dos dados da database no app
         mChildEventListener = new ChildEventListener() {
@@ -105,7 +81,7 @@ public class CalendarioActivity extends AppCompatActivity {
                 CalendarioFirebase calendarioFirebase = dataSnapshot.getValue(CalendarioFirebase.class);//desserializa o calendario do banco de dados para o objeto CalendarioFirebase
                 //o objeto CalendarioFirebase deve ter os mesmos campos dos objetos de calendario do banco de dados
 
-                mCalendarioAdapter.add(calendarioFirebase);//adiciona o objeto CalendarioFirebase ao Adapter, converte
+                mCalendarioMudarAdapter.add(calendarioFirebase);//adiciona o objeto CalendarioFirebase ao Adapter, converte
                 //o calendario em um objeto CalendarioFirebase e adiciona ao Adapter, que será exibido na ListView
             }
 
@@ -127,22 +103,42 @@ public class CalendarioActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.calendario_itens_menu, menu);
-        return true;
+    public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
+        contextMenu.add(Menu.NONE, 1, Menu.NONE, "Atualizar");
+        contextMenu.add(Menu.NONE, 2, Menu.NONE, "Deletar");
+
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.opcoes:
-                Intent intentOpcoesCalendario = new Intent(this, MudarCalendario.class);
-                this.startActivity(intentOpcoesCalendario);
-                break;
+    public boolean onContextItemSelected(final MenuItem item) {
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+        final int position = info.position;
 
-            default:
-                return super.onOptionsItemSelected(item);
+        if (item.getTitle() == "Atualizar") {
+            // Cria um intent para abrir {@link AdicionarCalendario}
+            Intent intentAtualizarCalendario = new Intent(MudarCalendario.this, AdicionarCalendario.class);
+
+            // Inicia a activity AdicionarCalendario
+            startActivity(intentAtualizarCalendario);
+
+        } else if (item.getTitle() == "Deletar") {
+
+            Query removerCalendario = mCalendarioDatabaseReference.limitToFirst(1);
+            removerCalendario.addListenerForSingleValueEvent(new ValueEventListener() {
+
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    for (DataSnapshot snapshotRemoverCalendario : dataSnapshot.getChildren()) {
+                        snapshotRemoverCalendario.getRef().removeValue();
+
+                    }
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
         }
         return true;
     }
