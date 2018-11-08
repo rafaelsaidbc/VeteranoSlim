@@ -15,4 +15,9 @@
         android:title="Estatísticas 2017"
         app:showAsAction="never" />
 
+    <item
+        android:id="@+id/acessarEstatisticas2018"
+        android:title="Estatísticas 2018"
+        app:showAsAction="never" />
+
 </menu>

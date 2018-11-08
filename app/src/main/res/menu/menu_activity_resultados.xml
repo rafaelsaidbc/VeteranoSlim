@@ -15,4 +15,9 @@
         android:title="Resultados 2017"
         app:showAsAction="never" />
 
+    <item
+        android:id="@+id/acessarResultados2018"
+        android:title="Resultados 2018"
+        app:showAsAction="never" />
+
 </menu>

@@ -26,7 +26,6 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import rafasaid.com.br.santacruzveterano.calendario.CalendarioActivity;
 import rafasaid.com.br.santacruzveterano.estatisticas.EstatisticasActivity;
-import rafasaid.com.br.santacruzveterano.jogadores.firebase.JogadoresActivity;
 import rafasaid.com.br.santacruzveterano.resultados.ResultadosActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -40,26 +39,7 @@ public class MainActivity extends AppCompatActivity {
         FirebaseDatabase.getInstance().setPersistenceEnabled(true); //faz o download dos dados do Firebase
         //para o dispositivo, armazenando localmente os dados
 
-
-        // Find the View that shows the jogadores category
-        TextView jogadores = (TextView) findViewById(R.id.jogadores);
-
-        // Set a click listener on that View
-        jogadores.setOnClickListener(new OnClickListener() {
-            // The code in this method will be executed when the jogadores category is clicked on.
-            @Override
-            public void onClick(View view) {
-
-                // Create a new intent to open the {@link JogadoresActivity}
-                Intent jogadoresIntent = new Intent(MainActivity.this, JogadoresActivity.class);
-
-                // Start the new activity (show jogadores activity)
-                startActivity(jogadoresIntent);
-
-            }
-        });
-
-        TextView resultados = (TextView) findViewById(R.id.resultados);
+        TextView resultados = findViewById(R.id.resultados);
 
         resultados.setOnClickListener(new OnClickListener() {
             // The code in this method will be executed when the resultados category is clicked on.
@@ -71,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        TextView calendario = (TextView) findViewById(R.id.calendario);
+        TextView calendario = findViewById(R.id.calendario);
 
         calendario.setOnClickListener(new OnClickListener() {
             // The code in this method will be executed when the colors category is clicked on.
@@ -83,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        TextView estatisticas = (TextView) findViewById(R.id.estatisticas);
+        TextView estatisticas = findViewById(R.id.estatisticas);
 
         estatisticas.setOnClickListener(new OnClickListener() {
             // The code in this method will be executed when the colors category is clicked on.
@@ -95,21 +75,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        TextView contato = (TextView) findViewById(R.id.contato);
-
-        contato.setOnClickListener(new OnClickListener() {
-            // The code in this method will be executed when the contato category is clicked on.
-            @Override
-            public void onClick(View view) {
-                // Create a new intent to open the {@link PhrasesActivity}
-                Intent contatoIntent = new Intent(MainActivity.this, rafasaid.com.br.santacruzveterano.ContatoActivity.class);
-
-                // Start the new activity
-                startActivity(contatoIntent);
-            }
-        });
-
-        TextView mensagens = (TextView) findViewById(R.id.mensagens);
+        TextView mensagens = findViewById(R.id.mensagens);
 
         // Set a click listener on that View
         mensagens.setOnClickListener(new OnClickListener() {
@@ -125,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        TextView fotos = (TextView) findViewById(R.id.fotos);
+        TextView fotos = findViewById(R.id.fotos);
 
         // Set a click listener on that View
         fotos.setOnClickListener(new OnClickListener() {

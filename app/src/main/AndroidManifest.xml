@@ -20,97 +20,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- Jogadores e colaboradores-->
-        <activity
-            android:name=".jogadores.AlexActivity"
-            android:label="Alex" />
-        <activity
-            android:name=".jogadores.AlissonActivity"
-            android:label="Alisson" />
-        <activity
-            android:name=".jogadores.BaianoActivity"
-            android:label="Baiano" />
-        <activity
-            android:name=".jogadores.BoizinhoActivity"
-            android:label="Boizinho" />
-        <activity
-            android:name=".jogadores.BrunoActivity"
-            android:label="Bruno Pupu" />
-        <activity
-            android:name=".jogadores.Charles"
-            android:label="Charles" />
-        <activity
-            android:name=".jogadores.DouglasActivity"
-            android:label="Douglas" />
-        <activity
-            android:name=".jogadores.LuizEduardoActivity"
-            android:label="Du" />
-        <activity
-            android:name=".jogadores.EdmundoActivity"
-            android:label="Edmundo" />
-        <activity
-            android:name=".jogadores.ErickActivity"
-            android:label="Erick" />
-        <activity
-            android:name=".jogadores.ErliActivity"
-            android:label="Erli" />
-        <activity
-            android:name=".jogadores.FlavioActivity"
-            android:label="Flávio" />
-        <activity
-            android:name=".jogadores.GabrielActivity"
-            android:label="Ieiel" />
-        <activity
-            android:name=".jogadores.Heverton"
-            android:label="Cabeção" />
-        <activity
-            android:name=".jogadores.PaulinhoActivity"
-            android:label="Paulinho" />
-        <activity
-            android:name=".jogadores.PelotaActivity"
-            android:label="Pelota" />
-        <activity
-            android:name=".jogadores.RafaelActivity"
-            android:label="Rafael" />
-        <activity
-            android:name=".jogadores.RicardoActivity"
-            android:label="Ricardo" />
-        <activity
-            android:name=".jogadores.RobertoActivity"
-            android:label="Roberto" />
-        <activity
-            android:name=".jogadores.RomarioActivity"
-            android:label="Romário" />
-        <activity
-            android:name=".jogadores.RyanActivity"
-            android:label="Ryan" />
-        <activity
-            android:name=".jogadores.ZeGatoActivity"
-            android:label="Zé Gato" />
-        <activity
-            android:name=".jogadores.JosielActivity"
-            android:label="Ziel" />
-        <activity
-            android:name=".colaboradores.Delinha"
-            android:label="Delinha" />
-        <activity
-            android:name=".colaboradores.Daniel"
-            android:label="Daniel" />
-        <activity
-            android:name=".colaboradores.MaurinhoActivity"
-            android:label="Gandula" />
-        <activity
-            android:name=".colaboradores.Toninho"
-            android:label="Toninho" />
-        <activity
-            android:name=".colaboradores.VanorActivity"
-            android:label="Árbitro" />
 
         <!-- Outras atividades do app -->
-        <activity
-            android:name=".ContatoActivity"
-            android:label="Contato" />
-
         <activity
             android:name=".MensagensActivity"
             android:label="Mensagens" />
@@ -135,13 +46,9 @@
         <activity
             android:name=".resultados.ResultadosActivity"
             android:label="Resultados" />
-        <activity
-            android:name=".jogadores.firebase.JogadoresActivity"
-            android:label="Jogadores" />
         <activity android:name=".FotosFullscreen" />
         <activity android:name=".resultados.ResultadoShare" />
         <activity android:name=".calendario.CalendarioShare" />
-
 
         <!-- Adicionando resultados e calendário -->
         <activity
